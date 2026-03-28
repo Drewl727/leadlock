@@ -101,13 +101,6 @@
       border-radius: 2px;
     }
 
-    /* Strikethrough pricing */
-    .line-through-red {
-      text-decoration: line-through;
-      text-decoration-color: #ef4444;
-      text-decoration-thickness: 2px;
-      opacity: 0.6;
-    }
 
     /* Timeline connector */
     .timeline-line {
@@ -164,6 +157,21 @@
 
 <body class="bg-chalk text-navy antialiased">
 
+<!-- Cookie notice -->
+<div id="cookie-banner" class="fixed bottom-0 inset-x-0 z-[70] transition-transform duration-500 translate-y-full"
+     style="background: rgba(26,35,50,0.97); backdrop-filter: blur(12px); border-top: 1px solid rgba(255,255,255,0.08);">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <p class="font-body text-white/60 text-sm text-center sm:text-left">
+      We use cookies to improve your experience. By using this site you agree to our use of cookies.
+    </p>
+    <div class="flex items-center gap-3 flex-shrink-0">
+      <button id="cookie-decline" class="font-body text-white/40 hover:text-white/70 text-sm transition-colors duration-200">Decline</button>
+      <button id="cookie-accept" class="font-body font-600 text-navy text-sm px-4 py-2 rounded-lg transition-colors duration-200"
+              style="background: #02C39A;">Accept</button>
+    </div>
+  </div>
+</div>
+
 <!-- Source tooltip -->
 <div id="stat-tooltip" class="fixed z-50 opacity-0 transition-opacity duration-200 max-w-xs"
      style="pointer-events: none; background: #1A2332; border: 1px solid rgba(2,195,154,0.25); border-radius: 10px; padding: 10px 14px; box-shadow: 0 8px 32px rgba(0,0,0,0.4);">
@@ -176,14 +184,23 @@
 <div id="scroll-progress" class="fixed top-0 left-0 z-[60] h-0.5" style="width:0%; background: linear-gradient(90deg, #02C39A, #028090); transition: width 0.1s linear;"></div>
 
 <!-- Back to top button -->
-<div class="fixed bottom-6 right-6 z-50 flex items-center gap-2 group">
+<div id="back-to-top-wrap" class="fixed bottom-6 right-6 z-50 flex items-center gap-2 group opacity-0 pointer-events-none transition-all duration-300">
   <span class="opacity-0 group-hover:opacity-100 transition-opacity duration-200 font-body text-xs text-white/80 whitespace-nowrap px-2 py-1 rounded-lg pointer-events-none"
         style="background: rgba(26,35,50,0.85); backdrop-filter: blur(6px);">Back to top</span>
   <button id="back-to-top" aria-label="Back to top"
-    class="w-10 h-10 rounded-full flex items-center justify-center shadow-lg opacity-0 pointer-events-none transition-all duration-300"
+    class="w-10 h-10 rounded-full flex items-center justify-center shadow-lg"
     style="background: linear-gradient(135deg, #02C39A, #028090);">
     <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
   </button>
+</div>
+
+<!-- Mobile sticky CTA bar -->
+<div id="mobile-cta-bar" class="fixed bottom-0 inset-x-0 z-40 md:hidden transition-transform duration-300 translate-y-full"
+     style="background: rgba(26,35,50,0.97); backdrop-filter: blur(12px); border-top: 1px solid rgba(255,255,255,0.08); padding: 12px 16px;">
+  <a href="#contact" class="block w-full text-center font-heading font-700 text-navy text-sm py-3 rounded-xl transition-colors duration-200"
+     style="background: linear-gradient(135deg, #02C39A, #01a882);">
+    Get My Free Google Audit →
+  </a>
 </div>
 
 <!-- ═══════════════════════════════════════════════
@@ -328,11 +345,11 @@
       <div class="reveal reveal-delay-2 grad-border p-8 text-center cursor-default hover:-translate-y-1 transition-transform duration-200">
         <div class="relative inline-block mb-3">
           <div class="stat-number" data-counter="62" data-suffix="%">0%</div>
-          <button class="stat-source absolute -top-1 -right-5 w-4 h-4 rounded-full flex items-center justify-center text-white/40 hover:text-teal transition-colors duration-200"
+          <button class="stat-source absolute -top-1 -right-5 w-4 h-4 rounded-full flex items-center justify-center text-navy/30 hover:text-teal transition-colors duration-200"
                   data-source="411Locals — Small Business Owners Don't Answer 62% of Phone Calls"
                   data-url="https://411locals.us/small-business-owners-dont-answer-62-of-phone-calls/"
                   aria-label="View source">
-            <svg viewBox="0 0 24 24" fill="currentColor" class="w-3.5 h-3.5 text-navy/30 hover:text-teal"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm1 14H11v-2h2v2zm0-4H11V7h2v5z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" class="w-3.5 h-3.5"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm1 14H11v-2h2v2zm0-4H11V7h2v5z"/></svg>
           </button>
         </div>
         <p class="font-heading font-700 text-navy text-lg mb-2">Of calls to local businesses go unanswered</p>
@@ -342,11 +359,11 @@
       <div class="reveal reveal-delay-3 grad-border p-8 text-center cursor-default hover:-translate-y-1 transition-transform duration-200">
         <div class="relative inline-block mb-3">
           <div class="stat-number" data-counter="5" data-suffix=" min">0 min</div>
-          <button class="stat-source absolute -top-1 -right-5 w-4 h-4 rounded-full flex items-center justify-center text-white/40 hover:text-teal transition-colors duration-200"
+          <button class="stat-source absolute -top-1 -right-5 w-4 h-4 rounded-full flex items-center justify-center text-navy/30 hover:text-teal transition-colors duration-200"
                   data-source="InsideSales — Response Time Matters"
                   data-url="https://www.insidesales.com/response-time-matters/"
                   aria-label="View source">
-            <svg viewBox="0 0 24 24" fill="currentColor" class="w-3.5 h-3.5 text-navy/30 hover:text-teal"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm1 14H11v-2h2v2zm0-4H11V7h2v5z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" class="w-3.5 h-3.5"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm1 14H11v-2h2v2zm0-4H11V7h2v5z"/></svg>
           </button>
         </div>
         <p class="font-heading font-700 text-navy text-lg mb-2">Before a lead goes cold</p>
@@ -948,6 +965,22 @@
       </div>
 
       <div>
+        <label for="referral" class="block font-body font-500 text-white/70 text-sm mb-2">How did you hear about us? <span class="text-white/30 font-400">(optional)</span></label>
+        <select id="referral" name="referral_source"
+                class="w-full rounded-xl px-4 py-3 font-body text-sm text-white outline-none transition-all duration-200 cursor-pointer"
+                style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);"
+                onfocus="this.style.borderColor='rgba(2,195,154,0.6)'; this.style.background='rgba(2,195,154,0.05)';"
+                onblur="this.style.borderColor='rgba(255,255,255,0.1)'; this.style.background='rgba(255,255,255,0.06)';">
+          <option value="" style="background:#1A2332;">Select an option...</option>
+          <option value="google_search" style="background:#1A2332;">Google Search</option>
+          <option value="word_of_mouth" style="background:#1A2332;">Word of Mouth</option>
+          <option value="social_media" style="background:#1A2332;">Social Media</option>
+          <option value="friend_referral" style="background:#1A2332;">Friend or Colleague</option>
+          <option value="other" style="background:#1A2332;">Other</option>
+        </select>
+      </div>
+
+      <div>
         <div class="flex justify-between items-center mb-2">
           <label for="message" class="block font-body font-500 text-white/70 text-sm">
             Tell us about your business <span class="text-white/30 font-400">(optional)</span>
@@ -999,7 +1032,6 @@
       <nav class="flex flex-wrap gap-6" aria-label="Footer navigation">
         <a href="#services" class="font-body text-white/40 hover:text-white/80 text-sm transition-colors duration-200 cursor-pointer">Services</a>
         <a href="#how-it-works" class="font-body text-white/40 hover:text-white/80 text-sm transition-colors duration-200 cursor-pointer">How It Works</a>
-        <a href="#pricing" class="font-body text-white/40 hover:text-white/80 text-sm transition-colors duration-200 cursor-pointer">Pricing</a>
         <a href="#faq" class="font-body text-white/40 hover:text-white/80 text-sm transition-colors duration-200 cursor-pointer">FAQ</a>
         <a href="#contact" class="font-body text-white/40 hover:text-white/80 text-sm transition-colors duration-200 cursor-pointer">Contact</a>
       </nav>
@@ -1137,19 +1169,78 @@
 
   // ─── Back to top ────────────────────────────────────────────────────────────
   (function() {
-    const btn = document.getElementById('back-to-top');
+    const wrap = document.getElementById('back-to-top-wrap');
+    const btn  = document.getElementById('back-to-top');
     window.addEventListener('scroll', function() {
       if (window.scrollY > 400) {
-        btn.style.opacity = '1';
-        btn.style.pointerEvents = 'auto';
+        wrap.style.opacity = '1';
+        wrap.style.pointerEvents = 'auto';
       } else {
-        btn.style.opacity = '0';
-        btn.style.pointerEvents = 'none';
+        wrap.style.opacity = '0';
+        wrap.style.pointerEvents = 'none';
       }
     }, { passive: true });
     btn.addEventListener('click', function() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+  })();
+
+  // ─── Mobile sticky CTA bar ──────────────────────────────────────────────────
+  (function() {
+    const bar     = document.getElementById('mobile-cta-bar');
+    const contact = document.getElementById('contact');
+    if (!bar || !contact) return;
+    function update() {
+      const contactTop = contact.getBoundingClientRect().top;
+      const atTop = window.scrollY < 300;
+      const pastForm = contactTop < window.innerHeight;
+      if (atTop || pastForm) {
+        bar.style.transform = 'translateY(100%)';
+      } else {
+        bar.style.transform = 'translateY(0)';
+      }
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  })();
+
+  // ─── Cookie banner ──────────────────────────────────────────────────────────
+  (function() {
+    const banner  = document.getElementById('cookie-banner');
+    const accept  = document.getElementById('cookie-accept');
+    const decline = document.getElementById('cookie-decline');
+    if (!banner) return;
+    if (!localStorage.getItem('ll_cookie')) {
+      setTimeout(function() { banner.style.transform = 'translateY(0)'; }, 1200);
+    }
+    function dismiss() {
+      banner.style.transform = 'translateY(100%)';
+    }
+    accept.addEventListener('click', function() {
+      localStorage.setItem('ll_cookie', 'accepted');
+      dismiss();
+    });
+    decline.addEventListener('click', function() {
+      localStorage.setItem('ll_cookie', 'declined');
+      dismiss();
+    });
+  })();
+
+  // ─── Active nav highlighting ─────────────────────────────────────────────────
+  (function() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (!entry.isIntersecting) return;
+        const id = entry.target.id;
+        navLinks.forEach(function(link) {
+          const matches = link.getAttribute('href') === '#' + id;
+          link.style.color = matches ? '#02C39A' : '';
+        });
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    sections.forEach(function(s) { observer.observe(s); });
   })();
 
   // ─── Mobile hamburger menu ───────────────────────────────────────────────────
@@ -1238,6 +1329,24 @@
 
     form.addEventListener('submit', async function(e) {
       e.preventDefault();
+
+      // Validate required text fields
+      const businessName = document.getElementById('business-name');
+      const contactName  = document.getElementById('contact-name');
+      let hasError = false;
+      [businessName, contactName].forEach(function(field) {
+        if (!field.value.trim()) {
+          field.style.borderColor = 'rgba(239,68,68,0.7)';
+          field.style.background  = 'rgba(239,68,68,0.05)';
+          hasError = true;
+          field.addEventListener('input', function() {
+            field.style.borderColor = 'rgba(2,195,154,0.6)';
+            field.style.background  = 'rgba(2,195,154,0.05)';
+          }, { once: true });
+        }
+      });
+      if (hasError) return;
+
       btn.disabled = true;
       label.textContent = 'Sending…';
       arrow.classList.add('hidden');
