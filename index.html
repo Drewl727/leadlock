@@ -5,6 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LeadLock — Lock in every lead. Rank on every search.</title>
   <meta name="description" content="LeadLock helps local businesses get found on Google, generate more reviews, and never miss a customer call. Serving Providence RI and Hartford CT." />
+  <!-- Google Analytics (loaded only after cookie consent) -->
+  <script>
+    window.GA_ID = 'G-H5DZ7G291G';
+    function loadGA() {
+      if (window._gaLoaded) return;
+      window._gaLoaded = true;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.GA_ID;
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', window.GA_ID);
+    }
+    if (localStorage.getItem('ll_cookie') === 'accepted') loadGA();
+  </script>
+
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%231A2332'/><rect x='8' y='15' width='16' height='11' rx='2' fill='none' stroke='%2302C39A' stroke-width='2'/><path d='M11 15v-4a5 5 0 0 1 10 0v4' fill='none' stroke='%2302C39A' stroke-width='2'/></svg>" />
   <script src="https://cdn.tailwindcss.com"></script>
@@ -1219,6 +1238,7 @@
     accept.addEventListener('click', function() {
       localStorage.setItem('ll_cookie', 'accepted');
       dismiss();
+      if (typeof loadGA === 'function') loadGA();
     });
     decline.addEventListener('click', function() {
       localStorage.setItem('ll_cookie', 'declined');
