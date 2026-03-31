@@ -3,61 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LeadLock | Local SEO & Google Business Profile Optimization — CT & RI</title>
-  <meta name="description" content="LeadLock helps local businesses rank higher on Google, get more 5-star reviews, and never miss a customer call. Expert Google Business Profile optimization serving West Hartford CT, Canton CT, Providence RI & Hartford CT." />
-  <meta name="keywords" content="local SEO, Google Business Profile optimization, missed call text back, local business marketing, Google reviews, rank on Google, local search, small business SEO, West Hartford CT, Canton CT, Hartford CT, Providence RI, Connecticut local SEO" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://leadlock.it.com" />
-
-  <!-- Local Business Schema (helps Google understand who we are) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "LeadLock",
-    "description": "LeadLock helps local businesses rank higher on Google, generate more 5-star reviews, and never miss a customer call through Google Business Profile optimization and missed call text-back systems.",
-    "url": "https://leadlock.it.com",
-    "areaServed": [
-      { "@type": "City", "name": "West Hartford", "addressRegion": "CT" },
-      { "@type": "City", "name": "Canton", "addressRegion": "CT" },
-      { "@type": "City", "name": "Hartford", "addressRegion": "CT" },
-      { "@type": "City", "name": "Providence", "addressRegion": "RI" }
-    ],
-    "serviceType": [
-      "Google Business Profile Optimization",
-      "Local SEO",
-      "Missed Call Text-Back",
-      "Review Generation",
-      "Local Search Marketing"
-    ],
-    "founder": [
-      { "@type": "Person", "name": "Drew Lewis" },
-      { "@type": "Person", "name": "Tristan Sidrane" }
-    ],
-    "sameAs": ["https://github.com/Drewl727/leadlock"]
-  }
-  </script>
-  <!-- Google Analytics (loaded only after cookie consent) -->
-  <script>
-    window.GA_ID = 'G-H5DZ7G291G';
-    function loadGA() {
-      if (window._gaLoaded) return;
-      window._gaLoaded = true;
-      var s = document.createElement('script');
-      s.async = true;
-      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.GA_ID;
-      document.head.appendChild(s);
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){ dataLayer.push(arguments); }
-      window.gtag = gtag;
-      gtag('js', new Date());
-      gtag('config', window.GA_ID);
-    }
-    if (localStorage.getItem('ll_cookie') === 'accepted') loadGA();
-  </script>
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%231A2332'/><rect x='8' y='15' width='16' height='11' rx='2' fill='none' stroke='%2302C39A' stroke-width='2'/><path d='M11 15v-4a5 5 0 0 1 10 0v4' fill='none' stroke='%2302C39A' stroke-width='2'/></svg>" />
+  <title>LeadLock — Lock in every lead. Rank on every search.</title>
+  <meta name="description" content="LeadLock helps local businesses get found on Google, generate more reviews, and never miss a customer call. Serving Providence RI and Hartford CT." />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -152,6 +99,13 @@
       border-radius: 2px;
     }
 
+    /* Strikethrough pricing */
+    .line-through-red {
+      text-decoration: line-through;
+      text-decoration-color: #ef4444;
+      text-decoration-thickness: 2px;
+      opacity: 0.6;
+    }
 
     /* Timeline connector */
     .timeline-line {
@@ -208,52 +162,6 @@
 
 <body class="bg-chalk text-navy antialiased">
 
-<!-- Cookie notice -->
-<div id="cookie-banner" class="fixed bottom-0 inset-x-0 z-[70] transition-transform duration-500 translate-y-full"
-     style="background: rgba(26,35,50,0.97); backdrop-filter: blur(12px); border-top: 1px solid rgba(255,255,255,0.08);">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-    <p class="font-body text-white/60 text-sm text-center sm:text-left">
-      We use cookies to improve your experience. By using this site you agree to our use of cookies.
-    </p>
-    <div class="flex items-center gap-3 flex-shrink-0">
-      <button id="cookie-decline" class="font-body text-white/40 hover:text-white/70 text-sm transition-colors duration-200">Decline</button>
-      <button id="cookie-accept" class="font-body font-600 text-navy text-sm px-4 py-2 rounded-lg transition-colors duration-200"
-              style="background: #02C39A;">Accept</button>
-    </div>
-  </div>
-</div>
-
-<!-- Source tooltip -->
-<div id="stat-tooltip" class="fixed z-50 opacity-0 transition-opacity duration-200 max-w-xs"
-     style="pointer-events: none; background: #1A2332; border: 1px solid rgba(2,195,154,0.25); border-radius: 10px; padding: 10px 14px; box-shadow: 0 8px 32px rgba(0,0,0,0.4);">
-  <p id="tooltip-source" class="font-body text-white/90 text-xs font-500 mb-1"></p>
-  <a id="tooltip-url" href="#" target="_blank" rel="noopener noreferrer"
-     class="font-body text-mint text-xs hover:underline pointer-events-auto truncate block" style="max-width: 220px;"></a>
-</div>
-
-<!-- Scroll progress bar -->
-<div id="scroll-progress" class="fixed top-0 left-0 z-[60] h-0.5" style="width:0%; background: linear-gradient(90deg, #02C39A, #028090); transition: width 0.1s linear;"></div>
-
-<!-- Back to top button -->
-<div id="back-to-top-wrap" class="fixed bottom-6 right-6 z-50 flex items-center gap-2 group opacity-0 pointer-events-none transition-all duration-300">
-  <span class="opacity-0 group-hover:opacity-100 transition-opacity duration-200 font-body text-xs text-white/80 whitespace-nowrap px-2 py-1 rounded-lg pointer-events-none"
-        style="background: rgba(26,35,50,0.85); backdrop-filter: blur(6px);">Back to top</span>
-  <button id="back-to-top" aria-label="Back to top"
-    class="w-10 h-10 rounded-full flex items-center justify-center shadow-lg"
-    style="background: linear-gradient(135deg, #02C39A, #028090);">
-    <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
-  </button>
-</div>
-
-<!-- Mobile sticky CTA bar -->
-<div id="mobile-cta-bar" class="fixed bottom-0 inset-x-0 z-40 md:hidden transition-transform duration-300 translate-y-full"
-     style="background: rgba(26,35,50,0.97); backdrop-filter: blur(12px); border-top: 1px solid rgba(255,255,255,0.08); padding: 12px 16px;">
-  <a href="#contact" class="block w-full text-center font-heading font-700 text-navy text-sm py-3 rounded-xl transition-colors duration-200"
-     style="background: linear-gradient(135deg, #02C39A, #01a882);">
-    Get My Free Google Audit →
-  </a>
-</div>
-
 <!-- ═══════════════════════════════════════════════
      STICKY HEADER
 ═══════════════════════════════════════════════ -->
@@ -277,35 +185,15 @@
       <a href="#faq" class="text-sm text-white/70 hover:text-mint transition-colors duration-200 cursor-pointer">FAQ</a>
     </nav>
 
-    <!-- CTA (desktop) -->
-    <a href="#contact" class="hidden md:inline-flex items-center gap-2 bg-mint hover:bg-mint-dark text-navy font-heading font-600 text-sm px-4 py-2 rounded-lg transition-colors duration-200 cursor-pointer">
+    <!-- CTA -->
+    <a href="#contact" class="inline-flex items-center gap-2 bg-mint hover:bg-mint-dark text-navy font-heading font-600 text-sm px-4 py-2 rounded-lg transition-colors duration-200 cursor-pointer">
       Get Free Audit
       <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <path d="M5 12h14M12 5l7 7-7 7"/>
       </svg>
     </a>
-
-    <!-- Hamburger (mobile) -->
-    <button id="menu-toggle" class="md:hidden flex flex-col gap-1.5 p-2 rounded-lg transition-colors duration-200 hover:bg-white/10" aria-label="Toggle menu" aria-expanded="false">
-      <span class="menu-bar block w-5 h-0.5 bg-white rounded transition-all duration-300"></span>
-      <span class="menu-bar block w-5 h-0.5 bg-white rounded transition-all duration-300"></span>
-      <span class="menu-bar block w-5 h-0.5 bg-white rounded transition-all duration-300"></span>
-    </button>
   </div>
 </header>
-
-<!-- Mobile nav panel -->
-<div id="mobile-menu" class="fixed inset-x-0 top-16 z-40 bg-navy border-b border-white/10 shadow-xl translate-y-[-110%] transition-transform duration-300 md:hidden" aria-hidden="true">
-  <nav class="flex flex-col px-6 py-6 gap-5">
-    <a href="#services"    class="mobile-nav-link font-body text-white/80 hover:text-mint text-base transition-colors duration-200">Services</a>
-    <a href="#how-it-works" class="mobile-nav-link font-body text-white/80 hover:text-mint text-base transition-colors duration-200">How It Works</a>
-    <a href="#faq"         class="mobile-nav-link font-body text-white/80 hover:text-mint text-base transition-colors duration-200">FAQ</a>
-    <a href="#contact"     class="mobile-nav-link inline-flex items-center gap-2 bg-mint hover:bg-mint-dark text-navy font-heading font-700 px-5 py-3 rounded-xl text-sm transition-colors duration-200 w-full justify-center">
-      Get Free Audit
-      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </a>
-  </nav>
-</div>
 
 
 <!-- ═══════════════════════════════════════════════
@@ -334,9 +222,9 @@
       <span class="grad-text">Are they finding you?</span>
     </h1>
 
-    <p class="reveal reveal-delay-2 font-body text-white max-w-2xl mx-auto mb-10 leading-relaxed"
+    <p class="reveal reveal-delay-2 font-body text-white/60 max-w-2xl mx-auto mb-10 leading-relaxed"
        style="font-size: clamp(1rem, 2vw, 1.2rem);">
-      LeadLock helps auto shops, barbers, landscapers, plumbers, and more dominate Google search, flood their inbox with 5-star reviews, and never lose another customer to a missed call.
+      LeadLock helps local businesses get found on Google, capture every lead, and grow on autopilot — with tools that work while you work.
     </p>
 
     <div class="reveal reveal-delay-3 flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -368,57 +256,33 @@
 <!-- ═══════════════════════════════════════════════
      PROBLEM STATS
 ═══════════════════════════════════════════════ -->
-<section id="stats" class="bg-chalk py-12 md:py-16">
+<section id="stats" class="bg-chalk py-20 md:py-28">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="reveal text-center mb-10">
+    <div class="reveal text-center mb-14">
       <h2 class="font-heading font-800 text-navy mb-3" style="font-size: clamp(1.6rem, 3.5vw, 2.6rem); letter-spacing: -0.02em;">
         The numbers don't lie
       </h2>
-      <p class="font-body text-navy/72 max-w-xl mx-auto">Your competitors are already showing up. Here's what's at stake every day you wait.</p>
+      <p class="font-body text-navy/55 max-w-xl mx-auto">Your competitors are already showing up. Here's what's at stake every day you wait.</p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <!-- Stat 1 -->
       <div class="reveal reveal-delay-1 grad-border p-8 text-center cursor-default hover:-translate-y-1 transition-transform duration-200">
-        <div class="relative inline-block mb-3">
-          <div class="stat-number" data-counter="87" data-suffix="%">0%</div>
-          <button class="stat-source absolute -top-1 -right-5 w-4 h-4 rounded-full flex items-center justify-center text-navy/30 hover:text-teal transition-colors duration-200"
-                  data-source="BrightLocal — Local Consumer Review Survey"
-                  data-url="https://www.brightlocal.com/research/local-consumer-review-survey/"
-                  aria-label="View source">
-            <svg viewBox="0 0 24 24" fill="currentColor" class="w-3.5 h-3.5"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm1 14H11v-2h2v2zm0-4H11V7h2v5z"/></svg>
-          </button>
-        </div>
+        <div class="stat-number mb-3">87%</div>
         <p class="font-heading font-700 text-navy text-lg mb-2">Use Google to find local businesses</p>
-        <p class="font-body text-navy/72 text-base leading-relaxed">If you're not ranking, you're invisible to nearly 9 out of 10 potential customers in your area.</p>
+        <p class="font-body text-navy/55 text-sm leading-relaxed">If you're not ranking, you're invisible to nearly 9 out of 10 potential customers in your area.</p>
       </div>
       <!-- Stat 2 -->
       <div class="reveal reveal-delay-2 grad-border p-8 text-center cursor-default hover:-translate-y-1 transition-transform duration-200">
-        <div class="relative inline-block mb-3">
-          <div class="stat-number" data-counter="62" data-suffix="%">0%</div>
-          <button class="stat-source absolute -top-1 -right-5 w-4 h-4 rounded-full flex items-center justify-center text-navy/30 hover:text-teal transition-colors duration-200"
-                  data-source="411Locals — Small Business Owners Don't Answer 62% of Phone Calls"
-                  data-url="https://411locals.us/small-business-owners-dont-answer-62-of-phone-calls/"
-                  aria-label="View source">
-            <svg viewBox="0 0 24 24" fill="currentColor" class="w-3.5 h-3.5"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm1 14H11v-2h2v2zm0-4H11V7h2v5z"/></svg>
-          </button>
-        </div>
+        <div class="stat-number mb-3">62%</div>
         <p class="font-heading font-700 text-navy text-lg mb-2">Of calls to local businesses go unanswered</p>
-        <p class="font-body text-navy/72 text-base leading-relaxed">More than half your phone leads hang up and call your competitor — and you never even know it happened.</p>
+        <p class="font-body text-navy/55 text-sm leading-relaxed">More than half your phone leads hang up and call your competitor — and you never even know it happened.</p>
       </div>
       <!-- Stat 3 -->
       <div class="reveal reveal-delay-3 grad-border p-8 text-center cursor-default hover:-translate-y-1 transition-transform duration-200">
-        <div class="relative inline-block mb-3">
-          <div class="stat-number" data-counter="5" data-suffix=" min">0 min</div>
-          <button class="stat-source absolute -top-1 -right-5 w-4 h-4 rounded-full flex items-center justify-center text-navy/30 hover:text-teal transition-colors duration-200"
-                  data-source="InsideSales — Response Time Matters"
-                  data-url="https://www.insidesales.com/response-time-matters/"
-                  aria-label="View source">
-            <svg viewBox="0 0 24 24" fill="currentColor" class="w-3.5 h-3.5"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm1 14H11v-2h2v2zm0-4H11V7h2v5z"/></svg>
-          </button>
-        </div>
+        <div class="stat-number mb-3">5 min</div>
         <p class="font-heading font-700 text-navy text-lg mb-2">Before a lead goes cold</p>
-        <p class="font-body text-navy/72 text-base leading-relaxed">Response time is everything. After 5 minutes, your odds of converting that lead drop by over 80%.</p>
+        <p class="font-body text-navy/55 text-sm leading-relaxed">Response time is everything. After 5 minutes, your odds of converting that lead drop by over 80%.</p>
       </div>
     </div>
   </div>
@@ -428,226 +292,96 @@
 <!-- ═══════════════════════════════════════════════
      SERVICES
 ═══════════════════════════════════════════════ -->
-<section id="services" class="bg-navy py-12 md:py-16 relative overflow-hidden">
+<section id="services" class="bg-navy py-20 md:py-28 relative overflow-hidden">
   <div class="absolute inset-0 opacity-4" aria-hidden="true"
        style="background-image: radial-gradient(circle at 20% 80%, rgba(2,195,154,0.12) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(2,128,144,0.1) 0%, transparent 50%);">
   </div>
 
-  <!-- What your Google listing says about you -->
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 md:pb-16">
-    <div class="reveal text-center mb-10">
-      <span class="font-body text-mint font-500 text-sm tracking-widest uppercase mb-3 block">The Difference</span>
-      <h2 class="font-heading font-800 text-white mb-4" style="font-size: clamp(1.6rem, 3.5vw, 2.6rem); letter-spacing: -0.02em;">
-        What your Google listing says about you
-      </h2>
-      <p class="font-body text-white/80 max-w-xl mx-auto">Customers judge your business before they ever call. Here's what they see — and what they should see.</p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <!-- Before -->
-      <div class="reveal reveal-delay-1 rounded-2xl p-8 border-2 border-red-400/30 bg-red-500/10">
-        <div class="flex items-center gap-3 mb-6">
-          <div class="w-8 h-8 rounded-full bg-red-500/20 flex items-center justify-center flex-shrink-0">
-            <svg class="w-4 h-4 text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-          </div>
-          <h3 class="font-heading font-700 text-red-400 text-lg">Without LeadLock</h3>
-        </div>
-        <ul class="space-y-4" aria-label="Problems without LeadLock">
-          <li class="flex items-start gap-3">
-            <svg class="w-4 h-4 text-red-400 mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm1 14H11v-2h2v2zm0-4H11V7h2v5z"/></svg>
-            <span class="font-body text-white text-sm leading-relaxed">No description — just a name and a phone number, nothing to make them choose you</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-4 h-4 text-red-400 mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm1 14H11v-2h2v2zm0-4H11V7h2v5z"/></svg>
-            <span class="font-body text-white text-sm leading-relaxed">3 reviews from 4 years ago — and one of them is 2 stars</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-4 h-4 text-red-400 mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm1 14H11v-2h2v2zm0-4H11V7h2v5z"/></svg>
-            <span class="font-body text-white text-sm leading-relaxed">Stock photo or no photos — customers can't see your work or your shop</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-4 h-4 text-red-400 mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm1 14H11v-2h2v2zm0-4H11V7h2v5z"/></svg>
-            <span class="font-body text-white text-sm leading-relaxed">Buried on page 2 or 3 of the local pack — your competitors are taking your calls</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-4 h-4 text-red-400 mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm1 14H11v-2h2v2zm0-4H11V7h2v5z"/></svg>
-            <span class="font-body text-white text-sm leading-relaxed">No posts, no updates, no activity — Google treats you like you're barely open</span>
-          </li>
-        </ul>
-      </div>
-      <!-- After -->
-      <div class="reveal reveal-delay-2 rounded-2xl p-8 border-2 border-mint/30 bg-mint/10">
-        <div class="flex items-center gap-3 mb-6">
-          <div class="w-8 h-8 rounded-full bg-mint/20 flex items-center justify-center flex-shrink-0">
-            <svg class="w-4 h-4 text-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-          </div>
-          <h3 class="font-heading font-700 text-mint text-lg">With LeadLock</h3>
-        </div>
-        <ul class="space-y-4" aria-label="Benefits with LeadLock">
-          <li class="flex items-start gap-3">
-            <svg class="w-4 h-4 text-mint mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-            <span class="font-body text-white text-sm leading-relaxed">Compelling keyword-optimized description that tells customers exactly why to choose you</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-4 h-4 text-mint mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-            <span class="font-body text-white text-sm leading-relaxed">50+ fresh 5-star reviews that build trust and push you to the top of the local pack</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-4 h-4 text-mint mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-            <span class="font-body text-white text-sm leading-relaxed">A professional photo gallery showing your work, your team, and your space</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-4 h-4 text-mint mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-            <span class="font-body text-white text-sm leading-relaxed">Top 3 in Google's local pack — the first thing customers see when they search</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-4 h-4 text-mint mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-            <span class="font-body text-white text-sm leading-relaxed">Weekly posts keep your profile active — Google rewards you with higher placement</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 3rem;">
-    <div class="reveal text-center mb-10">
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="reveal text-center mb-16">
       <span class="font-body text-mint font-500 text-sm tracking-widest uppercase mb-3 block">What We Do</span>
       <h2 class="font-heading font-800 text-white mb-4" style="font-size: clamp(1.6rem, 3.5vw, 2.6rem); letter-spacing: -0.02em;">
-        Two weapons. One result.
+        Everything your business needs to get found, stay booked, and grow.
       </h2>
-      <p class="font-body text-white/80 max-w-xl mx-auto">More visibility. More calls answered. More revenue — automatically.</p>
+      <p class="font-body text-white/55 max-w-xl mx-auto">Three systems. One connected story. All running without you having to think about it.</p>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
 
-      <!-- GBP Optimization -->
-      <div class="reveal reveal-delay-1 rounded-2xl p-8 md:p-10"
-           style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-mint to-teal flex items-center justify-center mb-6">
+      <!-- GROUP 1: GET FOUND -->
+      <div class="reveal reveal-delay-1 rounded-2xl p-8"
+           style="background: rgba(2,195,154,0.06); border: 1px solid rgba(2,195,154,0.18);">
+        <!-- Group header -->
+        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-mint to-teal flex items-center justify-center mb-5">
           <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
           </svg>
         </div>
-        <h3 class="font-heading font-700 text-white text-2xl mb-2">Google Business Profile Optimization</h3>
-        <p class="font-body text-white/70 text-base mb-8 leading-relaxed">We turn your Google listing into a lead machine — showing up first, looking credible, and converting searchers into calls.</p>
+        <h3 class="font-heading font-800 text-white text-xl mb-1">Get Found</h3>
+        <p class="font-body text-white/50 text-sm mb-7 leading-relaxed">Visibility and reputation — so the right customers find you first.</p>
 
-        <ul class="space-y-4" aria-label="GBP optimization features">
-          <!-- Check item template -->
-          <li class="flex items-start gap-3">
-            <span class="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-mint/15 border border-mint/30 flex items-center justify-center">
-              <svg class="w-3 h-3 text-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-            </span>
-            <span class="font-body text-white/75 text-sm leading-relaxed"><strong class="text-white font-600">Profile audit</strong> — We fix every gap, missing category, and outdated detail</span>
+        <ul class="space-y-5" aria-label="Get Found services">
+          <li>
+            <p class="font-heading font-600 text-white text-sm mb-0.5">Google Business Profile Optimization</p>
+            <p class="font-body text-white/50 text-xs leading-relaxed">Full audit, keyword-rich description, photo strategy, weekly posts, and competitor analysis.</p>
           </li>
-          <li class="flex items-start gap-3">
-            <span class="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-mint/15 border border-mint/30 flex items-center justify-center">
-              <svg class="w-3 h-3 text-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-            </span>
-            <span class="font-body text-white/75 text-sm leading-relaxed"><strong class="text-white font-600">Keyword-rich description</strong> — Written to rank for what your customers actually search</span>
+          <li class="pt-5 border-t" style="border-color: rgba(2,195,154,0.15);">
+            <p class="font-heading font-600 text-white text-sm mb-0.5">Review Generation System</p>
+            <p class="font-body text-white/50 text-xs leading-relaxed">Automated 5-star review requests sent to happy customers — hands-free.</p>
           </li>
-          <li class="flex items-start gap-3">
-            <span class="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-mint/15 border border-mint/30 flex items-center justify-center">
-              <svg class="w-3 h-3 text-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-            </span>
-            <span class="font-body text-white/75 text-sm leading-relaxed"><strong class="text-white font-600">Photo strategy</strong> — High-quality images that build trust before a customer calls</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-mint/15 border border-mint/30 flex items-center justify-center">
-              <svg class="w-3 h-3 text-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-            </span>
-            <span class="font-body text-white/75 text-sm leading-relaxed"><strong class="text-white font-600">Review generation</strong> — A hands-off system that gets happy customers to leave 5-star reviews</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-mint/15 border border-mint/30 flex items-center justify-center">
-              <svg class="w-3 h-3 text-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-            </span>
-            <span class="font-body text-white/75 text-sm leading-relaxed"><strong class="text-white font-600">Weekly posts</strong> — Fresh Google updates that signal activity and boost local ranking</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-mint/15 border border-mint/30 flex items-center justify-center">
-              <svg class="w-3 h-3 text-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-            </span>
-            <span class="font-body text-white/75 text-sm leading-relaxed"><strong class="text-white font-600">Competitor analysis</strong> — We watch what's working for your rivals and out-rank them</span>
+          <li class="pt-5 border-t" style="border-color: rgba(2,195,154,0.15);">
+            <p class="font-heading font-600 text-white text-sm mb-0.5">Local SEO Management</p>
+            <p class="font-body text-white/50 text-xs leading-relaxed">Ongoing optimization so you stay in the top 3 as search trends shift.</p>
           </li>
         </ul>
       </div>
 
-      <!-- Missed Call Text-Back -->
-      <div class="reveal reveal-delay-2 rounded-2xl p-8 md:p-10"
-           style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-mint to-teal flex items-center justify-center mb-6">
+      <!-- GROUP 2: NEVER MISS A LEAD -->
+      <div class="reveal reveal-delay-2 rounded-2xl p-8"
+           style="background: rgba(2,128,144,0.08); border: 1px solid rgba(2,128,144,0.25);">
+        <!-- Group header -->
+        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-teal to-navy-light flex items-center justify-center mb-5">
           <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"/><path d="M14.05 2a9 9 0 0 1 8 7.94"/>
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"/>
           </svg>
         </div>
-        <h3 class="font-heading font-700 text-white text-2xl mb-2">Missed Call Text-Back</h3>
-        <p class="font-body text-white/70 text-base mb-8 leading-relaxed">When you can't answer, we answer for you — instantly. A smart text goes out in seconds so the lead never goes cold.</p>
+        <h3 class="font-heading font-800 text-white text-xl mb-1">Never Miss a Lead</h3>
+        <p class="font-body text-white/50 text-sm mb-7 leading-relaxed">Capture and respond to every inquiry — even when you're busy.</p>
 
-        <!-- Flow diagram -->
-        <div class="flex items-center gap-3 mb-8 flex-wrap">
-          <!-- Step 1 -->
-          <div class="flex flex-col items-center gap-1 text-center">
-            <div class="w-10 h-10 rounded-xl bg-red-500/15 border border-red-500/30 flex items-center justify-center">
-              <svg class="w-5 h-5 text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72"/><line x1="1" y1="1" x2="23" y2="23"/>
-              </svg>
-            </div>
-            <span class="font-body text-white/70 text-xs">Missed<br/>call</span>
-          </div>
-          <svg class="w-4 h-4 text-white/25 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          <!-- Step 2 -->
-          <div class="flex flex-col items-center gap-1 text-center">
-            <div class="w-10 h-10 rounded-xl bg-mint/15 border border-mint/30 flex items-center justify-center">
-              <svg class="w-5 h-5 text-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-              </svg>
-            </div>
-            <span class="font-body text-white/70 text-xs">Instant<br/>text</span>
-          </div>
-          <svg class="w-4 h-4 text-white/25 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          <!-- Step 3 -->
-          <div class="flex flex-col items-center gap-1 text-center">
-            <div class="w-10 h-10 rounded-xl bg-teal/20 border border-teal/30 flex items-center justify-center">
-              <svg class="w-5 h-5 text-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 12h8M8 8h4"/>
-              </svg>
-            </div>
-            <span class="font-body text-white/70 text-xs">Customer<br/>responds</span>
-          </div>
-          <svg class="w-4 h-4 text-white/25 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          <!-- Step 4 -->
-          <div class="flex flex-col items-center gap-1 text-center">
-            <div class="w-10 h-10 rounded-xl bg-mint/15 border border-mint/30 flex items-center justify-center">
-              <svg class="w-5 h-5 text-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M20 6L9 17l-5-5"/>
-              </svg>
-            </div>
-            <span class="font-body text-white/70 text-xs">Lead<br/>saved</span>
-          </div>
-        </div>
+        <ul class="space-y-5" aria-label="Never Miss a Lead services">
+          <li>
+            <p class="font-heading font-600 text-white text-sm mb-0.5">Missed Call Text-Back</p>
+            <p class="font-body text-white/50 text-xs leading-relaxed">When you can't answer, an instant text goes out — keeping the lead warm before they call a competitor.</p>
+          </li>
+          <li class="pt-5 border-t" style="border-color: rgba(2,128,144,0.2);">
+            <p class="font-heading font-600 text-white text-sm mb-0.5">AI Receptionist</p>
+            <p class="font-body text-white/50 text-xs leading-relaxed">24/7 call handling that answers FAQs and books appointments — without you lifting a finger.</p>
+          </li>
+          <li class="pt-5 border-t" style="border-color: rgba(2,128,144,0.2);">
+            <p class="font-heading font-600 text-white text-sm mb-0.5">CRM + Lead Pipeline</p>
+            <p class="font-body text-white/50 text-xs leading-relaxed">Every lead tracked from first contact to booked job — no one falls through the cracks.</p>
+          </li>
+        </ul>
 
         <!-- Phone mockup -->
-        <div class="flex justify-center">
-          <div class="phone-frame w-52 px-3 pt-8 pb-6" role="img" aria-label="Phone showing missed call text-back conversation">
+        <div class="flex justify-center mt-8">
+          <div class="phone-frame w-48 px-3 pt-8 pb-5" role="img" aria-label="Phone showing missed call text-back conversation">
             <div class="space-y-3">
-              <!-- Missed call notification -->
               <div class="rounded-xl p-3 text-xs" style="background: rgba(239,68,68,0.15); border: 1px solid rgba(239,68,68,0.2);">
                 <div class="flex items-center gap-2 mb-1">
                   <svg class="w-3 h-3 text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
                   <span class="text-red-400 font-600 font-heading">Missed call</span>
                 </div>
-                <span class="text-white/70 font-body">Customer: (401) 555-0198</span>
+                <span class="text-white/50 font-body">Customer: (401) 555-0198</span>
               </div>
-              <!-- Outgoing text -->
               <div class="rounded-xl rounded-br-sm p-3 text-xs ml-4" style="background: linear-gradient(135deg, #02C39A, #028090);">
-                <p class="text-white font-body leading-relaxed">Hi! You just called Mike's Auto. We're with a customer — can we text you back? What can we help with?</p>
+                <p class="text-white font-body leading-relaxed">Hi! You just called Mike's Auto. We're with a customer — can we text you back?</p>
                 <span class="text-white/60 text-xs mt-1 block">12:47 PM · Delivered</span>
               </div>
-              <!-- Incoming reply -->
               <div class="rounded-xl rounded-bl-sm p-3 text-xs mr-4" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.08);">
                 <p class="text-white/80 font-body leading-relaxed">Yes! Need an oil change — when's your next opening?</p>
                 <span class="text-white/40 text-xs mt-1 block">12:49 PM</span>
               </div>
-              <!-- Lead saved badge -->
               <div class="flex items-center justify-center gap-1.5 py-1">
                 <svg class="w-3 h-3 text-mint" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
                 <span class="text-mint text-xs font-heading font-600">Lead saved</span>
@@ -657,426 +391,211 @@
         </div>
       </div>
 
+      <!-- GROUP 3: GROW ON AUTOPILOT -->
+      <div class="reveal reveal-delay-3 rounded-2xl p-8"
+           style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);">
+        <!-- Group header -->
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
+             style="background: linear-gradient(135deg, rgba(2,195,154,0.3), rgba(2,128,144,0.3)); border: 1px solid rgba(2,195,154,0.3);">
+          <svg class="w-6 h-6 text-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>
+          </svg>
+        </div>
+        <h3 class="font-heading font-800 text-white text-xl mb-1">Grow on Autopilot</h3>
+        <p class="font-body text-white/50 text-sm mb-7 leading-relaxed">Nurture and retention tools that keep customers coming back — automatically.</p>
+
+        <ul class="space-y-5" aria-label="Grow on Autopilot services">
+          <li>
+            <p class="font-heading font-600 text-white text-sm mb-0.5">Appointment Booking + Reminders</p>
+            <p class="font-body text-white/50 text-xs leading-relaxed">Self-service booking with automated reminders that slash no-shows.</p>
+          </li>
+          <li class="pt-5 border-t" style="border-color: rgba(255,255,255,0.08);">
+            <p class="font-heading font-600 text-white text-sm mb-0.5">SMS &amp; Email Drip Campaigns</p>
+            <p class="font-body text-white/50 text-xs leading-relaxed">Follow-up sequences that run themselves — keeping leads warm until they convert.</p>
+          </li>
+          <li class="pt-5 border-t" style="border-color: rgba(255,255,255,0.08);">
+            <p class="font-heading font-600 text-white text-sm mb-0.5">Social Media Scheduling</p>
+            <p class="font-body text-white/50 text-xs leading-relaxed">Stay active and visible across platforms without lifting a finger.</p>
+          </li>
+        </ul>
+      </div>
+
     </div>
   </div>
 </section>
 
 
 <!-- ═══════════════════════════════════════════════
-     EXTENDED SERVICES
+     BEFORE / AFTER
 ═══════════════════════════════════════════════ -->
-
-<!-- Review Growth System -->
-<section class="bg-chalk py-12 md:py-16">
+<section id="before-after" class="bg-chalk py-20 md:py-28">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-      <!-- Text -->
-      <div class="reveal">
-        <span class="font-body text-teal font-500 text-sm tracking-widest uppercase mb-3 block">Automated Reviews</span>
-        <h2 class="font-heading font-800 text-navy mb-3" style="font-size: clamp(1.6rem, 3.5vw, 2.4rem); letter-spacing: -0.02em;">Review Growth System</h2>
-        <p class="font-body font-600 text-teal mb-5 text-base">Real reviews from real customers. No tricks, no faking it.</p>
-        <p class="font-body text-navy/80 text-base leading-relaxed mb-6">After a customer uses your service, they get a personal follow-up text from the owner thanking them. The next day, a friendly review request with a one-tap Google link goes out automatically. We drip these out slowly so it never looks like spam. Your reviews grow every single week on autopilot — while you focus on running your business.</p>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <div class="rounded-xl p-4 text-center" style="background: rgba(2,195,154,0.08); border: 1px solid rgba(2,195,154,0.2);">
-            <p class="font-heading font-800 text-teal text-2xl mb-1">Day 0</p>
-            <p class="font-body text-navy/60 text-xs">Personal thank-you text</p>
-          </div>
-          <div class="rounded-xl p-4 text-center" style="background: rgba(2,195,154,0.08); border: 1px solid rgba(2,195,154,0.2);">
-            <p class="font-heading font-800 text-teal text-2xl mb-1">Day 1</p>
-            <p class="font-body text-navy/60 text-xs">Review request + Google link</p>
-          </div>
-          <div class="rounded-xl p-4 text-center" style="background: rgba(2,195,154,0.08); border: 1px solid rgba(2,195,154,0.2);">
-            <p class="font-heading font-800 text-teal text-2xl mb-1">★★★★★</p>
-            <p class="font-body text-navy/60 text-xs">New review posted</p>
-          </div>
-        </div>
-      </div>
-      <!-- Phone mockup -->
-      <div class="reveal reveal-delay-2 flex justify-center lg:justify-end">
-        <div class="phone-frame w-64 px-4 pt-10 pb-8" role="img" aria-label="Review growth conversation">
-          <div class="space-y-3">
-            <!-- Message header -->
-            <div class="text-center mb-4">
-              <p class="font-body text-white/35 text-xs">iMessage</p>
-            </div>
-            <!-- Owner text 1 - 2 hours after service -->
-            <div class="text-center mb-2">
-              <span class="font-body text-white/30 text-xs">2 hours after service</span>
-            </div>
-            <div class="rounded-xl rounded-br-sm p-3 text-xs ml-4" style="background: linear-gradient(135deg, #02C39A, #028090);">
-              <p class="text-white font-body leading-relaxed">Hey! Thanks for coming in today. Really appreciate the business. 🙏</p>
-              <span class="text-white/60 text-xs mt-1 block">2:15 PM · Delivered</span>
-            </div>
-            <!-- Day divider -->
-            <div class="text-center py-1">
-              <span class="font-body text-white/30 text-xs">Next day</span>
-            </div>
-            <!-- Owner text 2 - review request -->
-            <div class="rounded-xl rounded-br-sm p-3 text-xs ml-4" style="background: linear-gradient(135deg, #02C39A, #028090);">
-              <p class="text-white font-body leading-relaxed">Quick favor — if you had a good experience, a 30-second Google review would mean a lot. Here's the link: [review link]</p>
-              <span class="text-white/60 text-xs mt-1 block">10:02 AM · Delivered</span>
-            </div>
-            <!-- Customer reply -->
-            <div class="rounded-xl rounded-bl-sm p-3 text-xs mr-4" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.08);">
-              <p class="text-white/80 font-body leading-relaxed">Done! Left you 5 stars ⭐</p>
-              <span class="text-white/40 text-xs mt-1 block">10:09 AM</span>
-            </div>
-            <!-- Badge -->
-            <div class="flex items-center justify-center gap-1.5 py-1">
-              <svg class="w-3 h-3 text-mint" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <span class="text-mint text-xs font-heading font-600">New 5-star review</span>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="reveal text-center mb-14">
+      <span class="font-body text-teal font-500 text-sm tracking-widest uppercase mb-3 block">The Difference</span>
+      <h2 class="font-heading font-800 text-navy mb-4" style="font-size: clamp(1.6rem, 3.5vw, 2.6rem); letter-spacing: -0.02em;">
+        Without LeadLock vs. With LeadLock
+      </h2>
+      <p class="font-body text-navy/55 max-w-xl mx-auto">This isn't just about your Google listing. It's the whole picture — visibility, lead capture, follow-up, and growth.</p>
     </div>
-  </div>
-</section>
 
-<!-- AI Receptionist -->
-<section class="bg-navy py-12 md:py-16 relative overflow-hidden">
-  <div class="absolute inset-0 opacity-5" aria-hidden="true"
-       style="background-image: radial-gradient(circle at 70% 30%, rgba(2,195,154,0.15) 0%, transparent 50%);">
-  </div>
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-      <!-- Phone mockup (left) -->
-      <div class="reveal flex justify-center lg:justify-start order-2 lg:order-1">
-        <div class="phone-frame w-64 px-4 pt-10 pb-8" role="img" aria-label="AI Receptionist conversation">
-          <div class="space-y-3">
-            <div class="text-center mb-4">
-              <p class="font-body text-white/35 text-xs">Sunday · 11:14 PM</p>
-            </div>
-            <!-- Customer question -->
-            <div class="rounded-xl rounded-bl-sm p-3 text-xs mr-4" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.08);">
-              <p class="text-white/80 font-body leading-relaxed">Hey, do you guys do brake replacements? What's the typical cost?</p>
-              <span class="text-white/40 text-xs mt-1 block">11:14 PM</span>
-            </div>
-            <!-- AI instant reply -->
-            <div class="rounded-xl rounded-br-sm p-3 text-xs ml-4" style="background: linear-gradient(135deg, #02C39A, #028090);">
-              <p class="text-white font-body leading-relaxed">Hi! Yes we do brake replacements. Pricing depends on the vehicle but typically runs $250–400 for most cars. Want to schedule an appointment? I can get you in this week.</p>
-              <span class="text-white/70 text-xs mt-1 block">11:14 PM · Instant</span>
-            </div>
-            <!-- Customer reply -->
-            <div class="rounded-xl rounded-bl-sm p-3 text-xs mr-4" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.08);">
-              <p class="text-white/80 font-body leading-relaxed">Yeah, Tuesday morning work?</p>
-              <span class="text-white/40 text-xs mt-1 block">11:16 PM</span>
-            </div>
-            <!-- AI confirmation -->
-            <div class="rounded-xl rounded-br-sm p-3 text-xs ml-4" style="background: linear-gradient(135deg, #02C39A, #028090);">
-              <p class="text-white font-body leading-relaxed">Tuesday at 9 AM works great. I've got you down. We'll send a confirmation text shortly. See you then!</p>
-              <span class="text-white/70 text-xs mt-1 block">11:16 PM · Instant</span>
-            </div>
-            <div class="flex items-center justify-center gap-1.5 py-1">
-              <svg class="w-3 h-3 text-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-              <span class="text-mint text-xs font-heading font-600">Booked at 11:16 PM</span>
-            </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Before -->
+      <div class="reveal reveal-delay-1 rounded-2xl p-8 border-2 border-red-200/60 bg-red-50/40">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0">
+            <svg class="w-4 h-4 text-red-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
           </div>
+          <h3 class="font-heading font-700 text-red-700 text-lg">Without LeadLock</h3>
         </div>
+        <ul class="space-y-4" aria-label="Problems without LeadLock">
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-red-400 mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm1 14H11v-2h2v2zm0-4H11V7h2v5z"/></svg>
+            <span class="font-body text-navy/70 text-sm leading-relaxed">Invisible on Google — buried behind competitors who outrank you by default</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-red-400 mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm1 14H11v-2h2v2zm0-4H11V7h2v5z"/></svg>
+            <span class="font-body text-navy/70 text-sm leading-relaxed">Missed calls going straight to voicemail — or nowhere — with no follow-up</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-red-400 mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm1 14H11v-2h2v2zm0-4H11V7h2v5z"/></svg>
+            <span class="font-body text-navy/70 text-sm leading-relaxed">No review strategy — 3 stale reviews from years ago, one of them 2 stars</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-red-400 mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm1 14H11v-2h2v2zm0-4H11V7h2v5z"/></svg>
+            <span class="font-body text-navy/70 text-sm leading-relaxed">No follow-up system — leads forget about you in hours and call someone else</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-red-400 mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm1 14H11v-2h2v2zm0-4H11V7h2v5z"/></svg>
+            <span class="font-body text-navy/70 text-sm leading-relaxed">Manually booking appointments and chasing no-shows — hours lost every week</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-red-400 mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm1 14H11v-2h2v2zm0-4H11V7h2v5z"/></svg>
+            <span class="font-body text-navy/70 text-sm leading-relaxed">No idea which marketing is working — no data, no dashboard, no clarity</span>
+          </li>
+        </ul>
       </div>
-      <!-- Text (right) -->
-      <div class="reveal reveal-delay-2 order-1 lg:order-2">
-        <span class="font-body text-mint font-500 text-sm tracking-widest uppercase mb-3 block">24/7 Automation</span>
-        <h2 class="font-heading font-800 text-white mb-3" style="font-size: clamp(1.6rem, 3.5vw, 2.4rem); letter-spacing: -0.02em;">AI Receptionist</h2>
-        <p class="font-heading font-600 text-mint mb-5 text-base">Never miss another question — answers calls and texts 24/7, even when you can't.</p>
-        <p class="font-body text-white text-base leading-relaxed mb-6">Your AI receptionist handles FAQs, gives pricing info, and books appointments around the clock. Customers get instant answers instead of voicemail. You wake up to booked appointments instead of missed opportunities — even on Sunday night at 11 PM.</p>
-        <ul class="space-y-3">
+
+      <!-- After -->
+      <div class="reveal reveal-delay-2 rounded-2xl p-8 border-2 border-mint/30 bg-mint/5">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-8 h-8 rounded-full bg-mint/15 flex items-center justify-center flex-shrink-0">
+            <svg class="w-4 h-4 text-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+          </div>
+          <h3 class="font-heading font-700 text-teal-dark text-lg">With LeadLock</h3>
+        </div>
+        <ul class="space-y-4" aria-label="Benefits with LeadLock">
           <li class="flex items-start gap-3">
-            <span class="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-mint/15 border border-mint/30 flex items-center justify-center">
-              <svg class="w-3 h-3 text-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-            </span>
-            <span class="font-body text-white/70 text-sm">Answers pricing, hours, and service questions instantly</span>
+            <svg class="w-4 h-4 text-mint mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+            <span class="font-body text-navy/75 text-sm leading-relaxed">Top 3 in Google Maps — the first thing customers see when they search for what you do</span>
           </li>
           <li class="flex items-start gap-3">
-            <span class="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-mint/15 border border-mint/30 flex items-center justify-center">
-              <svg class="w-3 h-3 text-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-            </span>
-            <span class="font-body text-white/70 text-sm">Books appointments directly — no back-and-forth required</span>
+            <svg class="w-4 h-4 text-mint mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+            <span class="font-body text-navy/75 text-sm leading-relaxed">Every missed call gets an instant text response — no lead left behind</span>
           </li>
           <li class="flex items-start gap-3">
-            <span class="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-mint/15 border border-mint/30 flex items-center justify-center">
-              <svg class="w-3 h-3 text-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-            </span>
-            <span class="font-body text-white/70 text-sm">Works via text, so no app required for your customers</span>
+            <svg class="w-4 h-4 text-mint mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+            <span class="font-body text-navy/75 text-sm leading-relaxed">50+ fresh reviews and climbing weekly — building trust before they even call</span>
           </li>
           <li class="flex items-start gap-3">
-            <span class="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-mint/15 border border-mint/30 flex items-center justify-center">
-              <svg class="w-3 h-3 text-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-            </span>
-            <span class="font-body text-white/70 text-sm">Available around the clock — zero extra staff needed</span>
+            <svg class="w-4 h-4 text-mint mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+            <span class="font-body text-navy/75 text-sm leading-relaxed">Automated follow-up keeps leads warm until they convert — without you doing a thing</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-mint mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+            <span class="font-body text-navy/75 text-sm leading-relaxed">Self-service booking with automatic reminders — no-shows drop, your schedule fills</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-mint mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+            <span class="font-body text-navy/75 text-sm leading-relaxed">Clear dashboard showing calls, leads, reviews, and revenue impact — every month</span>
           </li>
         </ul>
       </div>
     </div>
   </div>
 </section>
-
-<!-- Appointment Booking + Reminders -->
-<section class="bg-chalk py-12 md:py-16">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="reveal text-center mb-10">
-      <span class="font-body text-teal font-500 text-sm tracking-widest uppercase mb-3 block">Zero No-Shows</span>
-      <h2 class="font-heading font-800 text-navy mb-3" style="font-size: clamp(1.6rem, 3.5vw, 2.4rem); letter-spacing: -0.02em;">Online Booking + Smart Reminders</h2>
-      <p class="font-heading font-600 text-teal mb-4 text-base">Customers book online. Reminders make sure they show up.</p>
-      <p class="font-body text-navy/78 max-w-2xl mx-auto text-base leading-relaxed">Customers book directly from your Google listing or website. They get an instant confirmation text, a reminder 24 hours before, and another 1 hour before. No-shows drop 30–50%. No more phone tag to schedule appointments.</p>
-    </div>
-    <!-- Flow diagram -->
-    <div class="reveal reveal-delay-1 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-2 flex-wrap mb-12">
-      <!-- Step -->
-      <div class="flex flex-col items-center gap-2 text-center">
-        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-mint to-teal flex items-center justify-center shadow-lg">
-          <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        </div>
-        <span class="font-body text-navy/65 text-xs font-600 max-w-20">Customer books online</span>
-      </div>
-      <svg class="w-5 h-5 text-navy/20 rotate-90 sm:rotate-0 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      <!-- Step -->
-      <div class="flex flex-col items-center gap-2 text-center">
-        <div class="w-14 h-14 rounded-2xl flex items-center justify-center" style="background: rgba(2,195,154,0.12); border: 1.5px solid rgba(2,195,154,0.3);">
-          <svg class="w-7 h-7 text-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-        </div>
-        <span class="font-body text-navy/65 text-xs font-600 max-w-20">Instant confirmation text</span>
-      </div>
-      <svg class="w-5 h-5 text-navy/20 rotate-90 sm:rotate-0 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      <!-- Step -->
-      <div class="flex flex-col items-center gap-2 text-center">
-        <div class="w-14 h-14 rounded-2xl flex items-center justify-center" style="background: rgba(2,195,154,0.12); border: 1.5px solid rgba(2,195,154,0.3);">
-          <svg class="w-7 h-7 text-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        </div>
-        <span class="font-body text-navy/65 text-xs font-600 max-w-20">24-hour reminder</span>
-      </div>
-      <svg class="w-5 h-5 text-navy/20 rotate-90 sm:rotate-0 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      <!-- Step -->
-      <div class="flex flex-col items-center gap-2 text-center">
-        <div class="w-14 h-14 rounded-2xl flex items-center justify-center" style="background: rgba(2,195,154,0.12); border: 1.5px solid rgba(2,195,154,0.3);">
-          <svg class="w-7 h-7 text-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
-        </div>
-        <span class="font-body text-navy/65 text-xs font-600 max-w-20">1-hour reminder</span>
-      </div>
-      <svg class="w-5 h-5 text-navy/20 rotate-90 sm:rotate-0 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      <!-- Step -->
-      <div class="flex flex-col items-center gap-2 text-center">
-        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-mint to-teal flex items-center justify-center shadow-lg">
-          <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-        </div>
-        <span class="font-body text-navy/65 text-xs font-600 max-w-20">Customer shows up</span>
-      </div>
-    </div>
-    <!-- Stat callout -->
-    <div class="reveal reveal-delay-2 max-w-lg mx-auto rounded-2xl p-6 text-center" style="background: rgba(2,128,144,0.07); border: 1.5px solid rgba(2,128,144,0.2);">
-      <p class="font-heading font-800 text-teal text-3xl mb-1">30–50%</p>
-      <p class="font-body text-navy/65 text-sm">reduction in no-shows for businesses using automated reminders</p>
-    </div>
-  </div>
-</section>
-
-<!-- Customer Reactivation -->
-<section class="bg-navy py-12 md:py-16 relative overflow-hidden">
-  <div class="absolute inset-0 opacity-5" aria-hidden="true"
-       style="background-image: radial-gradient(circle at 25% 60%, rgba(2,195,154,0.15) 0%, transparent 50%);">
-  </div>
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-      <!-- Text -->
-      <div class="reveal">
-        <span class="font-body text-mint font-500 text-sm tracking-widest uppercase mb-3 block">Win-Back Campaigns</span>
-        <h2 class="font-heading font-800 text-white mb-3" style="font-size: clamp(1.6rem, 3.5vw, 2.4rem); letter-spacing: -0.02em;">Win back customers who disappeared</h2>
-        <p class="font-heading font-600 text-mint mb-5 text-base">Bring past customers back with one text.</p>
-        <p class="font-body text-white text-base leading-relaxed mb-6">Every business has customers who came once or twice and never came back. Our reactivation campaigns automatically reach out to inactive customers with a personal, friendly message. Most businesses recover 10–15% of lost customers within the first month.</p>
-        <div class="rounded-2xl p-5" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);">
-          <p class="font-body text-white/40 text-xs uppercase tracking-widest mb-3">Average first-campaign results</p>
-          <div class="grid grid-cols-2 gap-4">
-            <div>
-              <p class="font-heading font-800 text-mint text-2xl mb-0.5">10–15%</p>
-              <p class="font-body text-white/70 text-xs">of inactive customers return</p>
-            </div>
-            <div>
-              <p class="font-heading font-800 text-mint text-2xl mb-0.5">&lt; 30 days</p>
-              <p class="font-body text-white/70 text-xs">to see results</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Phone mockup -->
-      <div class="reveal reveal-delay-2 flex justify-center lg:justify-end">
-        <div class="phone-frame w-64 px-4 pt-10 pb-8" role="img" aria-label="Customer reactivation message">
-          <div class="space-y-3">
-            <div class="text-center mb-4">
-              <p class="font-body text-white/35 text-xs">iMessage</p>
-            </div>
-            <div class="rounded-xl rounded-br-sm p-3 text-xs ml-2" style="background: linear-gradient(135deg, #02C39A, #028090);">
-              <p class="text-white font-body leading-relaxed">Hey [Name], it's been a while since your last visit. We'd love to see you again — book this week and get 10% off your next service. [booking link]</p>
-              <span class="text-white/60 text-xs mt-1 block">Delivered</span>
-            </div>
-            <div class="rounded-xl rounded-bl-sm p-3 text-xs mr-4" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.08);">
-              <p class="text-white/80 font-body leading-relaxed">Oh nice! I was just thinking about coming in. Booking now 👍</p>
-              <span class="text-white/40 text-xs mt-1 block">Just now</span>
-            </div>
-            <div class="flex items-center justify-center gap-1.5 py-1">
-              <svg class="w-3 h-3 text-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-              <span class="text-mint text-xs font-heading font-600">Customer reactivated</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SMS + Email Marketing -->
-<section class="bg-chalk py-12 md:py-16">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-      <!-- Text -->
-      <div class="reveal">
-        <span class="font-body text-teal font-500 text-sm tracking-widest uppercase mb-3 block">Broadcast Campaigns</span>
-        <h2 class="font-heading font-800 text-navy mb-3" style="font-size: clamp(1.6rem, 3.5vw, 2.4rem); letter-spacing: -0.02em;">Reach every customer in one click</h2>
-        <p class="font-heading font-600 text-teal mb-5 text-base">Promos, specials, events, announcements — delivered directly.</p>
-        <p class="font-body text-navy/80 text-base leading-relaxed mb-6">Running a holiday special? New service offering? Seasonal promotion? Send a targeted text or email to your entire customer base in minutes. No design skills needed. We build the campaigns, you approve them, and they go out automatically.</p>
-        <ul class="space-y-3">
-          <li class="flex items-start gap-3">
-            <span class="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-teal/15 border border-teal/30 flex items-center justify-center">
-              <svg class="w-3 h-3 text-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-            </span>
-            <span class="font-body text-navy/70 text-sm">SMS campaigns sent directly to customer phones</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-teal/15 border border-teal/30 flex items-center justify-center">
-              <svg class="w-3 h-3 text-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-            </span>
-            <span class="font-body text-navy/70 text-sm">Email campaigns for longer promotions and updates</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-teal/15 border border-teal/30 flex items-center justify-center">
-              <svg class="w-3 h-3 text-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-            </span>
-            <span class="font-body text-navy/70 text-sm">We write and design everything — you just approve and go</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-teal/15 border border-teal/30 flex items-center justify-center">
-              <svg class="w-3 h-3 text-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-            </span>
-            <span class="font-body text-navy/70 text-sm">Segment your list to target the right customers at the right time</span>
-          </li>
-        </ul>
-      </div>
-      <!-- Campaign type cards -->
-      <div class="reveal reveal-delay-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div class="rounded-2xl p-5" style="background: #fff; border: 1.5px solid rgba(2,128,144,0.18); box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-mint to-teal flex items-center justify-center mb-3">
-            <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-          </div>
-          <p class="font-heading font-700 text-navy text-sm mb-1">SMS Blast</p>
-          <p class="font-body text-navy/72 text-sm leading-relaxed">Instant reach, 98% open rate. Great for flash sales and last-minute promos.</p>
-        </div>
-        <div class="rounded-2xl p-5" style="background: #fff; border: 1.5px solid rgba(2,128,144,0.18); box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-mint to-teal flex items-center justify-center mb-3">
-            <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </div>
-          <p class="font-heading font-700 text-navy text-sm mb-1">Email Campaign</p>
-          <p class="font-body text-navy/72 text-sm leading-relaxed">Newsletters, seasonal offers, and service announcements sent to your full list.</p>
-        </div>
-        <div class="rounded-2xl p-5" style="background: #fff; border: 1.5px solid rgba(2,128,144,0.18); box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-mint to-teal flex items-center justify-center mb-3">
-            <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          </div>
-          <p class="font-heading font-700 text-navy text-sm mb-1">Seasonal Promo</p>
-          <p class="font-body text-navy/72 text-sm leading-relaxed">Holiday specials, back-to-school offers, and weather-based campaigns.</p>
-        </div>
-        <div class="rounded-2xl p-5" style="background: #fff; border: 1.5px solid rgba(2,128,144,0.18); box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-mint to-teal flex items-center justify-center mb-3">
-            <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-          </div>
-          <p class="font-heading font-700 text-navy text-sm mb-1">New Service Alert</p>
-          <p class="font-body text-navy/72 text-sm leading-relaxed">Tell your entire customer base about a new service or location expansion.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 
 
 <!-- ═══════════════════════════════════════════════
      HOW IT WORKS
 ═══════════════════════════════════════════════ -->
-<section id="how-it-works" class="bg-chalk py-12 md:py-16">
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="reveal text-center mb-12">
-      <span class="font-body text-teal font-500 text-sm tracking-widest uppercase mb-3 block">The Timeline</span>
-      <h2 class="font-heading font-800 text-navy mb-4" style="font-size: clamp(1.6rem, 3.5vw, 2.6rem); letter-spacing: -0.02em;">
+<section id="how-it-works" class="bg-navy py-20 md:py-28 relative overflow-hidden">
+  <div class="absolute inset-0 opacity-5" aria-hidden="true"
+       style="background-image: radial-gradient(circle at 80% 20%, rgba(2,195,154,0.15) 0%, transparent 50%);">
+  </div>
+  <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="reveal text-center mb-16">
+      <span class="font-body text-mint font-500 text-sm tracking-widest uppercase mb-3 block">The Timeline</span>
+      <h2 class="font-heading font-800 text-white mb-4" style="font-size: clamp(1.6rem, 3.5vw, 2.6rem); letter-spacing: -0.02em;">
         From signup to results in 30 days
       </h2>
-      <p class="font-body text-navy/72 max-w-lg mx-auto">No long onboarding. No waiting 6 months to see results. Here's exactly what happens.</p>
+      <p class="font-body text-white/55 max-w-lg mx-auto">No long onboarding. No waiting 6 months to see results. Here's exactly what happens.</p>
     </div>
 
     <div class="space-y-0">
       <!-- Step 1 -->
-      <div class="reveal reveal-delay-1 relative flex gap-6 pb-8">
+      <div class="reveal reveal-delay-1 relative flex gap-6 pb-10">
         <div class="flex flex-col items-center">
-          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-mint to-teal flex items-center justify-center flex-shrink-0 z-10 font-heading font-800 text-white text-sm shadow-md">1</div>
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-mint to-teal flex items-center justify-center flex-shrink-0 z-10 font-heading font-800 text-white text-sm">1</div>
           <div class="w-0.5 flex-1 mt-2" style="background: linear-gradient(180deg, #02C39A, rgba(2,128,144,0.2));"></div>
         </div>
-        <div class="pt-1.5 pb-4">
-          <span class="font-body text-teal text-xs font-700 tracking-wider uppercase">Week 1</span>
-          <h3 class="font-heading font-700 text-navy text-xl mt-1 mb-2">Profile Overhaul</h3>
-          <p class="font-body text-navy/72 text-base leading-relaxed max-w-lg">We audit everything — categories, description, hours, photos, service areas. Then we rebuild it from the ground up to rank for the searches that matter most to your business.</p>
+        <div class="pt-1.5 pb-6">
+          <span class="font-body text-mint text-xs font-600 tracking-wider uppercase">Week 1 — Foundation</span>
+          <h3 class="font-heading font-700 text-white text-xl mt-1 mb-2">We Learn Your Business Inside Out</h3>
+          <p class="font-body text-white/55 text-sm leading-relaxed max-w-lg">Full Google Business Profile audit and optimization. CRM and lead pipeline setup. We rebuild your listing from the ground up and configure every system to your business before anything goes live.</p>
         </div>
       </div>
       <!-- Step 2 -->
-      <div class="reveal reveal-delay-2 relative flex gap-6 pb-8">
+      <div class="reveal reveal-delay-2 relative flex gap-6 pb-10">
         <div class="flex flex-col items-center">
-          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-mint to-teal flex items-center justify-center flex-shrink-0 z-10 font-heading font-800 text-white text-sm shadow-md">2</div>
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-mint to-teal flex items-center justify-center flex-shrink-0 z-10 font-heading font-800 text-white text-sm">2</div>
           <div class="w-0.5 flex-1 mt-2" style="background: linear-gradient(180deg, #028090, rgba(2,128,144,0.2));"></div>
         </div>
-        <div class="pt-1.5 pb-4">
-          <span class="font-body text-teal text-xs font-700 tracking-wider uppercase">Week 2</span>
-          <h3 class="font-heading font-700 text-navy text-xl mt-1 mb-2">Text-Back Goes Live</h3>
-          <p class="font-body text-navy/72 text-base leading-relaxed max-w-lg">Your missed call text-back system is set up, tested, and activated. Every missed call now gets an instant, professional response — capturing leads you used to lose.</p>
+        <div class="pt-1.5 pb-6">
+          <span class="font-body text-mint text-xs font-600 tracking-wider uppercase">Week 2 — Capture</span>
+          <h3 class="font-heading font-700 text-white text-xl mt-1 mb-2">Every Lead Gets a Response in Seconds</h3>
+          <p class="font-body text-white/55 text-sm leading-relaxed max-w-lg">Missed call text-back goes live. AI receptionist activated. From this point on, no call goes unanswered — every inquiry is captured and routed instantly, even at 2am on a Sunday.</p>
         </div>
       </div>
       <!-- Step 3 -->
-      <div class="reveal reveal-delay-3 relative flex gap-6 pb-8">
+      <div class="reveal reveal-delay-3 relative flex gap-6 pb-10">
         <div class="flex flex-col items-center">
-          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-mint to-teal flex items-center justify-center flex-shrink-0 z-10 font-heading font-800 text-white text-sm shadow-md">3</div>
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-mint to-teal flex items-center justify-center flex-shrink-0 z-10 font-heading font-800 text-white text-sm">3</div>
           <div class="w-0.5 flex-1 mt-2" style="background: linear-gradient(180deg, #028090, rgba(2,128,144,0.2));"></div>
         </div>
-        <div class="pt-1.5 pb-4">
-          <span class="font-body text-teal text-xs font-700 tracking-wider uppercase">Week 3</span>
-          <h3 class="font-heading font-700 text-navy text-xl mt-1 mb-2">Reviews Start Flowing</h3>
-          <p class="font-body text-navy/72 text-base leading-relaxed max-w-lg">Your review generation system kicks in. Happy customers get a simple, frictionless request. You watch your star rating climb and your Google ranking rise with it.</p>
+        <div class="pt-1.5 pb-6">
+          <span class="font-body text-mint text-xs font-600 tracking-wider uppercase">Week 3 — Growth</span>
+          <h3 class="font-heading font-700 text-white text-xl mt-1 mb-2">Reviews, Bookings, and Drip Campaigns Launch</h3>
+          <p class="font-body text-white/55 text-sm leading-relaxed max-w-lg">Review generation system starts requesting 5-star reviews from happy customers. Appointment booking and automated reminders go live. Drip campaigns begin nurturing leads who haven't booked yet.</p>
         </div>
       </div>
       <!-- Step 4 -->
       <div class="reveal reveal-delay-4 relative flex gap-6">
         <div class="flex flex-col items-center">
-          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-mint to-teal flex items-center justify-center flex-shrink-0 z-10 font-heading font-800 text-white text-sm shadow-md">4</div>
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-mint to-teal flex items-center justify-center flex-shrink-0 z-10 font-heading font-800 text-white text-sm">4</div>
         </div>
         <div class="pt-1.5">
-          <span class="font-body text-teal text-xs font-700 tracking-wider uppercase">Week 4</span>
-          <h3 class="font-heading font-700 text-navy text-xl mt-1 mb-2">Results Review</h3>
-          <p class="font-body text-navy/72 text-base leading-relaxed max-w-lg">We walk you through exactly what changed: ranking position, profile views, call volume, and leads captured. Then we fine-tune for month two.</p>
+          <span class="font-body text-mint text-xs font-600 tracking-wider uppercase">Week 4 — Results</span>
+          <h3 class="font-heading font-700 text-white text-xl mt-1 mb-2">Full Performance Review</h3>
+          <p class="font-body text-white/55 text-sm leading-relaxed max-w-lg">We walk you through ranking position, calls captured, leads gained, reviews earned, and bookings made. Then we fine-tune every system and map out month two.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
-
 
 
 
 <!-- ═══════════════════════════════════════════════
      INDUSTRIES
 ═══════════════════════════════════════════════ -->
-<section id="industries" class="bg-navy py-12 md:py-16">
+<section id="industries" class="bg-navy py-20 md:py-28">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="reveal text-center mb-10">
+    <div class="reveal text-center mb-14">
       <span class="font-body text-mint font-500 text-sm tracking-widest uppercase mb-3 block">Who We Serve</span>
       <h2 class="font-heading font-800 text-white mb-4" style="font-size: clamp(1.6rem, 3.5vw, 2.6rem); letter-spacing: -0.02em;">
         Built for local businesses
       </h2>
-      <p class="font-body text-white/80 max-w-xl mx-auto">If you depend on local customers finding you, we can help you rank higher and convert more.</p>
-      <p class="font-body text-white/35 text-sm mt-2">Single location or multiple — we scale with your business.</p>
+      <p class="font-body text-white/55 max-w-xl mx-auto">From auto shops to dental offices, we build the system — you focus on your craft.</p>
     </div>
 
     <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
@@ -1182,80 +701,11 @@
 
 
 <!-- ═══════════════════════════════════════════════
-     RESULTS / CASE STUDIES
-═══════════════════════════════════════════════ -->
-<section class="bg-chalk py-12 md:py-16">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="reveal text-center mb-10">
-      <span class="font-body text-teal font-500 text-sm tracking-widest uppercase mb-3 block">Social Proof</span>
-      <h2 class="font-heading font-800 text-navy mb-4" style="font-size: clamp(1.6rem, 3.5vw, 2.6rem); letter-spacing: -0.02em;">
-        Results from real businesses
-      </h2>
-      <p class="font-body text-navy/72 max-w-xl mx-auto">Real numbers, real businesses. Case studies updated as clients hit new milestones.</p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <!-- Card 1 -->
-      <div class="reveal reveal-delay-1 grad-border p-8 hover:-translate-y-1 transition-transform duration-200">
-        <div class="flex items-center gap-3 mb-5">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-mint/20 to-teal/20 flex items-center justify-center flex-shrink-0">
-            <svg class="w-5 h-5 text-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-          </div>
-          <div>
-            <p class="font-heading font-700 text-navy text-sm">Auto Repair Shop</p>
-            <p class="font-body text-navy/45 text-xs">Cranston, RI</p>
-          </div>
-        </div>
-        <div class="rounded-xl p-4 mb-5" style="background: rgba(2,195,154,0.07); border: 1px solid rgba(2,195,154,0.2);">
-          <p class="font-heading font-800 text-teal text-xl leading-tight">12 → 47 Google reviews<br/><span class="text-base font-600 text-navy/60">in 60 days</span></p>
-        </div>
-        <p class="font-body text-navy/60 text-sm italic leading-relaxed">"LeadLock completely changed how customers find us online. We went from invisible to top 3 in our area."</p>
-        <p class="font-body text-navy/35 text-xs mt-3">— Business owner, Cranston RI &nbsp;·&nbsp; <span class="text-teal/60">Case study coming soon</span></p>
-      </div>
-      <!-- Card 2 -->
-      <div class="reveal reveal-delay-2 grad-border p-8 hover:-translate-y-1 transition-transform duration-200">
-        <div class="flex items-center gap-3 mb-5">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-mint/20 to-teal/20 flex items-center justify-center flex-shrink-0">
-            <svg class="w-5 h-5 text-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2v20M18 2v20M6 7h12M6 12h12M6 17h12"/></svg>
-          </div>
-          <div>
-            <p class="font-heading font-700 text-navy text-sm">Barbershop</p>
-            <p class="font-body text-navy/45 text-xs">Hartford, CT</p>
-          </div>
-        </div>
-        <div class="rounded-xl p-4 mb-5" style="background: rgba(2,195,154,0.07); border: 1px solid rgba(2,195,154,0.2);">
-          <p class="font-heading font-800 text-teal text-xl leading-tight">31% more calls<br/><span class="text-base font-600 text-navy/60">in the first 45 days</span></p>
-        </div>
-        <p class="font-body text-navy/60 text-sm italic leading-relaxed">"The missed call text-back alone paid for everything. We used to lose 10+ leads a week — now we catch almost all of them."</p>
-        <p class="font-body text-navy/35 text-xs mt-3">— Shop owner, Hartford CT &nbsp;·&nbsp; <span class="text-teal/60">Case study coming soon</span></p>
-      </div>
-      <!-- Card 3 -->
-      <div class="reveal reveal-delay-3 grad-border p-8 hover:-translate-y-1 transition-transform duration-200">
-        <div class="flex items-center gap-3 mb-5">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-mint/20 to-teal/20 flex items-center justify-center flex-shrink-0">
-            <svg class="w-5 h-5 text-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22V12m0 0C12 7 7 4 2 6c2 2 4 6 10 6zm0 0c0-5 5-8 10-6-2 2-4 6-10 6z"/></svg>
-          </div>
-          <div>
-            <p class="font-heading font-700 text-navy text-sm">Landscaping Company</p>
-            <p class="font-body text-navy/45 text-xs">West Hartford, CT</p>
-          </div>
-        </div>
-        <div class="rounded-xl p-4 mb-5" style="background: rgba(2,195,154,0.07); border: 1px solid rgba(2,195,154,0.2);">
-          <p class="font-heading font-800 text-teal text-xl leading-tight">#1 local rank<br/><span class="text-base font-600 text-navy/60">for 6 target keywords</span></p>
-        </div>
-        <p class="font-body text-navy/60 text-sm italic leading-relaxed">"Our phone started ringing more in the first month than it had in the previous six. It's been a complete game changer for us."</p>
-        <p class="font-body text-navy/35 text-xs mt-3">— Owner, West Hartford CT &nbsp;·&nbsp; <span class="text-teal/60">Case study coming soon</span></p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════════
      FAQ
 ═══════════════════════════════════════════════ -->
-<section id="faq" class="bg-chalk py-12 md:py-16">
+<section id="faq" class="bg-chalk py-20 md:py-28">
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="reveal text-center mb-10">
+    <div class="reveal text-center mb-14">
       <span class="font-body text-teal font-500 text-sm tracking-widest uppercase mb-3 block">FAQ</span>
       <h2 class="font-heading font-800 text-navy mb-4" style="font-size: clamp(1.6rem, 3.5vw, 2.6rem); letter-spacing: -0.02em;">
         Questions we always get
@@ -1284,7 +734,7 @@
           </span>
         </button>
         <div class="faq-answer px-6">
-          <p class="font-body text-navy/80 text-base leading-relaxed pb-6">The missed call text-back goes live in week 2, so you'll start capturing leads immediately. Google ranking improvements typically show within 30–60 days. Review count increases are visible within weeks. Most clients see measurable impact by the end of month one.</p>
+          <p class="font-body text-navy/80 text-base leading-relaxed pb-6">By week 2, your missed call text-back and AI receptionist are live — so you start capturing leads immediately. Google ranking improvements typically show within 30–60 days. Review counts climb within weeks. Appointment booking and drip campaigns are running by week 3. Most clients see measurable impact across multiple fronts before month one is done.</p>
         </div>
       </div>
       <!-- Q3 -->
@@ -1320,7 +770,7 @@
           </span>
         </button>
         <div class="faq-answer px-6">
-          <p class="font-body text-navy/80 text-base leading-relaxed pb-6">We set up a smart automation that detects when a call to your business goes unanswered. Within seconds, it fires a customized text message to the caller from your business number. Replies come back to a shared inbox you can check anytime — no app download required.</p>
+          <p class="font-body text-navy/80 text-base leading-relaxed pb-6">We set up a smart automation that detects when a call to your business goes unanswered. Within seconds, it fires a customized text message to the caller from your business number. Replies come back to a shared inbox you can check anytime — no app download required. It works alongside the AI receptionist and CRM so every conversation is tracked from first contact to booked job.</p>
         </div>
       </div>
       <!-- Q6 -->
@@ -1338,49 +788,25 @@
       <!-- Q7 -->
       <div class="reveal faq-item rounded-2xl border border-navy/10 bg-white overflow-hidden cursor-pointer">
         <button class="w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer" aria-expanded="false">
-          <span class="font-heading font-600 text-navy text-lg">What is the AI receptionist?</span>
+          <span class="font-heading font-600 text-navy text-lg">What exactly is included?</span>
           <span class="faq-icon flex-shrink-0 w-6 h-6 rounded-full border border-navy/15 flex items-center justify-center text-navy/50">
             <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
           </span>
         </button>
         <div class="faq-answer px-6">
-          <p class="font-body text-navy/80 text-base leading-relaxed pb-6">It's an AI-powered assistant that answers customer questions via text or phone 24/7. It handles common questions like pricing, hours, and services, and can book appointments directly. Customers get instant responses instead of voicemail, and you wake up to new bookings instead of missed calls.</p>
+          <p class="font-body text-navy/80 text-base leading-relaxed pb-6">Every plan includes Google Business Profile optimization, missed call text-back, review generation, CRM setup, appointment booking, automated reminders, and a monthly performance report. Depending on your plan, you may also get AI receptionist, drip campaigns, and social media scheduling. We'll walk you through exactly what's right for your business when you get your free audit.</p>
         </div>
       </div>
       <!-- Q8 -->
-      <div class="reveal reveal-delay-1 faq-item rounded-2xl border border-navy/10 bg-white overflow-hidden cursor-pointer">
+      <div class="reveal faq-item rounded-2xl border border-navy/10 bg-white overflow-hidden cursor-pointer">
         <button class="w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer" aria-expanded="false">
-          <span class="font-heading font-600 text-navy text-lg">How does the appointment booking work?</span>
+          <span class="font-heading font-600 text-navy text-lg">Do I need to learn any software?</span>
           <span class="faq-icon flex-shrink-0 w-6 h-6 rounded-full border border-navy/15 flex items-center justify-center text-navy/50">
             <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
           </span>
         </button>
         <div class="faq-answer px-6">
-          <p class="font-body text-navy/80 text-base leading-relaxed pb-6">We set up an online booking system connected to your Google listing and website. Customers pick a time that works for them, get an instant confirmation, and receive automatic reminders before their appointment. No more back-and-forth phone calls to schedule.</p>
-        </div>
-      </div>
-      <!-- Q9 -->
-      <div class="reveal reveal-delay-2 faq-item rounded-2xl border border-navy/10 bg-white overflow-hidden cursor-pointer">
-        <button class="w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer" aria-expanded="false">
-          <span class="font-heading font-600 text-navy text-lg">What are reactivation campaigns?</span>
-          <span class="faq-icon flex-shrink-0 w-6 h-6 rounded-full border border-navy/15 flex items-center justify-center text-navy/50">
-            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
-          </span>
-        </button>
-        <div class="faq-answer px-6">
-          <p class="font-body text-navy/80 text-base leading-relaxed pb-6">These are automated text messages sent to past customers who haven't visited in a while. A friendly, personal message from the business owner inviting them back. Most businesses recover 10–15% of inactive customers within the first campaign.</p>
-        </div>
-      </div>
-      <!-- Q10 -->
-      <div class="reveal reveal-delay-3 faq-item rounded-2xl border border-navy/10 bg-white overflow-hidden cursor-pointer">
-        <button class="w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer" aria-expanded="false">
-          <span class="font-heading font-600 text-navy text-lg">Do you work with multi-location businesses?</span>
-          <span class="faq-icon flex-shrink-0 w-6 h-6 rounded-full border border-navy/15 flex items-center justify-center text-navy/50">
-            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
-          </span>
-        </button>
-        <div class="faq-answer px-6">
-          <p class="font-body text-navy/80 text-base leading-relaxed pb-6">Yes. We set up and manage each location separately with its own Google Business Profile optimization, review system, and automations. You get a unified view across all locations so you can see how each one is performing.</p>
+          <p class="font-body text-navy/80 text-base leading-relaxed pb-6">No. We set everything up and manage it. You get a simple dashboard to see your leads and reviews, but you never need to touch the backend. If you want to, you can — but most clients let us handle it.</p>
         </div>
       </div>
     </div>
@@ -1391,7 +817,7 @@
 <!-- ═══════════════════════════════════════════════
      CONTACT
 ═══════════════════════════════════════════════ -->
-<section id="contact" class="bg-navy py-12 md:py-16 relative overflow-hidden">
+<section id="contact" class="bg-navy py-20 md:py-28 relative overflow-hidden">
   <div class="absolute inset-0 opacity-5" aria-hidden="true"
        style="background-image: radial-gradient(circle at 30% 70%, rgba(2,195,154,0.2) 0%, transparent 50%), radial-gradient(circle at 70% 30%, rgba(2,128,144,0.15) 0%, transparent 50%);">
   </div>
@@ -1401,19 +827,10 @@
       <h2 class="font-heading font-800 text-white mb-4" style="font-size: clamp(1.6rem, 3.5vw, 2.6rem); letter-spacing: -0.02em;">
         Get your free Google audit
       </h2>
-      <p class="font-body text-white/80 max-w-lg mx-auto">We'll analyze your current Google presence and show you exactly what's costing you customers — no pitch, no pressure.</p>
+      <p class="font-body text-white/55 max-w-lg mx-auto">We'll analyze your current Google presence and show you exactly what's costing you customers — no pitch, no pressure.</p>
     </div>
 
-    <!-- Success state -->
-    <div id="form-success" class="hidden reveal reveal-delay-1 text-center py-16 px-6 rounded-2xl" style="background: rgba(2,195,154,0.08); border: 1px solid rgba(2,195,154,0.2);">
-      <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" style="background: rgba(2,195,154,0.15);">
-        <svg class="w-8 h-8 text-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-      </div>
-      <h3 class="font-heading font-800 text-white text-2xl mb-3">You're on the list.</h3>
-      <p class="font-body text-white/60 max-w-sm mx-auto">We'll review your Google presence and reach out within 24 hours with your free audit. Keep an eye on your inbox.</p>
-    </div>
-
-    <form id="contact-form" class="reveal reveal-delay-1 space-y-4" name="contact" method="POST" action="https://formspree.io/f/xzdkdgwe" novalidate>
+    <form class="reveal reveal-delay-1 space-y-4" name="contact" method="POST" data-netlify="true" novalidate>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label for="business-name" class="block font-body font-500 text-white/70 text-sm mb-2">Business name <span class="text-mint" aria-hidden="true">*</span></label>
@@ -1437,67 +854,29 @@
           <label for="phone" class="block font-body font-500 text-white/70 text-sm mb-2">Phone <span class="text-mint" aria-hidden="true">*</span></label>
           <input type="tel" id="phone" name="phone" required
                  placeholder="(401) 555-0100"
-                 maxlength="14"
                  class="w-full rounded-xl px-4 py-3 font-body text-sm text-white placeholder-white/25 outline-none transition-all duration-200"
-                 style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);" />
-          <p id="phone-error" class="hidden mt-1.5 text-xs font-body text-red-400 flex items-center gap-1">
-            <svg class="w-3.5 h-3.5 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm1 14H11v-2h2v2zm0-4H11V7h2v5z"/></svg>
-            Please enter a valid 10-digit phone number.
-          </p>
+                 style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);"
+                 onfocus="this.style.borderColor='rgba(2,195,154,0.6)'; this.style.background='rgba(2,195,154,0.05)';"
+                 onblur="this.style.borderColor='rgba(255,255,255,0.1)'; this.style.background='rgba(255,255,255,0.06)';" />
         </div>
         <div>
           <label for="email" class="block font-body font-500 text-white/70 text-sm mb-2">Email <span class="text-mint" aria-hidden="true">*</span></label>
           <input type="email" id="email" name="email" required
                  placeholder="mike@autorepair.com"
                  class="w-full rounded-xl px-4 py-3 font-body text-sm text-white placeholder-white/25 outline-none transition-all duration-200"
-                 style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);" />
-          <p id="email-error" class="hidden mt-1.5 text-xs font-body text-red-400 flex items-center gap-1">
-            <svg class="w-3.5 h-3.5 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm1 14H11v-2h2v2zm0-4H11V7h2v5z"/></svg>
-            Please enter a valid email address.
-          </p>
+                 style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);"
+                 onfocus="this.style.borderColor='rgba(2,195,154,0.6)'; this.style.background='rgba(2,195,154,0.05)';"
+                 onblur="this.style.borderColor='rgba(255,255,255,0.1)'; this.style.background='rgba(255,255,255,0.06)';" />
         </div>
       </div>
 
-      <div>
-        <label for="referral" class="block font-body font-500 text-white/70 text-sm mb-2">How did you hear about us? <span class="text-white/30 font-400">(optional)</span></label>
-        <select id="referral" name="referral_source"
-                class="w-full rounded-xl px-4 py-3 font-body text-sm text-white outline-none transition-all duration-200 cursor-pointer"
-                style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);"
-                onfocus="this.style.borderColor='rgba(2,195,154,0.6)'; this.style.background='rgba(2,195,154,0.05)';"
-                onblur="this.style.borderColor='rgba(255,255,255,0.1)'; this.style.background='rgba(255,255,255,0.06)';">
-          <option value="" style="background:#1A2332;">Select an option...</option>
-          <option value="google_search" style="background:#1A2332;">Google Search</option>
-          <option value="word_of_mouth" style="background:#1A2332;">Word of Mouth</option>
-          <option value="social_media" style="background:#1A2332;">Social Media</option>
-          <option value="friend_referral" style="background:#1A2332;">Friend or Colleague</option>
-          <option value="other" style="background:#1A2332;">Other</option>
-        </select>
-      </div>
-
-      <div>
-        <div class="flex justify-between items-center mb-2">
-          <label for="message" class="block font-body font-500 text-white/70 text-sm">
-            Tell us about your business <span class="text-white/30 font-400">(optional)</span>
-          </label>
-          <span id="char-count" class="font-body text-white/30 text-xs">500 left</span>
-        </div>
-        <p class="font-body text-white/35 text-xs mb-2 leading-relaxed">What type of business do you run, how long have you been open, and what's your biggest challenge with getting new customers right now?</p>
-        <textarea id="message" name="business_info" rows="4" maxlength="500"
-                  placeholder="e.g. We're a family-owned plumbing company, been in business 6 years. We get decent word-of-mouth but we're barely showing up on Google and we miss a lot of calls when we're out on jobs..."
-                  class="w-full rounded-xl px-4 py-3 font-body text-sm text-white placeholder-white/25 outline-none transition-all duration-200 resize-none"
-                  style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);"
-                  onfocus="this.style.borderColor='rgba(2,195,154,0.6)'; this.style.background='rgba(2,195,154,0.05)';"
-                  onblur="this.style.borderColor='rgba(255,255,255,0.1)'; this.style.background='rgba(255,255,255,0.06)';"></textarea>
-      </div>
-
-      <button type="submit" id="submit-btn"
+      <button type="submit"
               class="w-full bg-mint hover:bg-mint-dark text-navy font-heading font-700 py-4 rounded-xl text-base transition-all duration-200 cursor-pointer flex items-center justify-center gap-2"
               style="letter-spacing: -0.01em;"
               onmouseover="this.style.boxShadow='0 8px 32px rgba(2,195,154,0.3)'"
               onmouseout="this.style.boxShadow='none'">
-        <span id="submit-label">Get my free audit</span>
-        <svg id="submit-arrow" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        <svg id="submit-spinner" class="hidden w-5 h-5 animate-spin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+        Get my free audit
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </button>
       <p class="font-body text-white/30 text-xs text-center">No spam. No sales pressure. Just an honest look at where you stand.</p>
     </form>
@@ -1530,11 +909,10 @@
         <a href="#contact" class="font-body text-white/40 hover:text-white/80 text-sm transition-colors duration-200 cursor-pointer">Contact</a>
       </nav>
 
-      <!-- Location + owners -->
-      <div class="font-body text-white/30 text-sm flex flex-col gap-1">
-        <p>Drew Lewis &mdash; West Hartford, CT</p>
-        <p>Tristan Sidrane &mdash; Canton, CT</p>
-      </div>
+      <!-- Location + owner -->
+      <p class="font-body text-white/30 text-sm">
+        Drew Lewis &mdash; Providence RI &amp; Hartford CT
+      </p>
     </div>
 
     <div class="border-t border-white/6 mt-8 pt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
@@ -1606,337 +984,6 @@
         header.style.borderBottomColor = 'rgba(255,255,255,0.06)';
       }
     }, { passive: true });
-  })();
-
-  // ─── Stat source tooltips ───────────────────────────────────────────────────
-  (function() {
-    const tooltip = document.getElementById('stat-tooltip');
-    const tipSource = document.getElementById('tooltip-source');
-    const tipUrl    = document.getElementById('tooltip-url');
-    let hideTimer = null;
-
-    function showTooltip(btn, e) {
-      clearTimeout(hideTimer);
-      tipSource.textContent = btn.dataset.source;
-      tipUrl.textContent    = btn.dataset.url;
-      tipUrl.href           = btn.dataset.url;
-      tooltip.style.opacity        = '1';
-      tooltip.style.pointerEvents  = 'auto';
-      positionTooltip(e);
-    }
-
-    function scheduleHide() {
-      hideTimer = setTimeout(function() {
-        tooltip.style.opacity       = '0';
-        tooltip.style.pointerEvents = 'none';
-      }, 120);
-    }
-
-    document.querySelectorAll('.stat-source').forEach(function(btn) {
-      btn.addEventListener('mouseenter', function(e) { showTooltip(btn, e); });
-      btn.addEventListener('mousemove',  positionTooltip);
-      btn.addEventListener('mouseleave', scheduleHide);
-    });
-
-    tooltip.addEventListener('mouseenter', function() { clearTimeout(hideTimer); });
-    tooltip.addEventListener('mouseleave', scheduleHide);
-
-    function positionTooltip(e) {
-      const x = e.clientX + 12;
-      const y = e.clientY + 12;
-      const tw = tooltip.offsetWidth  || 260;
-      const th = tooltip.offsetHeight || 60;
-      tooltip.style.left = (x + tw > window.innerWidth  ? e.clientX - tw - 8 : x) + 'px';
-      tooltip.style.top  = (y + th > window.innerHeight ? e.clientY - th - 8 : y) + 'px';
-    }
-  })();
-
-  // ─── Scroll progress bar ────────────────────────────────────────────────────
-  (function() {
-    const bar = document.getElementById('scroll-progress');
-    window.addEventListener('scroll', function() {
-      const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      bar.style.width = (docHeight > 0 ? (scrollTop / docHeight) * 100 : 0) + '%';
-    }, { passive: true });
-  })();
-
-  // ─── Back to top ────────────────────────────────────────────────────────────
-  (function() {
-    const wrap = document.getElementById('back-to-top-wrap');
-    const btn  = document.getElementById('back-to-top');
-    window.addEventListener('scroll', function() {
-      if (window.scrollY > 400) {
-        wrap.style.opacity = '1';
-        wrap.style.pointerEvents = 'auto';
-      } else {
-        wrap.style.opacity = '0';
-        wrap.style.pointerEvents = 'none';
-      }
-    }, { passive: true });
-    btn.addEventListener('click', function() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  })();
-
-  // ─── Mobile sticky CTA bar ──────────────────────────────────────────────────
-  (function() {
-    const bar     = document.getElementById('mobile-cta-bar');
-    const contact = document.getElementById('contact');
-    if (!bar || !contact) return;
-    function update() {
-      const contactTop = contact.getBoundingClientRect().top;
-      const atTop = window.scrollY < 300;
-      const pastForm = contactTop < window.innerHeight;
-      if (atTop || pastForm) {
-        bar.style.transform = 'translateY(100%)';
-      } else {
-        bar.style.transform = 'translateY(0)';
-      }
-    }
-    window.addEventListener('scroll', update, { passive: true });
-    update();
-  })();
-
-  // ─── Cookie banner ──────────────────────────────────────────────────────────
-  (function() {
-    const banner  = document.getElementById('cookie-banner');
-    const accept  = document.getElementById('cookie-accept');
-    const decline = document.getElementById('cookie-decline');
-    if (!banner) return;
-    if (!localStorage.getItem('ll_cookie')) {
-      setTimeout(function() { banner.style.transform = 'translateY(0)'; }, 1200);
-    }
-    function dismiss() {
-      banner.style.transform = 'translateY(100%)';
-    }
-    accept.addEventListener('click', function() {
-      localStorage.setItem('ll_cookie', 'accepted');
-      dismiss();
-      if (typeof loadGA === 'function') loadGA();
-    });
-    decline.addEventListener('click', function() {
-      localStorage.setItem('ll_cookie', 'declined');
-      dismiss();
-    });
-  })();
-
-  // ─── Active nav highlighting ─────────────────────────────────────────────────
-  (function() {
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('nav a[href^="#"]');
-    const observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (!entry.isIntersecting) return;
-        const id = entry.target.id;
-        navLinks.forEach(function(link) {
-          const matches = link.getAttribute('href') === '#' + id;
-          link.style.color = matches ? '#02C39A' : '';
-        });
-      });
-    }, { rootMargin: '-40% 0px -55% 0px' });
-    sections.forEach(function(s) { observer.observe(s); });
-  })();
-
-  // ─── Mobile hamburger menu ───────────────────────────────────────────────────
-  (function() {
-    const toggle = document.getElementById('menu-toggle');
-    const menu   = document.getElementById('mobile-menu');
-    const bars   = toggle.querySelectorAll('.menu-bar');
-    let open = false;
-
-    function closeMenu() {
-      open = false;
-      menu.style.transform = 'translateY(-110%)';
-      menu.setAttribute('aria-hidden', 'true');
-      toggle.setAttribute('aria-expanded', 'false');
-      bars[0].style.transform = ''; bars[0].style.marginTop = '';
-      bars[1].style.opacity = '1';
-      bars[2].style.transform = '';
-    }
-
-    toggle.addEventListener('click', function() {
-      open = !open;
-      if (open) {
-        menu.style.transform = 'translateY(0)';
-        menu.setAttribute('aria-hidden', 'false');
-        toggle.setAttribute('aria-expanded', 'true');
-        bars[0].style.transform = 'translateY(8px) rotate(45deg)';
-        bars[1].style.opacity = '0';
-        bars[2].style.transform = 'translateY(-8px) rotate(-45deg)';
-      } else {
-        closeMenu();
-      }
-    });
-
-    document.querySelectorAll('.mobile-nav-link').forEach(link => {
-      link.addEventListener('click', closeMenu);
-    });
-  })();
-
-  // ─── Stat counter animation ──────────────────────────────────────────────────
-  (function() {
-    const counters = document.querySelectorAll('[data-counter]');
-    const observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (!entry.isIntersecting) return;
-        const el     = entry.target;
-        const target = parseInt(el.dataset.counter, 10);
-        const suffix = el.dataset.suffix || '';
-        const duration = 1400;
-        const start = performance.now();
-        observer.unobserve(el);
-        function step(now) {
-          const elapsed = now - start;
-          const progress = Math.min(elapsed / duration, 1);
-          const ease = 1 - Math.pow(1 - progress, 3);
-          el.textContent = Math.round(ease * target) + suffix;
-          if (progress < 1) requestAnimationFrame(step);
-        }
-        requestAnimationFrame(step);
-      });
-    }, { threshold: 0.5 });
-    counters.forEach(el => observer.observe(el));
-  })();
-
-  // ─── Message character counter ───────────────────────────────────────────────
-  (function() {
-    const textarea  = document.getElementById('message');
-    const counter   = document.getElementById('char-count');
-    if (!textarea || !counter) return;
-    const max = parseInt(textarea.getAttribute('maxlength'), 10);
-    textarea.addEventListener('input', function() {
-      const left = max - this.value.length;
-      counter.textContent = left + ' left';
-      counter.style.color = left < 80 ? 'rgba(239,68,68,0.8)' : 'rgba(255,255,255,0.3)';
-    });
-  })();
-
-  // ─── Form AJAX submit + success state ───────────────────────────────────────
-  (function() {
-    const form    = document.getElementById('contact-form');
-    const success = document.getElementById('form-success');
-    const btn     = document.getElementById('submit-btn');
-    const label   = document.getElementById('submit-label');
-    const arrow   = document.getElementById('submit-arrow');
-    const spinner = document.getElementById('submit-spinner');
-    if (!form) return;
-
-    form.addEventListener('submit', async function(e) {
-      e.preventDefault();
-
-      // Validate required text fields
-      const businessName = document.getElementById('business-name');
-      const contactName  = document.getElementById('contact-name');
-      let hasError = false;
-      [businessName, contactName].forEach(function(field) {
-        if (!field.value.trim()) {
-          field.style.borderColor = 'rgba(239,68,68,0.7)';
-          field.style.background  = 'rgba(239,68,68,0.05)';
-          hasError = true;
-          field.addEventListener('input', function() {
-            field.style.borderColor = 'rgba(2,195,154,0.6)';
-            field.style.background  = 'rgba(2,195,154,0.05)';
-          }, { once: true });
-        }
-      });
-      if (hasError) return;
-
-      btn.disabled = true;
-      label.textContent = 'Sending…';
-      arrow.classList.add('hidden');
-      spinner.classList.remove('hidden');
-
-      try {
-        const data = new FormData(form);
-        const res  = await fetch(form.action, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
-        if (res.ok) {
-          form.classList.add('hidden');
-          success.classList.remove('hidden');
-          success.classList.add('visible');
-        } else {
-          throw new Error('failed');
-        }
-      } catch {
-        label.textContent = 'Something went wrong — try again';
-        arrow.classList.remove('hidden');
-        spinner.classList.add('hidden');
-        btn.disabled = false;
-      }
-    });
-  })();
-
-  // ─── Phone auto-format & validation ────────────────────────────────────────
-  (function() {
-    const phoneInput = document.getElementById('phone');
-    const phoneError = document.getElementById('phone-error');
-    const emailInput = document.getElementById('email');
-    const emailError = document.getElementById('email-error');
-
-    function formatPhone(val) {
-      const digits = val.replace(/\D/g, '').slice(0, 10);
-      if (digits.length <= 3)  return digits.length ? '(' + digits : '';
-      if (digits.length <= 6)  return '(' + digits.slice(0,3) + ')-' + digits.slice(3);
-      return '(' + digits.slice(0,3) + ')-' + digits.slice(3,6) + '-' + digits.slice(6);
-    }
-
-    function setFieldState(input, error, isValid) {
-      if (isValid) {
-        input.style.borderColor = 'rgba(2,195,154,0.6)';
-        input.style.background  = 'rgba(2,195,154,0.05)';
-        error.classList.add('hidden');
-      } else {
-        input.style.borderColor = 'rgba(239,68,68,0.7)';
-        input.style.background  = 'rgba(239,68,68,0.05)';
-        error.classList.remove('hidden');
-      }
-    }
-
-    phoneInput.addEventListener('input', function() {
-      const cursor = this.selectionStart;
-      const prev = this.value.length;
-      this.value = formatPhone(this.value);
-      const delta = this.value.length - prev;
-      this.setSelectionRange(cursor + delta, cursor + delta);
-      phoneError.classList.add('hidden');
-      this.style.borderColor = 'rgba(2,195,154,0.6)';
-      this.style.background  = 'rgba(2,195,154,0.05)';
-    });
-
-    phoneInput.addEventListener('focus', function() {
-      phoneError.classList.add('hidden');
-      this.style.borderColor = 'rgba(2,195,154,0.6)';
-      this.style.background  = 'rgba(2,195,154,0.05)';
-    });
-
-    phoneInput.addEventListener('blur', function() {
-      const digits = this.value.replace(/\D/g, '');
-      const valid = digits.length === 10;
-      if (this.value === '') {
-        this.style.borderColor = 'rgba(255,255,255,0.1)';
-        this.style.background  = 'rgba(255,255,255,0.06)';
-        phoneError.classList.add('hidden');
-      } else {
-        setFieldState(this, phoneError, valid);
-      }
-    });
-
-    emailInput.addEventListener('focus', function() {
-      emailError.classList.add('hidden');
-      this.style.borderColor = 'rgba(2,195,154,0.6)';
-      this.style.background  = 'rgba(2,195,154,0.05)';
-    });
-
-    emailInput.addEventListener('blur', function() {
-      const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.value);
-      if (this.value === '') {
-        this.style.borderColor = 'rgba(255,255,255,0.1)';
-        this.style.background  = 'rgba(255,255,255,0.06)';
-        emailError.classList.add('hidden');
-      } else {
-        setFieldState(this, emailError, valid);
-      }
-    });
   })();
 </script>
 
