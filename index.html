@@ -998,7 +998,7 @@
       <p class="font-body text-white/80 max-w-sm mx-auto">We'll review your Google presence and reach out within 24 hours with what we find. No pitch — just the facts.</p>
     </div>
 
-    <form id="contact-form" class="reveal reveal-delay-1 space-y-4" name="contact" method="POST" data-netlify="true" novalidate>
+    <form id="contact-form" class="reveal reveal-delay-1 space-y-4" name="contact" method="POST">
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label for="business-name" class="block font-body font-500 text-white/70 text-sm mb-2">Business name <span class="text-mint" aria-hidden="true">*</span></label>
@@ -1021,11 +1021,13 @@
         <div>
           <label for="phone" class="block font-body font-500 text-white/70 text-sm mb-2">Phone <span class="text-mint" aria-hidden="true">*</span></label>
           <input type="tel" id="phone" name="phone" required
-                 placeholder="(401) 555-0100"
+                 placeholder="(000) 000-0000"
+                 maxlength="14"
                  class="w-full rounded-xl px-4 py-3 font-body text-sm text-white placeholder-white/25 outline-none transition-all duration-200"
                  style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);"
                  onfocus="this.style.borderColor='rgba(2,195,154,0.6)'; this.style.background='rgba(2,195,154,0.05)';"
                  onblur="this.style.borderColor='rgba(255,255,255,0.1)'; this.style.background='rgba(255,255,255,0.06)';" />
+          <p id="phone-error" class="font-body text-red-400 text-xs mt-1 hidden">Please enter a valid phone number: (000) 000-0000</p>
         </div>
         <div>
           <label for="email" class="block font-body font-500 text-white/70 text-sm mb-2">Email <span class="text-mint" aria-hidden="true">*</span></label>
@@ -1035,6 +1037,7 @@
                  style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);"
                  onfocus="this.style.borderColor='rgba(2,195,154,0.6)'; this.style.background='rgba(2,195,154,0.05)';"
                  onblur="this.style.borderColor='rgba(255,255,255,0.1)'; this.style.background='rgba(255,255,255,0.06)';" />
+          <p id="email-error" class="font-body text-red-400 text-xs mt-1 hidden">Please enter a valid email address</p>
         </div>
       </div>
 
@@ -1242,27 +1245,101 @@
     });
   })();
 
-  // ─── Contact form success state ─────────────────────────────────────────────
+  // ─── Phone number auto-format ───────────────────────────────────────────────
+  (function() {
+    const phone = document.getElementById('phone');
+    if (!phone) return;
+
+    phone.addEventListener('input', function(e) {
+      let digits = this.value.replace(/\D/g, '').substring(0, 10);
+      let formatted = '';
+      if (digits.length > 0) formatted = '(' + digits.substring(0, 3);
+      if (digits.length >= 3) formatted += ') ' + digits.substring(3, 6);
+      if (digits.length >= 6) formatted += '-' + digits.substring(6, 10);
+      this.value = formatted;
+
+      // Clear error while typing
+      const err = document.getElementById('phone-error');
+      if (err) err.classList.add('hidden');
+      this.style.borderColor = 'rgba(2,195,154,0.6)';
+    });
+  })();
+
+  // ─── Contact form validation & submission via Formspree ────────────────────
   (function() {
     const form    = document.getElementById('contact-form');
     const success = document.getElementById('form-success');
     if (!form || !success) return;
 
+    const phoneInput = document.getElementById('phone');
+    const emailInput = document.getElementById('email');
+    const phoneErr   = document.getElementById('phone-error');
+    const emailErr   = document.getElementById('email-error');
+    const submitBtn  = form.querySelector('button[type="submit"]');
+
+    function validatePhone() {
+      const digits = phoneInput.value.replace(/\D/g, '');
+      const valid = digits.length === 10;
+      if (!valid) {
+        phoneErr.classList.remove('hidden');
+        phoneInput.style.borderColor = 'rgba(239,68,68,0.7)';
+      } else {
+        phoneErr.classList.add('hidden');
+        phoneInput.style.borderColor = 'rgba(255,255,255,0.1)';
+      }
+      return valid;
+    }
+
+    function validateEmail() {
+      const valid = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(emailInput.value.trim());
+      if (!valid) {
+        emailErr.classList.remove('hidden');
+        emailInput.style.borderColor = 'rgba(239,68,68,0.7)';
+      } else {
+        emailErr.classList.add('hidden');
+        emailInput.style.borderColor = 'rgba(255,255,255,0.1)';
+      }
+      return valid;
+    }
+
+    // Clear errors on focus
+    emailInput.addEventListener('input', function() {
+      emailErr.classList.add('hidden');
+      this.style.borderColor = 'rgba(2,195,154,0.6)';
+    });
+
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
+
+      const phoneOk = validatePhone();
+      const emailOk = validateEmail();
+      if (!phoneOk || !emailOk) return;
+
+      // Disable button & show loading
+      const origText = submitBtn.innerHTML;
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<svg class="w-5 h-5 animate-spin" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" opacity="0.3"/><path d="M12 2a10 10 0 0 1 10 10" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg> Sending...';
+
       const data = new FormData(form);
       try {
-        const res = await fetch('/', { method: 'POST', body: data });
-        if (res.ok || res.status === 200 || res.redirected) {
+        const res = await fetch('https://formspree.io/f/xzdkdgwe', {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
           form.style.display = 'none';
           success.classList.remove('hidden');
           success.classList.add('visible');
+        } else {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = origText;
+          alert('Something went wrong. Please try again.');
         }
       } catch (_) {
-        // Fallback: show success anyway (Netlify may redirect)
-        form.style.display = 'none';
-        success.classList.remove('hidden');
-        success.classList.add('visible');
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = origText;
+        alert('Connection error. Please check your internet and try again.');
       }
     });
   })();
