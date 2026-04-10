@@ -1069,8 +1069,8 @@
       </div>
 
       <div>
-        <label for="business-info" class="block font-body font-500 text-white/70 text-sm mb-2">Tell us about your business</label>
-        <textarea id="business-info" name="business_info" rows="4"
+        <label for="business-info" class="block font-body font-500 text-white/70 text-sm mb-2">Tell us about your business <span class="text-mint" aria-hidden="true">*</span></label>
+        <textarea id="business-info" name="business_info" required rows="4"
                   placeholder="e.g. We're a family-owned auto shop in Providence — been open 12 years. We do oil changes, brakes, and inspections. We get most of our customers through word of mouth but struggle to show up on Google. We miss a lot of calls when we're under the hood."
                   class="w-full rounded-xl px-4 py-3 font-body text-sm text-white placeholder-white/25 outline-none transition-all duration-200 resize-none"
                   style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);"
@@ -1080,8 +1080,8 @@
       </div>
 
       <div>
-        <label for="referral" class="block font-body font-500 text-white/70 text-sm mb-2">Where did you hear about us?</label>
-        <select id="referral" name="referral"
+        <label for="referral" class="block font-body font-500 text-white/70 text-sm mb-2">Where did you hear about us? <span class="text-mint" aria-hidden="true">*</span></label>
+        <select id="referral" name="referral" required
                 class="w-full rounded-xl px-4 py-3 font-body text-sm text-white outline-none transition-all duration-200 appearance-none cursor-pointer"
                 style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2302C39A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M19 9l-7 7-7-7'/%3E%3C/svg%3E\"); background-repeat: no-repeat; background-position: right 1rem center; background-size: 16px;"
                 onfocus="this.style.borderColor='rgba(2,195,154,0.6)'; this.style.background='rgba(2,195,154,0.05)'"
@@ -1271,21 +1271,46 @@
     const success = document.getElementById('form-success');
     if (!form || !success) return;
 
-    const phoneInput = document.getElementById('phone');
-    const emailInput = document.getElementById('email');
-    const phoneErr   = document.getElementById('phone-error');
-    const emailErr   = document.getElementById('email-error');
-    const submitBtn  = form.querySelector('button[type="submit"]');
+    const phoneInput    = document.getElementById('phone');
+    const emailInput    = document.getElementById('email');
+    const bizNameInput  = document.getElementById('business-name');
+    const nameInput     = document.getElementById('contact-name');
+    const industryInput = document.getElementById('industry');
+    const bizInfoInput  = document.getElementById('business-info');
+    const referralInput = document.getElementById('referral');
+    const phoneErr      = document.getElementById('phone-error');
+    const emailErr      = document.getElementById('email-error');
+    const submitBtn     = form.querySelector('button[type="submit"]');
+
+    const errorStyle  = 'rgba(239,68,68,0.7)';
+    const normalStyle = 'rgba(255,255,255,0.1)';
+
+    function showFieldError(input, msg) {
+      input.style.borderColor = errorStyle;
+      let err = input.parentElement.querySelector('.field-error');
+      if (!err) {
+        err = document.createElement('p');
+        err.className = 'field-error font-body text-red-400 text-xs mt-1';
+        input.insertAdjacentElement('afterend', err);
+      }
+      err.textContent = msg;
+    }
+
+    function clearFieldError(input) {
+      input.style.borderColor = normalStyle;
+      const err = input.parentElement.querySelector('.field-error');
+      if (err) err.remove();
+    }
 
     function validatePhone() {
       const digits = phoneInput.value.replace(/\D/g, '');
       const valid = digits.length === 10;
       if (!valid) {
         phoneErr.classList.remove('hidden');
-        phoneInput.style.borderColor = 'rgba(239,68,68,0.7)';
+        phoneInput.style.borderColor = errorStyle;
       } else {
         phoneErr.classList.add('hidden');
-        phoneInput.style.borderColor = 'rgba(255,255,255,0.1)';
+        phoneInput.style.borderColor = normalStyle;
       }
       return valid;
     }
@@ -1294,26 +1319,48 @@
       const valid = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(emailInput.value.trim());
       if (!valid) {
         emailErr.classList.remove('hidden');
-        emailInput.style.borderColor = 'rgba(239,68,68,0.7)';
+        emailInput.style.borderColor = errorStyle;
       } else {
         emailErr.classList.add('hidden');
-        emailInput.style.borderColor = 'rgba(255,255,255,0.1)';
+        emailInput.style.borderColor = normalStyle;
       }
       return valid;
     }
 
-    // Clear errors on focus
+    function validateRequired(input, label) {
+      const val = input.value ? input.value.trim() : '';
+      if (!val) {
+        showFieldError(input, label + ' is required');
+        return false;
+      }
+      clearFieldError(input);
+      return true;
+    }
+
+    // Clear errors on input
     emailInput.addEventListener('input', function() {
       emailErr.classList.add('hidden');
       this.style.borderColor = 'rgba(2,195,154,0.6)';
+    });
+    [bizNameInput, nameInput, bizInfoInput].forEach(function(el) {
+      el.addEventListener('input', function() { clearFieldError(this); this.style.borderColor = 'rgba(2,195,154,0.6)'; });
+    });
+    [industryInput, referralInput].forEach(function(el) {
+      el.addEventListener('change', function() { clearFieldError(this); this.style.borderColor = 'rgba(2,195,154,0.6)'; });
     });
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      const phoneOk = validatePhone();
-      const emailOk = validateEmail();
-      if (!phoneOk || !emailOk) return;
+      const bizOk      = validateRequired(bizNameInput, 'Business name');
+      const nameOk     = validateRequired(nameInput, 'Your name');
+      const phoneOk    = validatePhone();
+      const emailOk    = validateEmail();
+      const industryOk = validateRequired(industryInput, 'Type of business');
+      const bizInfoOk  = validateRequired(bizInfoInput, 'Tell us about your business');
+      const referralOk = validateRequired(referralInput, 'Where you heard about us');
+
+      if (!bizOk || !nameOk || !phoneOk || !emailOk || !industryOk || !bizInfoOk || !referralOk) return;
 
       // Disable button & show loading
       const origText = submitBtn.innerHTML;
