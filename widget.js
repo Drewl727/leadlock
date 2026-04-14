@@ -127,6 +127,11 @@
       body: JSON.stringify({ messages: messages }),
     })
       .then(function (res) {
+        if (!res.ok) {
+          return res.text().then(function (t) {
+            throw new Error("Function error " + res.status + ": " + t);
+          });
+        }
         return res.json();
       })
       .then(function (data) {
