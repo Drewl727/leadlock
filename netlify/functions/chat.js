@@ -88,12 +88,16 @@ exports.handler = async function (event) {
     };
   }
 
-  const apiKey = process.env.ANTHROPIC_API_KEY;
+  const apiKey =
+    process.env.ANTHROPIC_API_KEY ||
+    process.env.Anthropic_API_KEY ||
+    process.env.anthropic_api_key;
   if (!apiKey) {
+    const available = Object.keys(process.env).filter(k => k.toLowerCase().includes('anthropic'));
     return {
       statusCode: 500,
       headers,
-      body: JSON.stringify({ error: "Server configuration error" }),
+      body: JSON.stringify({ error: "Server configuration error", hint: available }),
     };
   }
 
