@@ -3,8 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About the Founder — Millrun Digital</title>
-  <meta name="description" content="Meet Andrew Lewis, founder of Millrun Digital. Building systems that help local businesses stop losing customers to missed calls and slow follow-up." />
+  <!-- Primary SEO -->
+  <title>About Our Founder, Andrew Lewis | Millrun Digital</title>
+  <meta name="description" content="Andrew Lewis founded Millrun Digital to help auto shops and local businesses in Hartford CT and Providence RI stop missing leads and dominate local search." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://millrundigital.com/about.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Millrun Digital" />
+  <meta property="og:url" content="https://millrundigital.com/about.html" />
+  <meta property="og:title" content="About Our Founder, Andrew Lewis | Millrun Digital" />
+  <meta property="og:description" content="Andrew Lewis founded Millrun Digital to help auto shops and local businesses in Hartford CT and Providence RI stop missing leads and dominate local search." />
+  <meta property="og:image" content="https://millrundigital.com/millrun-digital-logo.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Millrun Digital — AI Receptionist for Local Businesses" />
+  <meta property="og:locale" content="en_US" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -328,6 +344,23 @@
   mobileNav.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => { ham.classList.remove('open'); mobileNav.classList.remove('open'); });
   });
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Millrun Digital",
+  "description": "AI-powered receptionist and marketing automation for auto shops and local businesses in Hartford CT and Providence RI.",
+  "url": "https://millrundigital.com",
+  "logo": "https://millrundigital.com/millrun-digital-logo.svg",
+  "image": "https://millrundigital.com/millrun-digital-logo.svg",
+  "areaServed": [
+    {"@type": "City", "name": "Hartford", "sameAs": "https://en.wikipedia.org/wiki/Hartford,_Connecticut"},
+    {"@type": "City", "name": "Providence", "sameAs": "https://en.wikipedia.org/wiki/Providence,_Rhode_Island"}
+  ],
+  "serviceType": ["AI Receptionist", "Missed Call Text-Back", "Review Automation", "Local Business Marketing"]
+}
 </script>
 </body>
 </html>

@@ -3,8 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Millrun Digital — Get Found. Get Leads. Grow.</title>
-  <meta name="description" content="Millrun Digital helps local businesses get found on Google, capture every lead, and grow on autopilot. Serving Providence RI and Hartford CT." />
+  <!-- Primary SEO -->
+  <title>AI Receptionist for Local Businesses | Millrun Digital</title>
+  <meta name="description" content="Millrun Digital helps auto shops and local businesses in Hartford CT and Providence RI never miss a lead with AI receptionists and review automation." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://millrundigital.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Millrun Digital" />
+  <meta property="og:url" content="https://millrundigital.com/" />
+  <meta property="og:title" content="AI Receptionist for Local Businesses | Millrun Digital" />
+  <meta property="og:description" content="Millrun Digital helps auto shops and local businesses in Hartford CT and Providence RI never miss a lead with AI receptionists and review automation." />
+  <meta property="og:image" content="https://millrundigital.com/millrun-digital-logo.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Millrun Digital — AI Receptionist for Local Businesses" />
+  <meta property="og:locale" content="en_US" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -727,6 +743,23 @@
   const backBtn = document.getElementById('back-to-top');
   window.addEventListener('scroll', () => { backBtn.classList.toggle('visible', window.scrollY > 400); });
   backBtn.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Millrun Digital",
+  "description": "AI-powered receptionist and marketing automation for auto shops and local businesses in Hartford CT and Providence RI.",
+  "url": "https://millrundigital.com",
+  "logo": "https://millrundigital.com/millrun-digital-logo.svg",
+  "image": "https://millrundigital.com/millrun-digital-logo.svg",
+  "areaServed": [
+    {"@type": "City", "name": "Hartford", "sameAs": "https://en.wikipedia.org/wiki/Hartford,_Connecticut"},
+    {"@type": "City", "name": "Providence", "sameAs": "https://en.wikipedia.org/wiki/Providence,_Rhode_Island"}
+  ],
+  "serviceType": ["AI Receptionist", "Missed Call Text-Back", "Review Automation", "Local Business Marketing"]
+}
 </script>
 </body>
 </html>
