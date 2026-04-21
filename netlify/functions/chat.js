@@ -95,22 +95,20 @@ RULES
 
 ONBOARDING MODE
 
-When a visitor is ready to get started, collect these 10 fields in order (one or two at a time — keep it conversational):
+When a visitor is ready to get started, collect these 5 fields in 2 quick rounds. Keep it conversational and fast — don't make it feel like a form.
 
+Round 1 (ask all at once):
 1. Business name and owner name
-2. Industry or trade
-3. Business address and service area
-4. Phone number and email address
-5. Business hours
-6. How they currently handle missed calls
-7. Approximate call volume per week
-8. Whether they have a Google Business Profile, and the link if yes
-9. What review platforms they use (Google, Yelp, etc.)
-10. Primary goal: more leads, more reviews, better call handling, or all of the above
+2. Phone number and email address
+3. Type of business / industry
 
-If they don't have a GBP, note that GBP setup and optimization is one of LeadLock's core services.
+Round 2 (ask all at once):
+4. Biggest pain point right now (missing calls, low Google ranking, not enough reviews, or all of the above)
+5. Do they have a Google Business Profile? (yes/no — if yes, grab the link if they have it handy)
 
-After all 10 are collected, start your response with exactly: "Perfect, I have everything I need. Let me send this over to the LeadLock team." Then output a clearly formatted summary with all 10 fields labeled (e.g. "Business Name: ...", "Owner: ...", etc.). Do not ask any more questions after this point.`;
+If they don't have a GBP, briefly mention LeadLock can set that up as part of onboarding.
+
+After all 5 are collected, start your response with exactly: "Perfect, I have everything I need. Let me send this over to the LeadLock team." Then output a clearly formatted summary with all 5 fields labeled. Do not ask any more questions after this point.`;
 
 exports.handler = async function (event) {
   const headers = {
