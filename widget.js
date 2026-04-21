@@ -4,7 +4,7 @@
   var FORMSPREE_URL = "https://formspree.io/f/xzdkdgwe";
   var CHAT_ENDPOINT = "https://heroic-semifreddo-ac06a2.netlify.app/.netlify/functions/chat";
   var OPENING_MESSAGE =
-    "Hi! I'm your LeadLock advisor. I'll ask a few quick questions to understand your business, then we'll put together a custom plan. Let's start — what's your business name, and who am I speaking with?";
+    "Hi! I'm your Millrun Digital advisor. I'll ask a few quick questions to understand your business, then we'll put together a custom plan. Let's start — what's your business name, and who am I speaking with?";
 
   var messages = [];
   var isLoading = false;
@@ -16,9 +16,7 @@
   // ── Helpers ───────────────────────────────────────────────────────────────
 
   function isSummary(text) {
-    // Detect the final summary by matching multiple phrasings Claude might use
     const triggerPhrases = /send this over|i have everything i need|i('ve| have) (got |collected |gathered )?(all |everything|all the)(information|details|info| i need)?|that('s| is) everything i need|let me send|i('ll| will) send this|i('ll| will) pass this (along|over|on)/i;
-    // Also detect by presence of a formatted summary block (labeled fields)
     const hasSummaryBlock = /business name[\s\S]{0,30}:/i.test(text) && /phone[\s\S]{0,30}:/i.test(text);
     return triggerPhrases.test(text) || hasSummaryBlock;
   }
@@ -84,18 +82,18 @@
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "application/json" },
       body: JSON.stringify({
-        subject: "New LeadLock Onboarding",
+        subject: "New Millrun Digital Onboarding",
         message: summaryText,
       }),
     })
       .then(function (res) {
         if (res.ok) {
           appendSuccessMessage(
-            "You're all set! Someone from the LeadLock team will be in touch shortly."
+            "You're all set! Someone from the Millrun Digital team will be in touch shortly."
           );
         } else {
           appendSuccessMessage(
-            "Your info was collected! The LeadLock team will be in touch soon."
+            "Your info was collected! The Millrun Digital team will be in touch soon."
           );
         }
         setLoading(false);
@@ -104,7 +102,7 @@
       })
       .catch(function () {
         appendSuccessMessage(
-          "Your info was collected! The LeadLock team will be in touch soon."
+          "Your info was collected! The Millrun Digital team will be in touch soon."
         );
         setLoading(false);
         inputEl.style.display = "none";
@@ -117,12 +115,10 @@
   function sendToAPI(userText) {
     if (isLoading) return;
 
-    // Append to local history
     messages.push({ role: "user", content: userText });
-
     appendMessage(userText, "user");
     setLoading(true);
-    var typing = showTyping();
+    showTyping();
 
     fetch(CHAT_ENDPOINT, {
       method: "POST",
@@ -146,7 +142,7 @@
         if (isSummary(botText) && !summarySubmitted) {
           summarySubmitted = true;
           appendFinalSummary(botText);
-          setLoading(true); // keep disabled while submitting
+          setLoading(true);
           submitToFormspree(botText);
         } else {
           appendMessage(botText, "bot");
@@ -178,7 +174,6 @@
     toggleBtn.setAttribute("aria-expanded", "true");
     inputEl.focus();
 
-    // Send opening message on first open
     if (messages.length === 0) {
       messages.push({ role: "assistant", content: OPENING_MESSAGE });
       appendMessage(OPENING_MESSAGE, "bot");
@@ -204,31 +199,27 @@
     var wrapper = document.createElement("div");
     wrapper.id = "ll-chat-widget";
 
-    // Chat window
     var win = document.createElement("div");
     win.id = "ll-chat-window";
     win.setAttribute("role", "dialog");
-    win.setAttribute("aria-label", "LeadLock Onboarding Chat");
+    win.setAttribute("aria-label", "Millrun Digital Chat");
 
-    // Header
     var header = document.createElement("div");
     header.id = "ll-chat-header";
     header.innerHTML =
       '<div class="ll-header-dot"></div>' +
       '<div id="ll-chat-header-text">' +
-        '<h3>LeadLock Advisor</h3>' +
+        '<h3>Millrun Digital Advisor</h3>' +
         '<p class="ll-subtitle">Available now</p>' +
       "</div>" +
       '<button id="ll-chat-close" aria-label="Close chat">' +
         '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>' +
       "</button>";
 
-    // Messages area
     var msgs = document.createElement("div");
     msgs.id = "ll-chat-messages";
     msgs.setAttribute("aria-live", "polite");
 
-    // Input area
     var inputArea = document.createElement("div");
     inputArea.id = "ll-chat-input-area";
 
@@ -251,10 +242,9 @@
     win.appendChild(msgs);
     win.appendChild(inputArea);
 
-    // Toggle button
     var toggle = document.createElement("button");
     toggle.id = "ll-chat-toggle";
-    toggle.setAttribute("aria-label", "Chat with a LeadLock advisor");
+    toggle.setAttribute("aria-label", "Chat with a Millrun Digital advisor");
     toggle.setAttribute("aria-expanded", "false");
     toggle.innerHTML =
       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
@@ -265,14 +255,12 @@
     wrapper.appendChild(toggle);
     document.body.appendChild(wrapper);
 
-    // Store refs
     toggleBtn = toggle;
     chatWindow = win;
     messagesEl = msgs;
     inputEl = inp;
     sendBtn = send;
 
-    // ── Event listeners ────────────────────────────────────────────────────
     toggle.addEventListener("click", toggleChat);
     document.getElementById("ll-chat-close").addEventListener("click", closeChat);
     send.addEventListener("click", handleSend);
@@ -284,7 +272,6 @@
       }
     });
 
-    // Auto-resize textarea
     inp.addEventListener("input", function () {
       inp.style.height = "auto";
       inp.style.height = Math.min(inp.scrollHeight, 80) + "px";
@@ -300,5 +287,5 @@
   }
 
   // Public API — lets page CTAs open the chat
-  window.openLeadLockChat = openChat;
+  window.openMillrunChat = openChat;
 })();

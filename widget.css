@@ -1,36 +1,37 @@
-/* LeadLock Onboarding Chat Widget */
+/* Millrun Digital Chat Widget */
 #ll-chat-widget {
   position: fixed;
   bottom: 24px;
   right: 24px;
   z-index: 9999;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 #ll-chat-toggle {
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: #0A1628;
-  border: none;
+  background: #1D1912;
+  border: 1.5px solid rgba(201,123,56,0.4);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.15s;
   margin-left: auto;
 }
 
 #ll-chat-toggle:hover {
   transform: scale(1.08);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  background: #2E2920;
 }
 
 #ll-chat-toggle svg {
   width: 26px;
   height: 26px;
-  color: #fff;
+  color: #C97B38;
 }
 
 #ll-chat-window {
@@ -38,11 +39,12 @@
   flex-direction: column;
   width: 350px;
   height: 500px;
-  background: #fff;
+  background: #FBF8F2;
   border-radius: 16px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
   overflow: hidden;
   margin-bottom: 12px;
+  border: 1px solid rgba(125,114,104,0.18);
 }
 
 #ll-chat-window.ll-open {
@@ -50,7 +52,7 @@
 }
 
 #ll-chat-header {
-  background: #0A1628;
+  background: #1D1912;
   color: #fff;
   padding: 16px 18px;
   display: flex;
@@ -63,7 +65,7 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #00C2CB;
+  background: #C97B38;
   flex-shrink: 0;
 }
 
@@ -72,11 +74,12 @@
   font-size: 15px;
   font-weight: 600;
   letter-spacing: 0.01em;
+  font-family: 'DM Serif Display', serif;
 }
 
 #ll-chat-header .ll-subtitle {
   font-size: 11px;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.55);
   margin: 0;
   line-height: 1;
 }
@@ -88,7 +91,7 @@
 #ll-chat-close {
   background: none;
   border: none;
-  color: rgba(255,255,255,0.7);
+  color: rgba(255,255,255,0.6);
   cursor: pointer;
   padding: 4px;
   border-radius: 4px;
@@ -121,7 +124,7 @@
 }
 
 #ll-chat-messages::-webkit-scrollbar-thumb {
-  background: #ddd;
+  background: rgba(125,114,104,0.3);
   border-radius: 2px;
 }
 
@@ -135,23 +138,24 @@
 }
 
 .ll-msg-bot {
-  background: #f0f1f3;
-  color: #1a1a1a;
+  background: #F5EFE3;
+  color: #1D1912;
   align-self: flex-start;
   border-bottom-left-radius: 4px;
+  border: 1px solid rgba(125,114,104,0.15);
 }
 
 .ll-msg-user {
-  background: #0A1628;
+  background: #1D1912;
   color: #fff;
   align-self: flex-end;
   border-bottom-right-radius: 4px;
 }
 
 .ll-msg-final {
-  background: #e6fafa;
-  border: 1px solid #00C2CB;
-  color: #1a1a1a;
+  background: rgba(201,123,56,0.08);
+  border: 1px solid rgba(201,123,56,0.3);
+  color: #1D1912;
   align-self: flex-start;
   border-bottom-left-radius: 4px;
   max-width: 92%;
@@ -160,8 +164,8 @@
 }
 
 .ll-msg-success {
-  background: #0A1628;
-  color: #fff;
+  background: #1D1912;
+  color: #E8A96A;
   align-self: flex-start;
   border-bottom-left-radius: 4px;
   font-weight: 500;
@@ -172,18 +176,19 @@
   align-items: center;
   gap: 4px;
   padding: 10px 14px;
-  background: #f0f1f3;
+  background: #F5EFE3;
   border-radius: 14px;
   border-bottom-left-radius: 4px;
   align-self: flex-start;
   width: fit-content;
+  border: 1px solid rgba(125,114,104,0.15);
 }
 
 .ll-typing span {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #999;
+  background: #9E9389;
   animation: ll-bounce 1.2s infinite ease-in-out;
 }
 
@@ -198,16 +203,16 @@
 
 #ll-chat-input-area {
   padding: 12px;
-  border-top: 1px solid #eee;
+  border-top: 1px solid rgba(125,114,104,0.18);
   display: flex;
   gap: 8px;
   flex-shrink: 0;
-  background: #fff;
+  background: #FBF8F2;
 }
 
 #ll-chat-input {
   flex: 1;
-  border: 1.5px solid #dde0e6;
+  border: 1.5px solid rgba(125,114,104,0.3);
   border-radius: 20px;
   padding: 9px 14px;
   font-size: 13.5px;
@@ -215,25 +220,26 @@
   outline: none;
   resize: none;
   line-height: 1.4;
-  color: #1a1a1a;
+  color: #1D1912;
+  background: #fff;
   transition: border-color 0.15s;
   max-height: 80px;
   overflow-y: auto;
 }
 
 #ll-chat-input:focus {
-  border-color: #00C2CB;
+  border-color: #C97B38;
 }
 
 #ll-chat-input::placeholder {
-  color: #aaa;
+  color: #9E9389;
 }
 
 #ll-chat-send {
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  background: #0A1628;
+  background: #1D1912;
   border: none;
   cursor: pointer;
   display: flex;
@@ -245,7 +251,7 @@
 }
 
 #ll-chat-send:hover:not(:disabled) {
-  background: #00C2CB;
+  background: #C97B38;
   transform: scale(1.05);
 }
 
@@ -273,7 +279,7 @@
     max-height: 520px;
   }
 
-  /* Prevent iOS from zooming in when tapping the input */
+  /* Prevent iOS zoom on input focus */
   #ll-chat-input {
     font-size: 16px;
   }

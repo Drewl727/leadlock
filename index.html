@@ -3,1493 +3,730 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LeadLock — Lock in every lead. Rank on every search.</title>
-  <meta name="description" content="LeadLock helps local businesses get found on Google, capture every lead, and grow on autopilot — with tools that work while you work. Serving Providence RI and Hartford CT." />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            teal:  '#028090',
-            navy:  '#1A2332',
-            mint:  '#02C39A',
-            chalk: '#F4F7F9',
-            'teal-dark': '#016f7c',
-            'mint-dark': '#01a882',
-            'navy-light': '#243143',
-          },
-          fontFamily: {
-            heading: ['Outfit', 'sans-serif'],
-            body:    ['Work Sans', 'sans-serif'],
-          },
-          animation: {
-            'fade-up':   'fadeUp 0.6s ease both',
-            'fade-in':   'fadeIn 0.5s ease both',
-            'pulse-slow': 'pulse 3s ease-in-out infinite',
-          },
-          keyframes: {
-            fadeUp:  { from: { opacity: '0', transform: 'translateY(24px)' }, to: { opacity: '1', transform: 'translateY(0)' } },
-            fadeIn:  { from: { opacity: '0' }, to: { opacity: '1' } },
-          },
-        },
-      },
-    }
-  </script>
+  <title>Millrun Digital — Get Found. Get Leads. Grow.</title>
+  <meta name="description" content="Millrun Digital helps local businesses get found on Google, capture every lead, and grow on autopilot. Serving Providence RI and Hartford CT." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="widget.css" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; }
-    html { font-family: 'Work Sans', sans-serif; }
-    h1, h2, h3, h4, h5, h6 { font-family: 'Outfit', sans-serif; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    /* Scroll-based reveal */
-    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-    .reveal-delay-4 { transition-delay: 0.4s; }
-
-    /* Gradient text */
-    .grad-text {
-      background: linear-gradient(135deg, #02C39A 0%, #028090 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+    :root {
+      --cream:        #F5EFE3;
+      --warm-white:   #FBF8F2;
+      --charcoal:     #1D1912;
+      --charcoal-mid: #2E2920;
+      --charcoal-soft:#3D3629;
+      --amber:        #C97B38;
+      --amber-dark:   #A86228;
+      --amber-light:  #E8A96A;
+      --stone:        #524A42;
+      --stone-light:  #9E9389;
+      --border:       rgba(125,114,104,0.22);
+      --border-dark:  rgba(255,255,255,0.09);
     }
 
-    /* Gradient border cards */
-    .grad-border {
-      position: relative;
-      background: #fff;
-      border-radius: 16px;
-    }
-    .grad-border::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: 16px;
-      padding: 1.5px;
-      background: linear-gradient(135deg, #02C39A, #028090);
-      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-    }
+    html { font-family: 'Plus Jakarta Sans', sans-serif; }
+    body { background: var(--warm-white); color: var(--charcoal); -webkit-font-smoothing: antialiased; }
+    h1,h2,h3,h4 { font-family: 'DM Serif Display', serif; font-weight: 400; }
 
-    /* Phone mockup */
-    .phone-frame {
-      background: #1A2332;
-      border-radius: 36px;
-      border: 3px solid #364256;
-      box-shadow: 0 32px 64px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05);
-      position: relative;
-    }
-    .phone-frame::before {
-      content: '';
-      position: absolute;
-      top: 12px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 4px;
-      background: #364256;
-      border-radius: 2px;
-    }
-
-    /* Sticky header blur */
-    .header-glass {
-      background: rgba(26, 35, 50, 0.92);
+    /* ─── HEADER ─── */
+    #site-header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+      background: rgba(29,25,18,0.94);
       backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid var(--border-dark);
+    }
+    .header-inner {
+      max-width: 1280px; margin: 0 auto;
+      padding: 0 2rem;
+      height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo { display:flex; align-items:center; gap:10px; text-decoration:none; }
+    .logo-mark { width:32px; height:32px; display:flex; align-items:center; justify-content:center; }
+    .logo-text { font-family:'DM Serif Display',serif; font-size:1.25rem; color:#fff; letter-spacing:-0.01em; }
+    .logo-text span { color: var(--amber); }
+
+    nav.desktop { display:flex; align-items:center; gap:1.75rem; }
+    nav.desktop a { font-size:15px; color:rgba(255,255,255,0.75); text-decoration:none; font-weight:500; transition:color 0.15s; }
+    nav.desktop a:hover { color:#fff; }
+
+    .btn-primary {
+      display:inline-flex; align-items:center; gap:6px;
+      background: var(--amber); color: var(--charcoal);
+      font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; font-size:0.875rem;
+      padding:0.6rem 1.25rem; border-radius:6px;
+      text-decoration:none; border:none; cursor:pointer;
+      transition: background 0.15s, transform 0.1s;
+    }
+    .btn-primary:hover { background: var(--amber-dark); transform: translateY(-1px); }
+
+    .hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:4px; }
+    .hamburger span { display:block; width:22px; height:2px; background:#fff; border-radius:2px; transition: transform 0.3s, opacity 0.3s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity:0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-nav { max-height:0; overflow:hidden; transition:max-height 0.35s ease; background:var(--charcoal-mid); }
+    .mobile-nav.open { max-height:400px; }
+    .mobile-nav a { display:block; padding:0.75rem 2rem; font-size:0.9rem; color:rgba(255,255,255,0.75); text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.05); }
+    .mobile-nav a:hover { color:#fff; }
+    .mobile-nav .mobile-cta { display:block; margin:1rem 2rem; }
+
+    @media(max-width:768px){ nav.desktop,.header-cta { display:none!important; } .hamburger{ display:flex; } }
+
+    /* ─── REVEAL ─── */
+    .reveal { opacity:0; transform:translateY(24px); transition:opacity 0.65s ease, transform 0.65s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+    .reveal-delay-1 { transition-delay:0.1s; }
+    .reveal-delay-2 { transition-delay:0.2s; }
+    .reveal-delay-3 { transition-delay:0.3s; }
+    .reveal-delay-4 { transition-delay:0.4s; }
+
+    /* ─── SECTIONS ─── */
+    .section { padding: 6rem 2rem; }
+    .container { max-width:1280px; margin:0 auto; }
+
+    .section-label {
+      font-family:'Plus Jakarta Sans',sans-serif; font-weight:600;
+      font-size:13px; letter-spacing:0.14em; text-transform:uppercase;
+      color: var(--amber); margin-bottom:1rem; display:block;
+    }
+    .section-label.dark { color: var(--amber-light); }
+
+    /* ─── HERO ─── */
+    #hero { background: var(--warm-white); padding-top: 120px; padding-bottom: 0; overflow: hidden; }
+    .hero-inner {
+      max-width:1280px; margin:0 auto; padding: 0 2rem;
+      display:grid; grid-template-columns: 1fr 420px;
+      gap: 4rem; align-items: end; padding-bottom: 5rem;
+    }
+    .hero-headline { font-size: clamp(3.2rem, 6.5vw, 6.5rem); line-height: 1.0; letter-spacing: -0.03em; color: var(--charcoal); }
+    .hero-headline em { font-style:italic; color: var(--amber); }
+    .hero-sub { margin-top: 2rem; font-size: 20px; color: rgb(46,45,41); line-height: 1.65; max-width: 480px; font-weight:400; }
+    .hero-actions { display:flex; align-items:center; gap:1rem; margin-top:2.5rem; flex-wrap:wrap; }
+    .hero-actions .btn-primary { font-size:1rem; padding:0.85rem 1.75rem; background:var(--charcoal); color:var(--cream); }
+    .hero-actions .btn-primary:hover { background: var(--charcoal-soft); }
+    .hero-actions .btn-ghost-warm {
+      font-size:1rem; font-weight:500; padding:0.85rem 1.75rem;
+      border:1.5px solid var(--border); border-radius:6px;
+      color:var(--stone); background:transparent; cursor:pointer;
+      transition: border-color 0.15s, color 0.15s;
+      font-family:'Plus Jakarta Sans',sans-serif;
+    }
+    .hero-actions .btn-ghost-warm:hover { border-color: var(--amber); color: var(--amber); }
+    .hero-right { display: flex; flex-direction: column; gap: 1.25rem; padding-bottom: 1rem; }
+    .hero-stat-card { background: var(--cream); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; }
+    .hero-stat-card .num { font-family:'DM Serif Display',serif; font-size: 3rem; line-height:1; color: var(--charcoal); }
+    .hero-stat-card .num span { color: var(--amber); }
+    .hero-stat-card p { font-size:0.875rem; color:var(--stone); margin-top:0.4rem; line-height:1.5; }
+    .hero-badge {
+      display:inline-flex; align-items:center; gap:8px;
+      background:rgba(201,123,56,0.12); border:1px solid rgba(201,123,56,0.25);
+      color:var(--amber-dark); border-radius:999px;
+      font-size:0.8rem; font-weight:600; padding:0.45rem 1rem; margin-bottom: 1.5rem;
+    }
+    .hero-badge-dot { width:7px; height:7px; border-radius:50%; background:var(--amber); }
+    .hero-divider { height:4px; background:var(--charcoal); width:60px; margin: 1rem 0; }
+
+    @media(max-width:900px){
+      .hero-inner { grid-template-columns:1fr; gap:3rem; }
+      .hero-right { flex-direction:row; flex-wrap:wrap; }
+      .hero-stat-card { flex:1; min-width:160px; }
     }
 
-    /* FAQ accordion */
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.35s ease, padding 0.35s ease;
-    }
-    .faq-answer.open {
-      max-height: 600px;
-    }
-    .faq-icon {
-      transition: transform 0.3s ease;
-    }
-    .faq-icon.rotated {
-      transform: rotate(45deg);
-    }
+    /* ─── SERVICES ─── */
+    #services { background: var(--cream); }
+    .services-header { display:grid; grid-template-columns:1fr 1fr; gap:2rem; align-items:end; margin-bottom:4rem; }
+    .services-header h2 { font-size: clamp(2rem,4vw,3.25rem); line-height:1.1; letter-spacing:-0.02em; color: rgb(46,45,41); }
+    .services-header p { color: rgb(46,45,41); line-height:1.7; font-size:1rem; }
+    .services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5px; background:var(--border); border:1px solid var(--border); border-radius:12px; overflow:hidden; }
+    .service-card { background:var(--warm-white); padding:2.5rem; transition:background 0.2s; }
+    .service-card:hover { background: #fff; }
+    .service-icon { width:44px; height:44px; border-radius:8px; background: rgba(201,123,56,0.12); border:1px solid rgba(201,123,56,0.2); display:flex; align-items:center; justify-content:center; margin-bottom:1.5rem; color:var(--amber); }
+    .service-card h3 { font-size:1.4rem; margin-bottom:0.75rem; letter-spacing:-0.01em; }
+    .service-card > p { color:var(--stone); font-size:0.9rem; line-height:1.65; margin-bottom:1.5rem; }
+    .service-list { list-style:none; display:flex; flex-direction:column; gap:0.75rem; }
+    .service-list li { display:flex; align-items:baseline; gap:0.6rem; font-size:15px; color:var(--charcoal); line-height:1.5; }
+    .service-list li::before { content:'—'; color:var(--amber); flex-shrink:0; font-weight:700; }
+    @media(max-width:900px){ .services-grid { grid-template-columns:1fr; } .services-header { grid-template-columns:1fr; } }
 
-    /* Stat number gradient */
-    .stat-number {
-      font-family: 'Outfit', sans-serif;
-      font-weight: 800;
-      font-size: clamp(2.5rem, 6vw, 4rem);
-      line-height: 1;
-      background: linear-gradient(135deg, #02C39A, #028090);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
+    /* ─── BEFORE / AFTER ─── */
+    #before-after { background: var(--charcoal); }
+    .ba-header { text-align:center; margin-bottom:3.5rem; }
+    .ba-header h2 { color:#fff; font-size:clamp(2rem,4vw,3rem); letter-spacing:-0.02em; }
+    .ba-header p { color:rgba(255,255,255,0.65); margin-top:0.75rem; font-size:15px; }
+    .ba-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; background:rgba(255,255,255,0.08); border-radius:12px; overflow:hidden; }
+    .ba-col { padding:2.5rem; }
+    .ba-col.before { background:#221C14; }
+    .ba-col.after { background:var(--charcoal-mid); }
+    .ba-col-header { display:flex; align-items:center; gap:0.75rem; margin-bottom:2rem; }
+    .ba-col-header .tag { font-size:13px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:0.3rem 0.75rem; border-radius:4px; }
+    .ba-col.before .tag { background:rgba(239,68,68,0.15); color:#f87171; }
+    .ba-col.after .tag { background:rgba(201,123,56,0.15); color:var(--amber-light); }
+    .ba-list { list-style:none; display:flex; flex-direction:column; gap:1rem; }
+    .ba-list li { display:flex; align-items:start; gap:0.75rem; font-size:0.9rem; line-height:1.6; }
+    .ba-col.before .ba-list li { color: rgb(240,236,237); }
+    .ba-col.after .ba-list li { color: rgb(221,221,221); }
+    .ba-dot { width:18px; height:18px; border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center; margin-top:2px; }
+    .ba-col.before .ba-dot { background:rgba(239,68,68,0.15); }
+    .ba-col.after .ba-dot { background:rgba(201,123,56,0.18); }
+    @media(max-width:768px){ .ba-grid { grid-template-columns:1fr; } }
 
-    /* Mobile nav menu */
-    .mobile-menu {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.35s ease;
-    }
-    .mobile-menu.open {
-      max-height: 300px;
-    }
-    .hamburger-line {
-      display: block;
-      width: 22px;
-      height: 2px;
-      background: #fff;
-      border-radius: 2px;
-      transition: transform 0.3s ease, opacity 0.3s ease;
-      transform-origin: center;
-    }
-    .hamburger.open .hamburger-line:nth-child(1) { transform: translateY(6px) rotate(45deg); }
-    .hamburger.open .hamburger-line:nth-child(2) { opacity: 0; }
-    .hamburger.open .hamburger-line:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+    /* ─── HOW IT WORKS ─── */
+    #how-it-works { background: var(--warm-white); }
+    .hiw-header { margin-bottom:4rem; }
+    .hiw-header h2 { font-size:clamp(2rem,4vw,3.25rem); letter-spacing:-0.02em; max-width:600px; }
+    .hiw-header p { color:var(--stone); margin-top:1rem; max-width:500px; line-height:1.7; }
+    .hiw-steps { display:grid; grid-template-columns:repeat(4,1fr); gap:0; border:1px solid var(--border); border-radius:12px; overflow:hidden; }
+    .hiw-step { padding:2.5rem 2rem; border-right:1px solid var(--border); background:var(--warm-white); }
+    .hiw-step:last-child { border-right:none; }
+    .step-num { font-family:'DM Serif Display',serif; font-size:3.5rem; line-height:1; color:var(--stone-light); margin-bottom:1.25rem; }
+    .step-week { font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.12em; color: rgb(46,45,41); margin-bottom:0.5rem; }
+    .hiw-step h3 { font-size:1.15rem; margin-bottom:0.75rem; letter-spacing:-0.01em; }
+    .hiw-step p { font-size:0.875rem; color:var(--stone); line-height:1.65; }
+    @media(max-width:900px){ .hiw-steps { grid-template-columns:1fr 1fr; } .hiw-step { border-bottom:1px solid var(--border); } }
+    @media(max-width:560px){ .hiw-steps { grid-template-columns:1fr; } }
 
-    /* Industry tiles */
-    .industry-tile {
-      transition: border-color 0.08s ease, background-color 0.08s ease, transform 0.08s ease;
-    }
-    .industry-tile:hover {
-      border-color: rgba(2,195,154,0.35) !important;
-      background-color: rgba(2,195,154,0.08) !important;
-      transform: translateY(-4px);
-    }
+    /* ─── INDUSTRIES ─── */
+    #industries { background: var(--charcoal); }
+    .ind-header { text-align:center; margin-bottom:3rem; }
+    .ind-header h2 { color:#fff; font-size:clamp(2rem,4vw,3rem); letter-spacing:-0.02em; }
+    .ind-header p { color:rgba(255,255,255,0.45); margin-top:0.75rem; }
+    .industries-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.07); border-radius:12px; overflow:hidden; }
+    .ind-tile { background: var(--charcoal-mid); padding: 1.75rem 1.25rem; text-align:center; cursor:pointer; transition: background 0.15s; }
+    .ind-tile:hover { background: var(--charcoal-soft); }
+    .ind-tile svg { color: var(--amber); margin-bottom:0.75rem; }
+    .ind-tile p { font-size:0.85rem; font-weight:600; color:rgba(255,255,255,0.8); }
+    @media(max-width:900px){ .industries-grid { grid-template-columns:repeat(3,1fr); } }
+    @media(max-width:560px){ .industries-grid { grid-template-columns:repeat(2,1fr); } }
 
-    /* Back to top */
+    /* ─── FAQ ─── */
+    #faq { background: var(--cream); }
+    .faq-layout { display:grid; grid-template-columns:1fr 2fr; gap:4rem; align-items:start; }
+    .faq-list { display:flex; flex-direction:column; }
+    .faq-item { border-top:1px solid var(--border); }
+    .faq-question {
+      width:100%; text-align:left; background:none; border:none; cursor:pointer;
+      padding:1.5rem 0; display:flex; justify-content:space-between; align-items:center; gap:1rem;
+      font-family:'Plus Jakarta Sans',sans-serif; font-weight:600; font-size:1rem;
+      color:var(--charcoal); transition:color 0.15s;
+    }
+    .faq-question:hover { color:var(--amber); }
+    .faq-icon { font-size:1.25rem; font-weight:300; flex-shrink:0; transition:transform 0.3s; line-height:1; color:var(--stone); }
+    .faq-icon.open { transform:rotate(45deg); color:var(--amber); }
+    .faq-answer { max-height:0; overflow:hidden; transition:max-height 0.35s ease, padding 0.35s ease; }
+    .faq-answer.open { max-height:400px; padding-bottom:1.5rem; }
+    .faq-answer p { color:var(--stone); font-size:0.9rem; line-height:1.75; max-width:600px; }
+    @media(max-width:768px){ .faq-layout { grid-template-columns:1fr; } }
+
+    /* ─── CONTACT ─── */
+    #contact { background: var(--charcoal); }
+    .contact-inner { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:start; }
+    .contact-left h2 { color:#fff; font-size:clamp(2rem,4vw,3rem); letter-spacing:-0.02em; line-height:1.1; }
+    .contact-left p { color:rgba(255,255,255,0.5); margin-top:1.25rem; line-height:1.7; font-size:0.95rem; }
+    .contact-info { margin-top:2.5rem; display:flex; flex-direction:column; gap:1rem; }
+    .contact-info-item { display:flex; align-items:center; gap:0.75rem; font-size:0.875rem; color:rgba(255,255,255,0.6); }
+    .contact-info-item svg { color:var(--amber); flex-shrink:0; }
+    .contact-form { display:flex; flex-direction:column; gap:1rem; }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+    .form-group { display:flex; flex-direction:column; gap:0.4rem; }
+    .form-group label { font-size:0.8rem; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; color:rgba(255,255,255,0.5); }
+    .form-group input, .form-group select, .form-group textarea {
+      background: rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:6px;
+      padding:0.75rem 1rem; color:#fff; font-family:'Plus Jakarta Sans',sans-serif; font-size:0.9rem; outline:none; transition: border-color 0.15s;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color:var(--amber); }
+    .form-group select option { background:var(--charcoal); }
+    .form-group textarea { resize:vertical; min-height:100px; }
+    .form-submit {
+      background:var(--amber); color:var(--charcoal); border:none; border-radius:6px; cursor:pointer;
+      padding:0.9rem 2rem; font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; font-size:0.95rem;
+      transition: background 0.15s, transform 0.1s; display:flex; align-items:center; justify-content:center; gap:6px;
+    }
+    .form-submit:hover:not(:disabled) { background:var(--amber-dark); transform:translateY(-1px); }
+    .form-submit:disabled { opacity:0.65; cursor:not-allowed; }
+    @media(max-width:900px){ .contact-inner { grid-template-columns:1fr; gap:3rem; } .form-row { grid-template-columns:1fr; } }
+
+    /* ─── ADVISOR STRIP ─── */
+    .advisor-strip { background: var(--cream); border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:3rem 2rem; }
+    .advisor-strip-inner { max-width:1280px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:2rem; flex-wrap:wrap; }
+    .advisor-strip h3 { font-size:1.5rem; letter-spacing:-0.01em; }
+    .advisor-strip p { color:var(--stone); font-size:0.95rem; margin-top:0.35rem; }
+    .advisor-strip .btn-primary { background:var(--charcoal); color:var(--cream); font-size:0.875rem; }
+
+    /* ─── FOOTER ─── */
+    footer { background: var(--charcoal-mid); border-top:1px solid var(--border-dark); padding:3rem 2rem; }
+    .footer-inner { max-width:1280px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:2rem; }
+    .footer-logo { font-family:'DM Serif Display',serif; font-size:1.25rem; color:#fff; }
+    .footer-logo span { color:var(--amber); }
+    .footer-links { display:flex; gap:2rem; flex-wrap:wrap; }
+    .footer-links a { font-size:0.875rem; color:rgba(255,255,255,0.45); text-decoration:none; transition:color 0.15s; }
+    .footer-links a:hover { color:#fff; }
+    .footer-copy { font-size:0.8rem; color:rgba(255,255,255,0.3); }
+
+    /* ─── PHONE MOCKUP ─── */
+    .phone-wrap { display:flex; justify-content:center; margin-top:2rem; }
+    .phone-frame { background:#1A1410; border-radius:32px; border:2px solid rgba(255,255,255,0.1); box-shadow:0 24px 48px rgba(0,0,0,0.5); width:200px; padding:2rem 1rem 1.5rem; position:relative; }
+    .phone-frame::before { content:''; position:absolute; top:10px; left:50%; transform:translateX(-50%); width:60px; height:3px; background:rgba(255,255,255,0.15); border-radius:2px; }
+    .phone-msg { border-radius:10px; padding:0.75rem; font-size:0.72rem; line-height:1.5; margin-bottom:0.6rem; }
+    .phone-msg.outgoing { background:linear-gradient(135deg,#C97B38,#A86228); color:#fff; margin-left:1rem; }
+    .phone-msg.incoming { background:rgba(255,255,255,0.08); color:rgba(255,255,255,0.75); margin-right:1rem; }
+    .phone-tag { display:flex; align-items:center; justify-content:center; gap:5px; font-size:0.7rem; color:var(--amber-light); font-weight:600; padding:0.5rem; }
+    .phone-missed { background:rgba(239,68,68,0.12); border:1px solid rgba(239,68,68,0.2); border-radius:10px; padding:0.6rem 0.75rem; font-size:0.7rem; color:#f87171; margin-bottom:0.6rem; display:flex; align-items:center; gap:5px; }
+
+    /* ─── BACK TO TOP ─── */
     #back-to-top {
-      position: fixed;
-      bottom: 2rem;
-      left: 2rem;
-      z-index: 40;
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, #02C39A, #028090);
-      border: none;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 20px rgba(2,195,154,0.35);
-      opacity: 0;
-      transform: translateY(12px);
-      transition: opacity 0.3s ease, transform 0.3s ease;
-      pointer-events: none;
+      position: fixed; bottom: 96px; right: 24px; z-index: 9998;
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--charcoal); border: 1px solid rgba(201,123,56,0.4);
+      color: var(--amber); cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.3s ease, transform 0.2s ease, background 0.15s;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.25);
     }
-    #back-to-top.visible {
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
-    }
-    #back-to-top:hover {
-      box-shadow: 0 6px 28px rgba(2,195,154,0.5);
-      transform: translateY(-2px);
-    }
-    #back-to-top::before {
-      content: 'Back to top';
-      position: absolute;
-      left: calc(100% + 10px);
-      top: 50%;
-      transform: translateY(-50%);
-      background: #1A2332;
-      color: #fff;
-      font-family: 'Work Sans', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 500;
-      white-space: nowrap;
-      padding: 6px 12px;
-      border-radius: 8px;
-      border: 1px solid rgba(255,255,255,0.1);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0s;
-    }
-    #back-to-top:hover::before {
-      opacity: 1;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .reveal, .reveal.visible { transition: none; opacity: 1; transform: none; }
-      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
-    }
+    #back-to-top.visible { opacity: 1; pointer-events: auto; }
+    #back-to-top:hover { background: var(--amber); color: var(--charcoal); transform: translateY(-2px); }
+    @media(max-width:480px){ #back-to-top { bottom: 88px; right: 16px; } }
   </style>
 </head>
+<body>
 
-<body class="bg-chalk text-navy antialiased">
-
-<!-- ═══════════════════════════════════════════════
-     STICKY HEADER
-═══════════════════════════════════════════════ -->
-<header id="site-header" class="fixed top-0 left-0 right-0 z-50 header-glass">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-    <!-- Logo -->
-    <a href="#" class="flex items-center gap-2 group" aria-label="LeadLock home">
-      <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-mint to-teal flex items-center justify-center flex-shrink-0">
-        <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-          <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+<!-- ── HEADER ── -->
+<header id="site-header">
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <div class="logo-mark">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="14" cy="14" r="12" stroke="#C97B38" stroke-width="2"/>
+          <circle cx="14" cy="14" r="3" fill="#C97B38"/>
+          <line x1="14" y1="2" x2="14" y2="8" stroke="#C97B38" stroke-width="2" stroke-linecap="round"/>
+          <line x1="14" y1="20" x2="14" y2="26" stroke="#C97B38" stroke-width="2" stroke-linecap="round"/>
+          <line x1="2" y1="14" x2="8" y2="14" stroke="#C97B38" stroke-width="2" stroke-linecap="round"/>
+          <line x1="20" y1="14" x2="26" y2="14" stroke="#C97B38" stroke-width="2" stroke-linecap="round"/>
+          <line x1="5.5" y1="5.5" x2="9.75" y2="9.75" stroke="#C97B38" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="18.25" y1="18.25" x2="22.5" y2="22.5" stroke="#C97B38" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="22.5" y1="5.5" x2="18.25" y2="9.75" stroke="#C97B38" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="9.75" y1="18.25" x2="5.5" y2="22.5" stroke="#C97B38" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
       </div>
-      <span class="font-heading font-700 text-lg text-white tracking-tight">Lead<span class="text-mint">Lock</span></span>
+      <span class="logo-text">Millrun <span>Digital</span></span>
     </a>
-
-    <!-- Desktop nav -->
-    <nav class="hidden md:flex items-center gap-6" aria-label="Main navigation">
-      <a href="#services" class="text-sm text-white/70 hover:text-mint transition-colors duration-200 cursor-pointer">Services</a>
-      <a href="#how-it-works" class="text-sm text-white/70 hover:text-mint transition-colors duration-200 cursor-pointer">How It Works</a>
-      <a href="#faq" class="text-sm text-white/70 hover:text-mint transition-colors duration-200 cursor-pointer">FAQ</a>
-      <a href="about.html" class="text-sm text-white/70 hover:text-mint transition-colors duration-200 cursor-pointer">About the Founder</a>
+    <nav class="desktop">
+      <a href="#services">Services</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#faq">FAQ</a>
+      <a href="about.html">About the Founder</a>
     </nav>
-
-    <!-- CTA (desktop) -->
-    <a href="#contact" class="hidden md:inline-flex items-center gap-2 bg-mint hover:bg-mint-dark text-navy font-heading font-600 text-sm px-4 py-2 rounded-lg transition-colors duration-200 cursor-pointer">
-      Get Free Audit
-      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M5 12h14M12 5l7 7-7 7"/>
-      </svg>
-    </a>
-
-    <!-- Hamburger (mobile) -->
-    <button id="hamburger-btn" class="hamburger md:hidden flex flex-col gap-1.5 p-2 -mr-2 cursor-pointer" aria-label="Toggle navigation" aria-expanded="false">
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
+    <a href="#contact" class="btn-primary header-cta">Get Free Audit →</a>
+    <button class="hamburger" id="hamburger-btn" aria-label="Menu">
+      <span></span><span></span><span></span>
     </button>
   </div>
-
-  <!-- Mobile menu -->
-  <div id="mobile-menu" class="mobile-menu md:hidden border-t border-white/8">
-    <nav class="flex flex-col px-4 py-4 gap-1" aria-label="Mobile navigation">
-      <a href="#services" class="mobile-nav-link font-body text-white/80 hover:text-mint text-sm py-2.5 px-3 rounded-lg hover:bg-white/5 transition-colors duration-200">Services</a>
-      <a href="#how-it-works" class="mobile-nav-link font-body text-white/80 hover:text-mint text-sm py-2.5 px-3 rounded-lg hover:bg-white/5 transition-colors duration-200">How It Works</a>
-      <a href="#faq" class="mobile-nav-link font-body text-white/80 hover:text-mint text-sm py-2.5 px-3 rounded-lg hover:bg-white/5 transition-colors duration-200">FAQ</a>
-      <a href="about.html" class="mobile-nav-link font-body text-white/80 hover:text-mint text-sm py-2.5 px-3 rounded-lg hover:bg-white/5 transition-colors duration-200">About the Founder</a>
-      <a href="#contact" class="mobile-nav-link mt-2 inline-flex items-center justify-center gap-2 bg-mint hover:bg-mint-dark text-navy font-heading font-600 text-sm px-4 py-2.5 rounded-lg transition-colors duration-200">
-        Get Free Audit
-      </a>
-      <button onclick="openLeadLockChat(); document.getElementById('mobile-menu').classList.remove('open'); document.getElementById('hamburger-btn').classList.remove('open'); document.getElementById('hamburger-btn').setAttribute('aria-expanded','false');"
-              class="mt-1 inline-flex items-center justify-center gap-2 border border-white/20 hover:border-mint text-white/80 hover:text-mint font-heading font-600 text-sm px-4 py-2.5 rounded-lg transition-colors duration-200 cursor-pointer w-full">
-        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-        Talk to an Advisor
-      </button>
-    </nav>
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="#services">Services</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#faq">FAQ</a>
+    <a href="about.html">About the Founder</a>
+    <div class="mobile-cta"><a href="#contact" class="btn-primary" style="justify-content:center">Get Free Audit →</a></div>
   </div>
 </header>
 
-
-<!-- ═══════════════════════════════════════════════
-     HERO
-═══════════════════════════════════════════════ -->
-<section class="relative bg-navy overflow-hidden pt-16">
-  <!-- Background grid -->
-  <div class="absolute inset-0 opacity-5" aria-hidden="true"
-       style="background-image: linear-gradient(rgba(2,195,154,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(2,195,154,0.4) 1px, transparent 1px); background-size: 40px 40px;">
-  </div>
-  <!-- Glow -->
-  <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] rounded-full opacity-10"
-       style="background: radial-gradient(ellipse, #02C39A 0%, transparent 70%);" aria-hidden="true"></div>
-
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-36 text-center">
-    <div class="reveal">
-      <span class="inline-flex items-center gap-2 bg-white/8 border border-white/10 text-mint text-xs font-body font-500 px-3 py-1.5 rounded-full mb-6">
-        <span class="w-1.5 h-1.5 rounded-full bg-mint animate-pulse-slow inline-block"></span>
-        Serving Providence RI &amp; Hartford CT
-      </span>
-    </div>
-
-    <h1 class="reveal reveal-delay-1 font-heading font-900 text-white leading-tight tracking-tight mb-6"
-        style="font-size: clamp(2.4rem, 6vw, 5rem); letter-spacing: -0.03em;">
-      Your customers are searching.<br class="hidden sm:block" />
-      <span class="grad-text">Are they finding you?</span>
-    </h1>
-
-    <p class="reveal reveal-delay-2 font-body text-white/85 max-w-2xl mx-auto mb-10 leading-relaxed"
-       style="font-size: clamp(1rem, 2vw, 1.2rem);">
-      LeadLock helps local businesses get found on Google, capture every lead, and grow on autopilot — with tools that work while you work.
-    </p>
-
-    <div class="reveal reveal-delay-3 flex flex-col sm:flex-row gap-4 justify-center items-center">
-      <a href="#contact" class="inline-flex items-center gap-2 bg-mint hover:bg-mint-dark text-navy font-heading font-700 px-8 py-4 rounded-xl text-base transition-all duration-200 cursor-pointer shadow-lg hover:shadow-mint/30 hover:-translate-y-0.5"
-         style="box-shadow: 0 0 0 0 rgba(2,195,154,0);"
-         onmouseover="this.style.boxShadow='0 8px 32px rgba(2,195,154,0.35)'"
-         onmouseout="this.style.boxShadow='0 0 0 0 rgba(2,195,154,0)'">
-        Get your free Google audit
-        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M5 12h14M12 5l7 7-7 7"/>
-        </svg>
-      </a>
-      <button onclick="openLeadLockChat()" class="inline-flex items-center gap-2 border border-white/25 hover:border-mint text-white/80 hover:text-mint font-body text-sm px-6 py-4 rounded-xl transition-all duration-200 cursor-pointer">
-        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-        </svg>
-        Chat with an Advisor
-      </button>
-    </div>
-
-    <!-- Tagline badge -->
-    <p class="reveal reveal-delay-4 mt-14 font-heading font-600 text-white/25 text-sm tracking-widest uppercase">
-      Lock in every lead. Rank on every search.
-    </p>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════════
-     PROBLEM STATS
-═══════════════════════════════════════════════ -->
-<section id="stats" class="bg-chalk py-20 md:py-28">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="reveal text-center mb-14">
-      <h2 class="font-heading font-800 text-navy mb-3" style="font-size: clamp(1.6rem, 3.5vw, 2.6rem); letter-spacing: -0.02em;">
-        The numbers don't lie
-      </h2>
-      <p class="font-body text-navy/80 max-w-xl mx-auto">Your competitors are already showing up. Here's what's at stake every day you wait.</p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <!-- Stat 1 -->
-      <div class="reveal reveal-delay-1 grad-border p-8 text-center cursor-default hover:-translate-y-1 transition-transform duration-200">
-        <div class="stat-number mb-3">87%</div>
-        <p class="font-heading font-700 text-navy text-lg mb-2">Use Google to find local businesses</p>
-        <p class="font-body text-navy/80 text-base leading-relaxed">If you're not ranking, you're invisible to nearly 9 out of 10 potential customers in your area.</p>
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="reveal">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          Serving Greater Providence RI &amp; Hartford CT areas
+        </div>
       </div>
-      <!-- Stat 2 -->
-      <div class="reveal reveal-delay-2 grad-border p-8 text-center cursor-default hover:-translate-y-1 transition-transform duration-200">
-        <div class="stat-number mb-3">62%</div>
-        <p class="font-heading font-700 text-navy text-lg mb-2">Of calls to local businesses go unanswered</p>
-        <p class="font-body text-navy/80 text-base leading-relaxed">More than half your phone leads hang up and call your competitor — and you never even know it happened.</p>
+      <h1 class="hero-headline reveal reveal-delay-1">
+        Your customers<br>
+        are searching.<br>
+        <em>Are they finding<br>you?</em>
+      </h1>
+      <div class="hero-divider reveal reveal-delay-2"></div>
+      <p class="hero-sub reveal reveal-delay-2">
+        Millrun Digital helps local businesses get found on Google, capture every lead, and grow on autopilot — with systems that work while you work.
+      </p>
+      <div class="hero-actions reveal reveal-delay-3">
+        <a href="#contact" class="btn-primary">Get your free Google audit →</a>
+        <button onclick="window.openMillrunChat && window.openMillrunChat()" class="btn-ghost-warm">Chat with an advisor</button>
       </div>
-      <!-- Stat 3 -->
-      <div class="reveal reveal-delay-3 grad-border p-8 text-center cursor-default hover:-translate-y-1 transition-transform duration-200">
-        <div class="stat-number mb-3">5 min</div>
-        <p class="font-heading font-700 text-navy text-lg mb-2">Before a lead goes cold</p>
-        <p class="font-body text-navy/80 text-base leading-relaxed">Response time is everything. After 5 minutes, your odds of converting that lead drop by over 80%.</p>
+    </div>
+    <div class="hero-right reveal reveal-delay-2">
+      <div class="hero-stat-card">
+        <div class="num">87<span>%</span></div>
+        <p>of people use Google to find local businesses. If you're not ranking, you're invisible.</p>
+      </div>
+      <div class="hero-stat-card">
+        <div class="num">62<span>%</span></div>
+        <p>of calls to local businesses go unanswered — and those leads call your competitor instead.</p>
+      </div>
+      <div class="hero-stat-card">
+        <div class="num">5<span>min</span></div>
+        <p>before a lead goes cold. After that, your odds of converting drop by over 80%.</p>
       </div>
     </div>
   </div>
 </section>
 
-
-<!-- ═══════════════════════════════════════════════
-     SERVICES
-═══════════════════════════════════════════════ -->
-<section id="services" class="bg-navy py-20 md:py-28 relative overflow-hidden">
-  <div class="absolute inset-0 opacity-4" aria-hidden="true"
-       style="background-image: radial-gradient(circle at 20% 80%, rgba(2,195,154,0.12) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(2,128,144,0.1) 0%, transparent 50%);">
-  </div>
-
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="reveal text-center mb-16">
-      <span class="font-body text-mint font-500 text-sm tracking-widest uppercase mb-3 block">What We Do</span>
-      <h2 class="font-heading font-800 text-white mb-4" style="font-size: clamp(1.6rem, 3.5vw, 2.6rem); letter-spacing: -0.02em;">
-        Everything your business needs to get found, stay booked, and grow.
-      </h2>
-      <p class="font-body text-white/80 max-w-xl mx-auto">Three systems. One connected story. All running without you having to think about it.</p>
+<!-- ── SERVICES ── -->
+<section id="services" class="section">
+  <div class="container">
+    <div class="services-header reveal">
+      <div>
+        <span class="section-label">What We Do</span>
+        <h2>Everything you need to get found, stay booked, and grow.</h2>
+      </div>
+      <p>Three connected systems. All running without you having to think about it.</p>
     </div>
-
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
-
-      <!-- GROUP 1: GET FOUND -->
-      <div class="reveal reveal-delay-1 rounded-2xl p-8"
-           style="background: rgba(2,195,154,0.06); border: 1px solid rgba(2,195,154,0.18);">
-        <!-- Group header -->
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-mint to-teal flex items-center justify-center mb-5">
-          <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
-          </svg>
+    <div class="services-grid">
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
         </div>
-        <h3 class="font-heading font-800 text-white text-xl mb-1">Get Found</h3>
-        <p class="font-body text-white/80 text-base mb-7 leading-relaxed">Visibility and reputation — so the right customers find you first.</p>
-
-        <ul class="space-y-5" aria-label="Get Found services">
-          <li>
-            <p class="font-heading font-600 text-white text-base mb-0.5">Google Business Profile Optimization</p>
-            <p class="font-body text-white/80 text-base leading-relaxed">Full audit, keyword-rich description, photo strategy, weekly posts, and competitor analysis.</p>
-          </li>
-          <li class="pt-5 border-t" style="border-color: rgba(2,195,154,0.15);">
-            <p class="font-heading font-600 text-white text-base mb-0.5">Review Generation System</p>
-            <p class="font-body text-white/80 text-base leading-relaxed">Automated 5-star review requests sent to happy customers — hands-free.</p>
-          </li>
-          <li class="pt-5 border-t" style="border-color: rgba(2,195,154,0.15);">
-            <p class="font-heading font-600 text-white text-base mb-0.5">Local SEO Management</p>
-            <p class="font-body text-white/80 text-base leading-relaxed">Ongoing optimization so you stay in the top 3 as search trends shift.</p>
-          </li>
+        <h3>Get Found</h3>
+        <p>Visibility and reputation — so the right customers find you first.</p>
+        <ul class="service-list">
+          <li>Google Business Profile Optimization</li>
+          <li>Review Generation System</li>
+          <li>Local SEO Management</li>
+          <li>Competitor analysis and tracking</li>
         </ul>
       </div>
-
-      <!-- GROUP 2: NEVER MISS A LEAD -->
-      <div class="reveal reveal-delay-2 rounded-2xl p-8"
-           style="background: rgba(2,128,144,0.08); border: 1px solid rgba(2,128,144,0.25);">
-        <!-- Group header -->
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-teal to-navy-light flex items-center justify-center mb-5">
-          <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"/>
-          </svg>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6z"/></svg>
         </div>
-        <h3 class="font-heading font-800 text-white text-xl mb-1">Never Miss a Lead</h3>
-        <p class="font-body text-white/80 text-base mb-7 leading-relaxed">Capture and respond to every inquiry — even when you're busy.</p>
-
-        <ul class="space-y-5" aria-label="Never Miss a Lead services">
-          <li>
-            <p class="font-heading font-600 text-white text-base mb-0.5">Missed Call Text-Back</p>
-            <p class="font-body text-white/80 text-base leading-relaxed">When you can't answer, an instant text goes out — keeping the lead warm before they call a competitor.</p>
-          </li>
-          <li class="pt-5 border-t" style="border-color: rgba(2,128,144,0.2);">
-            <p class="font-heading font-600 text-white text-base mb-0.5">AI Receptionist</p>
-            <p class="font-body text-white/80 text-base leading-relaxed">24/7 call handling that answers FAQs and books appointments — without you lifting a finger.</p>
-          </li>
-          <li class="pt-5 border-t" style="border-color: rgba(2,128,144,0.2);">
-            <p class="font-heading font-600 text-white text-base mb-0.5">CRM + Lead Pipeline</p>
-            <p class="font-body text-white/80 text-base leading-relaxed">Every lead tracked from first contact to booked job — no one falls through the cracks.</p>
-          </li>
+        <h3>Never Miss a Lead</h3>
+        <p>Capture and respond to every inquiry — even when you're with a customer.</p>
+        <ul class="service-list">
+          <li>Missed Call Text-Back</li>
+          <li>AI Receptionist (24/7)</li>
+          <li>CRM + Lead Pipeline</li>
+          <li>Instant lead routing</li>
         </ul>
-
-        <!-- Phone mockup -->
-        <div class="flex justify-center mt-8">
-          <div class="phone-frame w-48 px-3 pt-8 pb-5" role="img" aria-label="Phone showing missed call text-back conversation">
-            <div class="space-y-3">
-              <div class="rounded-xl p-3 text-xs" style="background: rgba(239,68,68,0.15); border: 1px solid rgba(239,68,68,0.2);">
-                <div class="flex items-center gap-2 mb-1">
-                  <svg class="w-3 h-3 text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
-                  <span class="text-red-400 font-600 font-heading">Missed call</span>
-                </div>
-                <span class="text-white/50 font-body">Customer: (401) 555-0198</span>
-              </div>
-              <div class="rounded-xl rounded-br-sm p-3 text-xs ml-4" style="background: linear-gradient(135deg, #02C39A, #028090);">
-                <p class="text-white font-body leading-relaxed">Hi! You just called Mike's Auto. We're with a customer — can we text you back?</p>
-                <span class="text-white/60 text-xs mt-1 block">12:47 PM · Delivered</span>
-              </div>
-              <div class="rounded-xl rounded-bl-sm p-3 text-xs mr-4" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.08);">
-                <p class="text-white/80 font-body leading-relaxed">Yes! Need an oil change — when's your next opening?</p>
-                <span class="text-white/40 text-xs mt-1 block">12:49 PM</span>
-              </div>
-              <div class="flex items-center justify-center gap-1.5 py-1">
-                <svg class="w-3 h-3 text-mint" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-                <span class="text-mint text-xs font-heading font-600">Lead saved</span>
-              </div>
+        <div class="phone-wrap">
+          <div class="phone-frame">
+            <div class="phone-missed">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="1" y1="1" x2="23" y2="23"/><path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"/></svg>
+              Missed call — (401) 555-0198
+            </div>
+            <div class="phone-msg outgoing">Hi! You just called Mike's Auto. We're with a customer — can we text you back?<br><small style="opacity:0.7">12:47 PM · Delivered</small></div>
+            <div class="phone-msg incoming">Yes! Need an oil change — next opening?<br><small style="opacity:0.5">12:49 PM</small></div>
+            <div class="phone-tag">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+              Lead saved
             </div>
           </div>
         </div>
       </div>
-
-      <!-- GROUP 3: GROW ON AUTOPILOT -->
-      <div class="reveal reveal-delay-3 rounded-2xl p-8"
-           style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);">
-        <!-- Group header -->
-        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
-             style="background: linear-gradient(135deg, rgba(2,195,154,0.3), rgba(2,128,144,0.3)); border: 1px solid rgba(2,195,154,0.3);">
-          <svg class="w-6 h-6 text-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>
-          </svg>
+      <div class="service-card reveal reveal-delay-3">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
         </div>
-        <h3 class="font-heading font-800 text-white text-xl mb-1">Grow on Autopilot</h3>
-        <p class="font-body text-white/80 text-base mb-7 leading-relaxed">Nurture and retention tools that keep customers coming back — automatically.</p>
-
-        <ul class="space-y-5" aria-label="Grow on Autopilot services">
-          <li>
-            <p class="font-heading font-600 text-white text-base mb-0.5">Appointment Booking + Reminders</p>
-            <p class="font-body text-white/80 text-base leading-relaxed">Self-service booking with automated reminders that slash no-shows.</p>
-          </li>
-          <li class="pt-5 border-t" style="border-color: rgba(255,255,255,0.08);">
-            <p class="font-heading font-600 text-white text-base mb-0.5">SMS &amp; Email Drip Campaigns</p>
-            <p class="font-body text-white/80 text-base leading-relaxed">Follow-up sequences that run themselves — keeping leads warm until they convert.</p>
-          </li>
-          <li class="pt-5 border-t" style="border-color: rgba(255,255,255,0.08);">
-            <p class="font-heading font-600 text-white text-base mb-0.5">Social Media Scheduling</p>
-            <p class="font-body text-white/80 text-base leading-relaxed">Stay active and visible across platforms without lifting a finger.</p>
-          </li>
+        <h3>Grow on Autopilot</h3>
+        <p>Retention tools that bring customers back without lifting a finger.</p>
+        <ul class="service-list">
+          <li>Appointment Booking + Reminders</li>
+          <li>SMS &amp; Email Drip Campaigns</li>
+          <li>Social Media Scheduling</li>
+          <li>Monthly performance dashboard</li>
         </ul>
       </div>
-
     </div>
   </div>
 </section>
 
-
-<!-- ═══════════════════════════════════════════════
-     BEFORE / AFTER
-═══════════════════════════════════════════════ -->
-<section id="before-after" class="bg-chalk py-20 md:py-28">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="reveal text-center mb-14">
-      <span class="font-body text-teal font-500 text-sm tracking-widest uppercase mb-3 block">The Difference</span>
-      <h2 class="font-heading font-800 text-navy mb-4" style="font-size: clamp(1.6rem, 3.5vw, 2.6rem); letter-spacing: -0.02em;">
-        Without LeadLock vs. With LeadLock
-      </h2>
-      <p class="font-body text-navy/80 max-w-xl mx-auto">This isn't just about your Google listing. It's the whole picture — visibility, lead capture, follow-up, and growth.</p>
+<!-- ── BEFORE / AFTER ── -->
+<section id="before-after" class="section">
+  <div class="container">
+    <div class="ba-header reveal">
+      <span class="section-label dark">The Difference</span>
+      <h2>Without Millrun vs. With Millrun</h2>
+      <p>This isn't just about your Google listing — it's the whole picture.</p>
     </div>
+    <div class="ba-grid reveal reveal-delay-1">
+      <div class="ba-col before">
+        <div class="ba-col-header"><span class="tag">Before</span></div>
+        <ul class="ba-list">
+          <li><div class="ba-dot"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>Invisible on Google — buried behind competitors</li>
+          <li><div class="ba-dot"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>Missed calls going to voicemail with no follow-up</li>
+          <li><div class="ba-dot"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>3 stale reviews from years ago, one of them 2 stars</li>
+          <li><div class="ba-dot"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>No follow-up system — leads forget and call someone else</li>
+          <li><div class="ba-dot"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>Manually chasing no-shows — hours lost every week</li>
+          <li><div class="ba-dot"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>No idea which marketing is working — no data, no clarity</li>
+        </ul>
+      </div>
+      <div class="ba-col after">
+        <div class="ba-col-header"><span class="tag">After</span></div>
+        <ul class="ba-list">
+          <li><div class="ba-dot"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#E8A96A" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>Top 3 in Google Maps — the first thing customers see</li>
+          <li><div class="ba-dot"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#E8A96A" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>Every missed call gets an instant text — no lead left behind</li>
+          <li><div class="ba-dot"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#E8A96A" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>50+ fresh reviews climbing weekly — trust built before they call</li>
+          <li><div class="ba-dot"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#E8A96A" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>Automated follow-up converts leads without you doing a thing</li>
+          <li><div class="ba-dot"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#E8A96A" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>Self-service booking + reminders — no-shows drop, schedule fills</li>
+          <li><div class="ba-dot"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#E8A96A" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>Clear dashboard showing calls, leads, reviews, and revenue impact</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <!-- Before -->
-      <div class="reveal reveal-delay-1 rounded-2xl p-8 border-2 border-red-200/60 bg-red-50/40">
-        <div class="flex items-center gap-3 mb-6">
-          <div class="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0">
-            <svg class="w-4 h-4 text-red-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+<!-- ── ADVISOR STRIP ── -->
+<div class="advisor-strip reveal">
+  <div class="advisor-strip-inner">
+    <div>
+      <h3>Not sure where to start?</h3>
+      <p>Talk to one of our advisors — we'll show you exactly where you're losing customers.</p>
+    </div>
+    <button onclick="window.openMillrunChat && window.openMillrunChat()" class="btn-primary">Talk to an Advisor →</button>
+  </div>
+</div>
+
+<!-- ── HOW IT WORKS ── -->
+<section id="how-it-works" class="section">
+  <div class="container">
+    <div class="hiw-header reveal">
+      <span class="section-label">The Timeline</span>
+      <h2>From signup to results<br>in 30 days.</h2>
+      <p>No long onboarding. No waiting 6 months. Here's exactly what happens.</p>
+    </div>
+    <div class="hiw-steps">
+      <div class="hiw-step reveal reveal-delay-1">
+        <div class="step-num">01</div>
+        <div class="step-week">Week 1 — Foundation</div>
+        <h3>We Learn Your Business Inside Out</h3>
+        <p>Full Google Business Profile audit and optimization. CRM and lead pipeline setup. Everything configured to your business before anything goes live.</p>
+      </div>
+      <div class="hiw-step reveal reveal-delay-2">
+        <div class="step-num">02</div>
+        <div class="step-week">Week 2 — Capture</div>
+        <h3>Every Lead Gets a Response in Seconds</h3>
+        <p>Missed call text-back goes live. AI receptionist activated. No call goes unanswered — every inquiry captured and routed instantly, even at 2am.</p>
+      </div>
+      <div class="hiw-step reveal reveal-delay-3">
+        <div class="step-num">03</div>
+        <div class="step-week">Week 3 — Growth</div>
+        <h3>Reviews, Bookings &amp; Campaigns Launch</h3>
+        <p>Review generation starts. Appointment booking and reminders go live. Drip campaigns begin nurturing leads who haven't booked yet.</p>
+      </div>
+      <div class="hiw-step reveal reveal-delay-4">
+        <div class="step-num">04</div>
+        <div class="step-week">Week 4 — Results</div>
+        <h3>Full Performance Review</h3>
+        <p>We walk through ranking, calls captured, leads gained, reviews earned, and bookings made. Then we fine-tune and map out month two.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── INDUSTRIES ── -->
+<section id="industries" class="section">
+  <div class="container">
+    <div class="ind-header reveal">
+      <span class="section-label dark">Who We Serve</span>
+      <h2>Built for local businesses</h2>
+      <p>From auto shops to dental offices — we build the system, you focus on your craft.</p>
+    </div>
+    <div class="industries-grid">
+      <div class="ind-tile reveal" onclick="location.href='#contact'"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg><p>Auto Repair</p></div>
+      <div class="ind-tile reveal reveal-delay-1" onclick="location.href='#contact'"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="4"/></svg><p>HVAC</p></div>
+      <div class="ind-tile reveal reveal-delay-2" onclick="location.href='#contact'"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12m0 0C12 7 7 4 2 6c2 2 4 6 10 6zm0 0c0-5 5-8 10-6-2 2-4 6-10 6z"/></svg><p>Landscaping</p></div>
+      <div class="ind-tile reveal reveal-delay-3" onclick="location.href='#contact'"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg><p>Electricians</p></div>
+      <div class="ind-tile reveal reveal-delay-4" onclick="location.href='#contact'"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><p>Cleaning</p></div>
+      <div class="ind-tile reveal" onclick="location.href='#contact'"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg><p>Barbers</p></div>
+      <div class="ind-tile reveal reveal-delay-1" onclick="location.href='#contact'"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5.5C12 4.119 10.881 3 9.5 3S7 4.119 7 5.5c0 1.243.863 2.28 2.019 2.45L8.5 21h3L11 7.95C12.137 7.78 13 6.743 13 5.5z"/><path d="M12 5.5C12 4.119 13.119 3 14.5 3S16 4.119 16 5.5c0 1.243-.863 2.28-2.019 2.45L14.5 21h-3"/></svg><p>Dentists</p></div>
+      <div class="ind-tile reveal reveal-delay-2" onclick="location.href='#contact'"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg><p>Restaurants</p></div>
+      <div class="ind-tile reveal reveal-delay-3" onclick="location.href='#contact'"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/><path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/><path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"/><path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"/></svg><p>Plumbers</p></div>
+      <div class="ind-tile reveal reveal-delay-4" onclick="location.href='#contact'"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg><p>Pet Groomers</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section id="faq" class="section">
+  <div class="container">
+    <div class="faq-layout">
+      <div>
+        <span class="section-label">FAQ</span>
+        <h2 style="font-size:clamp(2rem,3.5vw,2.75rem); letter-spacing:-0.02em; line-height:1.1;">Common questions</h2>
+        <div style="height:1px; background:var(--border); margin:1.5rem 0;"></div>
+        <p style="color:var(--stone); line-height:1.7; font-size:0.9rem;">Don't see your question? <a href="#contact" style="color:var(--amber); font-weight:600;">Reach out directly →</a></p>
+      </div>
+      <div class="faq-list" id="faq-list"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact" class="section">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="contact-left reveal">
+        <span class="section-label dark">Get Started</span>
+        <h2>Get your free Google audit</h2>
+        <p>No pitch. No pressure. We'll analyze your Google presence and show you exactly where you're losing customers — and how to fix it.</p>
+        <div class="contact-info">
+          <div class="contact-info-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Serving Providence RI &amp; Hartford CT
           </div>
-          <h3 class="font-heading font-700 text-red-700 text-lg">Without LeadLock</h3>
-        </div>
-        <ul class="space-y-4" aria-label="Problems without LeadLock">
-          <li class="flex items-start gap-3">
-            <svg class="w-4 h-4 text-red-400 mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm1 14H11v-2h2v2zm0-4H11V7h2v5z"/></svg>
-            <span class="font-body text-navy/85 text-base leading-relaxed">Invisible on Google — buried behind competitors who outrank you by default</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-4 h-4 text-red-400 mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm1 14H11v-2h2v2zm0-4H11V7h2v5z"/></svg>
-            <span class="font-body text-navy/85 text-base leading-relaxed">Missed calls going straight to voicemail — or nowhere — with no follow-up</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-4 h-4 text-red-400 mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm1 14H11v-2h2v2zm0-4H11V7h2v5z"/></svg>
-            <span class="font-body text-navy/85 text-base leading-relaxed">No review strategy — 3 stale reviews from years ago, one of them 2 stars</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-4 h-4 text-red-400 mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm1 14H11v-2h2v2zm0-4H11V7h2v5z"/></svg>
-            <span class="font-body text-navy/85 text-base leading-relaxed">No follow-up system — leads forget about you in hours and call someone else</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-4 h-4 text-red-400 mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm1 14H11v-2h2v2zm0-4H11V7h2v5z"/></svg>
-            <span class="font-body text-navy/85 text-base leading-relaxed">Manually booking appointments and chasing no-shows — hours lost every week</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-4 h-4 text-red-400 mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm1 14H11v-2h2v2zm0-4H11V7h2v5z"/></svg>
-            <span class="font-body text-navy/85 text-base leading-relaxed">No idea which marketing is working — no data, no dashboard, no clarity</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- After -->
-      <div class="reveal reveal-delay-2 rounded-2xl p-8 border-2 border-mint/30 bg-mint/5">
-        <div class="flex items-center gap-3 mb-6">
-          <div class="w-8 h-8 rounded-full bg-mint/15 flex items-center justify-center flex-shrink-0">
-            <svg class="w-4 h-4 text-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+          <div class="contact-info-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Response within 24 hours
           </div>
-          <h3 class="font-heading font-700 text-teal-dark text-lg">With LeadLock</h3>
         </div>
-        <ul class="space-y-4" aria-label="Benefits with LeadLock">
-          <li class="flex items-start gap-3">
-            <svg class="w-4 h-4 text-mint mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-            <span class="font-body text-navy/90 text-base leading-relaxed">Top 3 in Google Maps — the first thing customers see when they search for what you do</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-4 h-4 text-mint mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-            <span class="font-body text-navy/90 text-base leading-relaxed">Every missed call gets an instant text response — no lead left behind</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-4 h-4 text-mint mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-            <span class="font-body text-navy/90 text-base leading-relaxed">50+ fresh reviews and climbing weekly — building trust before they even call</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-4 h-4 text-mint mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-            <span class="font-body text-navy/90 text-base leading-relaxed">Automated follow-up keeps leads warm until they convert — without you doing a thing</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-4 h-4 text-mint mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-            <span class="font-body text-navy/90 text-base leading-relaxed">Self-service booking with automatic reminders — no-shows drop, your schedule fills</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-4 h-4 text-mint mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-            <span class="font-body text-navy/90 text-base leading-relaxed">Clear dashboard showing calls, leads, reviews, and revenue impact — every month</span>
-          </li>
-        </ul>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <form class="contact-form" id="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" name="firstName" placeholder="Mike" required />
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" name="lastName" placeholder="Johnson" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Business Name</label>
+            <input type="text" name="businessName" placeholder="Mike's Auto Repair" required />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Phone</label>
+              <input type="tel" name="phone" placeholder="(401) 555-0198" />
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" name="email" placeholder="mike@example.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Industry</label>
+            <select name="industry">
+              <option value="">Select your industry</option>
+              <option>Auto Repair</option><option>HVAC</option><option>Landscaping</option>
+              <option>Electrician</option><option>Plumber</option><option>Cleaning</option>
+              <option>Restaurant</option><option>Barber / Salon</option><option>Dentist</option>
+              <option>Pet Grooming</option><option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>What's your biggest challenge right now?</label>
+            <textarea name="challenge" placeholder="e.g. Not showing up on Google, missing calls, need more reviews..."></textarea>
+          </div>
+          <button type="submit" class="form-submit" id="form-btn">
+            Send my free audit request
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+          <p id="form-success" style="display:none; color:var(--amber-light); font-size:0.9rem; text-align:center; margin-top:0.5rem;">&#10003; Request sent! We'll be in touch within 24 hours.</p>
+          <p id="form-error" style="display:none; color:#f87171; font-size:0.9rem; text-align:center; margin-top:0.5rem;">Something went wrong — please try again.</p>
+        </form>
       </div>
     </div>
   </div>
 </section>
 
-
-<!-- ═══════════════════════════════════════════════
-     ADVISOR CTA STRIP
-═══════════════════════════════════════════════ -->
-<section class="bg-navy py-14">
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="reveal rounded-2xl p-8 md:p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6"
-         style="background: linear-gradient(135deg, rgba(2,195,154,0.1) 0%, rgba(2,128,144,0.08) 100%); border: 1px solid rgba(2,195,154,0.22);">
-      <div>
-        <p class="font-heading font-700 text-white text-xl mb-1">Not sure where to start?</p>
-        <p class="font-body text-white/70 text-base">Talk to one of our advisors — we'll show you exactly where you're losing customers.</p>
-      </div>
-      <button onclick="openLeadLockChat()"
-              class="flex-shrink-0 inline-flex items-center gap-2 bg-mint hover:bg-mint-dark text-navy font-heading font-700 px-6 py-3.5 rounded-xl text-sm transition-all duration-200 cursor-pointer whitespace-nowrap"
-              onmouseover="this.style.boxShadow='0 6px 24px rgba(2,195,154,0.35)'"
-              onmouseout="this.style.boxShadow='none'">
-        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-        </svg>
-        Talk to an Advisor
-      </button>
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Millrun <span>Digital</span></div>
+      <div class="footer-copy" style="margin-top:0.4rem;">© 2026 Millrun Digital. All rights reserved.</div>
     </div>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════════
-     HOW IT WORKS
-═══════════════════════════════════════════════ -->
-<section id="how-it-works" class="bg-navy py-20 md:py-28 relative overflow-hidden">
-  <div class="absolute inset-0 opacity-5" aria-hidden="true"
-       style="background-image: radial-gradient(circle at 80% 20%, rgba(2,195,154,0.15) 0%, transparent 50%);">
-  </div>
-  <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="reveal text-center mb-16">
-      <span class="font-body text-mint font-500 text-sm tracking-widest uppercase mb-3 block">The Timeline</span>
-      <h2 class="font-heading font-800 text-white mb-4" style="font-size: clamp(1.6rem, 3.5vw, 2.6rem); letter-spacing: -0.02em;">
-        From signup to results in 30 days
-      </h2>
-      <p class="font-body text-white/80 max-w-lg mx-auto">No long onboarding. No waiting 6 months to see results. Here's exactly what happens.</p>
+    <div class="footer-links">
+      <a href="#services">Services</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#faq">FAQ</a>
+      <a href="about.html">About</a>
+      <a href="#contact">Contact</a>
     </div>
-
-    <div class="space-y-0">
-      <!-- Step 1 -->
-      <div class="reveal reveal-delay-1 relative flex gap-6 pb-10">
-        <div class="flex flex-col items-center">
-          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-mint to-teal flex items-center justify-center flex-shrink-0 z-10 font-heading font-800 text-white text-sm">1</div>
-          <div class="w-0.5 flex-1 mt-2" style="background: linear-gradient(180deg, #02C39A, rgba(2,128,144,0.2));"></div>
-        </div>
-        <div class="pt-1.5 pb-6">
-          <span class="font-body text-mint text-xs font-600 tracking-wider uppercase">Week 1 — Foundation</span>
-          <h3 class="font-heading font-700 text-white text-xl mt-1 mb-2">We Learn Your Business Inside Out</h3>
-          <p class="font-body text-white/80 text-base leading-relaxed max-w-lg">Full Google Business Profile audit and optimization. CRM and lead pipeline setup. We rebuild your listing from the ground up and configure every system to your business before anything goes live.</p>
-        </div>
-      </div>
-      <!-- Step 2 -->
-      <div class="reveal reveal-delay-2 relative flex gap-6 pb-10">
-        <div class="flex flex-col items-center">
-          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-mint to-teal flex items-center justify-center flex-shrink-0 z-10 font-heading font-800 text-white text-sm">2</div>
-          <div class="w-0.5 flex-1 mt-2" style="background: linear-gradient(180deg, #028090, rgba(2,128,144,0.2));"></div>
-        </div>
-        <div class="pt-1.5 pb-6">
-          <span class="font-body text-mint text-xs font-600 tracking-wider uppercase">Week 2 — Capture</span>
-          <h3 class="font-heading font-700 text-white text-xl mt-1 mb-2">Every Lead Gets a Response in Seconds</h3>
-          <p class="font-body text-white/80 text-base leading-relaxed max-w-lg">Missed call text-back goes live. AI receptionist activated. From this point on, no call goes unanswered — every inquiry is captured and routed instantly, even at 2am on a Sunday.</p>
-        </div>
-      </div>
-      <!-- Step 3 -->
-      <div class="reveal reveal-delay-3 relative flex gap-6 pb-10">
-        <div class="flex flex-col items-center">
-          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-mint to-teal flex items-center justify-center flex-shrink-0 z-10 font-heading font-800 text-white text-sm">3</div>
-          <div class="w-0.5 flex-1 mt-2" style="background: linear-gradient(180deg, #028090, rgba(2,128,144,0.2));"></div>
-        </div>
-        <div class="pt-1.5 pb-6">
-          <span class="font-body text-mint text-xs font-600 tracking-wider uppercase">Week 3 — Growth</span>
-          <h3 class="font-heading font-700 text-white text-xl mt-1 mb-2">Reviews, Bookings, and Drip Campaigns Launch</h3>
-          <p class="font-body text-white/80 text-base leading-relaxed max-w-lg">Review generation system starts requesting 5-star reviews from happy customers. Appointment booking and automated reminders go live. Drip campaigns begin nurturing leads who haven't booked yet.</p>
-        </div>
-      </div>
-      <!-- Step 4 -->
-      <div class="reveal reveal-delay-4 relative flex gap-6">
-        <div class="flex flex-col items-center">
-          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-mint to-teal flex items-center justify-center flex-shrink-0 z-10 font-heading font-800 text-white text-sm">4</div>
-        </div>
-        <div class="pt-1.5">
-          <span class="font-body text-mint text-xs font-600 tracking-wider uppercase">Week 4 — Results</span>
-          <h3 class="font-heading font-700 text-white text-xl mt-1 mb-2">Full Performance Review</h3>
-          <p class="font-body text-white/80 text-base leading-relaxed max-w-lg">We walk you through ranking position, calls captured, leads gained, reviews earned, and bookings made. Then we fine-tune every system and map out month two.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-<!-- ═══════════════════════════════════════════════
-     INDUSTRIES
-═══════════════════════════════════════════════ -->
-<section id="industries" class="bg-navy py-20 md:py-28">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="reveal text-center mb-14">
-      <span class="font-body text-mint font-500 text-sm tracking-widest uppercase mb-3 block">Who We Serve</span>
-      <h2 class="font-heading font-800 text-white mb-4" style="font-size: clamp(1.6rem, 3.5vw, 2.6rem); letter-spacing: -0.02em;">
-        Built for local businesses
-      </h2>
-      <p class="font-body text-white/80 max-w-xl mx-auto">From auto shops to dental offices, we build the system — you focus on your craft.</p>
-      <p class="font-body text-mint text-sm mt-3 flex items-center justify-center gap-1.5">
-        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 15l-6 6m0 0l-3-3m3 3V4"/></svg>
-        Click your business to get started
-      </p>
-    </div>
-
-    <div id="industries-grid" class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-      <!-- Auto Repair -->
-      <div class="reveal reveal-delay-1 rounded-2xl p-6 text-center industry-tile cursor-pointer"
-           style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);"
-           onmouseover="this.style.borderColor='rgba(2,195,154,0.3)'; this.style.background='rgba(2,195,154,0.06)'"
-           onmouseout="this.style.borderColor='rgba(255,255,255,0.07)'; this.style.background='rgba(255,255,255,0.04)'">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-mint/20 to-teal/20 flex items-center justify-center mx-auto mb-3">
-          <svg class="w-6 h-6 text-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
-          </svg>
-        </div>
-        <p class="font-heading font-600 text-white text-sm">Auto Repair</p>
-      </div>
-      <!-- HVAC -->
-      <div class="reveal reveal-delay-2 rounded-2xl p-6 text-center industry-tile cursor-pointer"
-           style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-mint/20 to-teal/20 flex items-center justify-center mx-auto mb-3">
-          <svg class="w-6 h-6 text-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="4"/><path d="M6.34 6.34l11.32 11.32M17.66 6.34L6.34 17.66"/>
-          </svg>
-        </div>
-        <p class="font-heading font-600 text-white text-sm">HVAC</p>
-      </div>
-      <!-- Landscaping -->
-      <div class="reveal reveal-delay-3 rounded-2xl p-6 text-center industry-tile cursor-pointer"
-           style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-mint/20 to-teal/20 flex items-center justify-center mx-auto mb-3">
-          <svg class="w-6 h-6 text-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M12 22V12m0 0C12 7 7 4 2 6c2 2 4 6 10 6zm0 0c0-5 5-8 10-6-2 2-4 6-10 6z"/>
-          </svg>
-        </div>
-        <p class="font-heading font-600 text-white text-sm">Landscaping</p>
-      </div>
-      <!-- Barbers -->
-      <div class="reveal reveal-delay-4 rounded-2xl p-6 text-center industry-tile cursor-pointer"
-           style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-mint/20 to-teal/20 flex items-center justify-center mx-auto mb-3">
-          <svg class="w-6 h-6 text-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M6 2v20M18 2v20M6 7h12M6 12h12M6 17h12"/>
-          </svg>
-        </div>
-        <p class="font-heading font-600 text-white text-sm">Barbers</p>
-      </div>
-      <!-- Pet Groomers -->
-      <div class="reveal reveal-delay-1 rounded-2xl p-6 text-center industry-tile cursor-pointer"
-           style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-mint/20 to-teal/20 flex items-center justify-center mx-auto mb-3">
-          <svg class="w-6 h-6 text-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M10 5.172C10 3.782 8.423 2.679 6.5 3c-2.823.47-4.113 6.006-4 7 .08.703 1.725 1.722 3.656 1 1.261-.472 1.96-1.45 2.344-2.5M14.267 5.172c0-1.39 1.577-2.493 3.5-2.172 2.823.47 4.113 6.006 4 7-.08.703-1.725 1.722-3.656 1-1.261-.472-1.96-1.45-2.344-2.5M8 14v.5A3.5 3.5 0 0011.5 18h1a3.5 3.5 0 003.5-3.5V14M8 14c-2 0-4 1-4 3v1h16v-1c0-2-2-3-4-3M8 14h8"/>
-          </svg>
-        </div>
-        <p class="font-heading font-600 text-white text-sm">Pet Groomers</p>
-      </div>
-      <!-- Dentists -->
-      <div class="reveal reveal-delay-2 rounded-2xl p-6 text-center industry-tile cursor-pointer"
-           style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-mint/20 to-teal/20 flex items-center justify-center mx-auto mb-3">
-          <svg class="w-6 h-6 text-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M12 5.5C12 4.119 10.881 3 9.5 3S7 4.119 7 5.5c0 1.243.863 2.28 2.019 2.45L8.5 21h3L11 7.95C12.137 7.78 13 6.743 13 5.5z"/><path d="M12 5.5C12 4.119 13.119 3 14.5 3S16 4.119 16 5.5c0 1.243-.863 2.28-2.019 2.45L14.5 21h-3L12 7.95"/>
-          </svg>
-        </div>
-        <p class="font-heading font-600 text-white text-sm">Dentists</p>
-      </div>
-      <!-- Cleaning -->
-      <div class="reveal reveal-delay-3 rounded-2xl p-6 text-center industry-tile cursor-pointer"
-           style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-mint/20 to-teal/20 flex items-center justify-center mx-auto mb-3">
-          <svg class="w-6 h-6 text-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
-          </svg>
-        </div>
-        <p class="font-heading font-600 text-white text-sm">Cleaning</p>
-      </div>
-      <!-- Restaurants -->
-      <div class="reveal reveal-delay-4 rounded-2xl p-6 text-center industry-tile cursor-pointer"
-           style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-mint/20 to-teal/20 flex items-center justify-center mx-auto mb-3">
-          <svg class="w-6 h-6 text-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/>
-          </svg>
-        </div>
-        <p class="font-heading font-600 text-white text-sm">Restaurants</p>
-      </div>
-      <!-- Electricians -->
-      <div class="reveal reveal-delay-1 rounded-2xl p-6 text-center industry-tile cursor-pointer"
-           style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-mint/20 to-teal/20 flex items-center justify-center mx-auto mb-3">
-          <svg class="w-6 h-6 text-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-          </svg>
-        </div>
-        <p class="font-heading font-600 text-white text-sm">Electricians</p>
-      </div>
-      <!-- Plumbers -->
-      <div class="reveal reveal-delay-2 rounded-2xl p-6 text-center industry-tile cursor-pointer"
-           style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-mint/20 to-teal/20 flex items-center justify-center mx-auto mb-3">
-          <svg class="w-6 h-6 text-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>
-          </svg>
-        </div>
-        <p class="font-heading font-600 text-white text-sm">Plumbers</p>
-      </div>
-      <!-- Roofers -->
-      <div class="reveal reveal-delay-3 rounded-2xl p-6 text-center industry-tile cursor-pointer"
-           style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-mint/20 to-teal/20 flex items-center justify-center mx-auto mb-3">
-          <svg class="w-6 h-6 text-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
-          </svg>
-        </div>
-        <p class="font-heading font-600 text-white text-sm">Roofers</p>
-      </div>
-      <!-- Painters -->
-      <div class="reveal reveal-delay-4 rounded-2xl p-6 text-center industry-tile cursor-pointer"
-           style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-mint/20 to-teal/20 flex items-center justify-center mx-auto mb-3">
-          <svg class="w-6 h-6 text-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M2 13.5V19a2 2 0 002 2h16a2 2 0 002-2v-5.5"/><path d="M2 13.5A10.5 10.5 0 0012 3a10.5 10.5 0 0010 10.5"/><path d="M12 3v10"/>
-          </svg>
-        </div>
-        <p class="font-heading font-600 text-white text-sm">Painters</p>
-      </div>
-      <!-- Chiropractors -->
-      <div class="reveal reveal-delay-1 rounded-2xl p-6 text-center industry-tile cursor-pointer"
-           style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-mint/20 to-teal/20 flex items-center justify-center mx-auto mb-3">
-          <svg class="w-6 h-6 text-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M12 2a4 4 0 100 8 4 4 0 000-8z"/><path d="M8 14s-4 2-4 6h16c0-4-4-6-4-6"/><path d="M12 10v4"/>
-          </svg>
-        </div>
-        <p class="font-heading font-600 text-white text-sm">Chiropractors</p>
-      </div>
-      <!-- Nail Salons -->
-      <div class="reveal reveal-delay-2 rounded-2xl p-6 text-center industry-tile cursor-pointer"
-           style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-mint/20 to-teal/20 flex items-center justify-center mx-auto mb-3">
-          <svg class="w-6 h-6 text-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M12 22c4.97 0 9-1.12 9-2.5V8c0-1.38-4.03-2.5-9-2.5S3 6.62 3 8v11.5C3 20.88 7.03 22 12 22z"/><path d="M3 8c0 1.38 4.03 2.5 9 2.5S21 9.38 21 8"/><path d="M12 5.5V2"/>
-          </svg>
-        </div>
-        <p class="font-heading font-600 text-white text-sm">Nail Salons</p>
-      </div>
-      <!-- Gyms & Fitness -->
-      <div class="reveal reveal-delay-3 rounded-2xl p-6 text-center industry-tile cursor-pointer"
-           style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-mint/20 to-teal/20 flex items-center justify-center mx-auto mb-3">
-          <svg class="w-6 h-6 text-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M6 4v16M18 4v16M2 8h4M18 8h4M2 16h4M18 16h4M6 12h12"/>
-          </svg>
-        </div>
-        <p class="font-heading font-600 text-white text-sm">Gyms &amp; Fitness</p>
-      </div>
-      <!-- Other -->
-      <div class="reveal reveal-delay-4 industry-tile rounded-2xl p-6 text-center cursor-pointer"
-           style="background: rgba(2,195,154,0.04); border: 1px dashed rgba(2,195,154,0.25);">
-        <div class="w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-3" style="background: rgba(2,195,154,0.1);">
-          <svg class="w-6 h-6 text-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/>
-          </svg>
-        </div>
-        <p class="font-heading font-600 text-mint text-sm">Other</p>
-        <p class="font-body text-white/35 text-xs mt-1">If you serve local customers, we can help.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════════
-     FAQ
-═══════════════════════════════════════════════ -->
-<section id="faq" class="bg-chalk py-20 md:py-28">
-  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="reveal text-center mb-14">
-      <span class="font-body text-teal font-500 text-sm tracking-widest uppercase mb-3 block">FAQ</span>
-      <h2 class="font-heading font-800 text-navy mb-4" style="font-size: clamp(1.6rem, 3.5vw, 2.6rem); letter-spacing: -0.02em;">
-        Questions we always get
-      </h2>
-    </div>
-
-    <div class="space-y-3" id="faq-container">
-      <!-- Q1 -->
-      <div class="reveal faq-item rounded-2xl border border-navy/10 bg-white overflow-hidden cursor-pointer">
-        <button class="w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer" aria-expanded="false">
-          <span class="font-heading font-600 text-navy text-lg">Do I need to give you access to my Google account?</span>
-          <span class="faq-icon flex-shrink-0 w-6 h-6 rounded-full border border-navy/15 flex items-center justify-center text-navy/50">
-            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
-          </span>
-        </button>
-        <div class="faq-answer px-6">
-          <p class="font-body text-navy/80 text-base leading-relaxed pb-6">Yes — we'll need manager-level access to your Google Business Profile to make changes. We walk you through the exact steps to add us, and you can remove access anytime. We never have access to your Google account password.</p>
-        </div>
-      </div>
-      <!-- Q2 -->
-      <div class="reveal reveal-delay-1 faq-item rounded-2xl border border-navy/10 bg-white overflow-hidden cursor-pointer">
-        <button class="w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer" aria-expanded="false">
-          <span class="font-heading font-600 text-navy text-lg">How quickly will I see results?</span>
-          <span class="faq-icon flex-shrink-0 w-6 h-6 rounded-full border border-navy/15 flex items-center justify-center text-navy/50">
-            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
-          </span>
-        </button>
-        <div class="faq-answer px-6">
-          <p class="font-body text-navy/80 text-base leading-relaxed pb-6">By week 2, your missed call text-back and AI receptionist are live — so you start capturing leads immediately. Google ranking improvements typically show within 30–60 days. Review counts climb within weeks. Appointment booking and drip campaigns are running by week 3. Most clients see measurable impact across multiple fronts before month one is done.</p>
-        </div>
-      </div>
-      <!-- Q3 -->
-      <div class="reveal reveal-delay-2 faq-item rounded-2xl border border-navy/10 bg-white overflow-hidden cursor-pointer">
-        <button class="w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer" aria-expanded="false">
-          <span class="font-heading font-600 text-navy text-lg">Is there a contract or minimum commitment?</span>
-          <span class="faq-icon flex-shrink-0 w-6 h-6 rounded-full border border-navy/15 flex items-center justify-center text-navy/50">
-            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
-          </span>
-        </button>
-        <div class="faq-answer px-6">
-          <p class="font-body text-navy/80 text-base leading-relaxed pb-6">No contracts, no minimum commitment. We're month-to-month and you can cancel anytime. That said, local SEO compounds over time — the longer you're in, the stronger your position gets. Most clients stay because it works.</p>
-        </div>
-      </div>
-      <!-- Q4 -->
-      <div class="reveal reveal-delay-3 faq-item rounded-2xl border border-navy/10 bg-white overflow-hidden cursor-pointer">
-        <button class="w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer" aria-expanded="false">
-          <span class="font-heading font-600 text-navy text-lg">What if I already have a Google listing?</span>
-          <span class="faq-icon flex-shrink-0 w-6 h-6 rounded-full border border-navy/15 flex items-center justify-center text-navy/50">
-            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
-          </span>
-        </button>
-        <div class="faq-answer px-6">
-          <p class="font-body text-navy/80 text-base leading-relaxed pb-6">That's actually ideal. We start with what you have and optimize every field — description, categories, service areas, hours, photos, and more. Even a "complete" listing usually has major gaps we can fix to improve ranking significantly.</p>
-        </div>
-      </div>
-      <!-- Q5 -->
-      <div class="reveal reveal-delay-4 faq-item rounded-2xl border border-navy/10 bg-white overflow-hidden cursor-pointer">
-        <button class="w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer" aria-expanded="false">
-          <span class="font-heading font-600 text-navy text-lg">How does the missed call text-back work technically?</span>
-          <span class="faq-icon flex-shrink-0 w-6 h-6 rounded-full border border-navy/15 flex items-center justify-center text-navy/50">
-            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
-          </span>
-        </button>
-        <div class="faq-answer px-6">
-          <p class="font-body text-navy/80 text-base leading-relaxed pb-6">We set up a smart automation that detects when a call to your business goes unanswered. Within seconds, it fires a customized text message to the caller from your business number. Replies come back to a shared inbox you can check anytime — no app download required. It works alongside the AI receptionist and CRM so every conversation is tracked from first contact to booked job.</p>
-        </div>
-      </div>
-      <!-- Q6 -->
-      <div class="reveal faq-item rounded-2xl border border-navy/10 bg-white overflow-hidden cursor-pointer">
-        <button class="w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer" aria-expanded="false">
-          <span class="font-heading font-600 text-navy text-lg">Do you work with businesses outside Providence and Hartford?</span>
-          <span class="faq-icon flex-shrink-0 w-6 h-6 rounded-full border border-navy/15 flex items-center justify-center text-navy/50">
-            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
-          </span>
-        </button>
-        <div class="faq-answer px-6">
-          <p class="font-body text-navy/80 text-base leading-relaxed pb-6">We're currently focused on local businesses in Providence RI and Hartford CT so we can deliver truly hands-on, personal service. If you're nearby but outside those areas, reach out — we may still be able to help.</p>
-        </div>
-      </div>
-      <!-- Q7 -->
-      <div class="reveal faq-item rounded-2xl border border-navy/10 bg-white overflow-hidden cursor-pointer">
-        <button class="w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer" aria-expanded="false">
-          <span class="font-heading font-600 text-navy text-lg">What exactly is included?</span>
-          <span class="faq-icon flex-shrink-0 w-6 h-6 rounded-full border border-navy/15 flex items-center justify-center text-navy/50">
-            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
-          </span>
-        </button>
-        <div class="faq-answer px-6">
-          <p class="font-body text-navy/80 text-base leading-relaxed pb-2">It depends on your business — and that's intentional. A landscaper has different needs than a dental office. A high-volume auto shop needs different tools than a one-person cleaning company.</p>
-          <p class="font-body text-navy/80 text-base leading-relaxed pb-2">That's why we start with a free audit. We look at where you're losing customers right now — missed calls, weak Google presence, no follow-up, low reviews — and we build a setup around what will actually move the needle for you specifically.</p>
-          <p class="font-body text-navy/80 text-base leading-relaxed pb-6">You won't pay for tools you don't need, and you won't be missing ones you do. We tell you exactly what we recommend and why before anything starts.</p>
-        </div>
-      </div>
-      <!-- Q8 -->
-      <div class="reveal faq-item rounded-2xl border border-navy/10 bg-white overflow-hidden cursor-pointer">
-        <button class="w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer" aria-expanded="false">
-          <span class="font-heading font-600 text-navy text-lg">Do I need to learn any software?</span>
-          <span class="faq-icon flex-shrink-0 w-6 h-6 rounded-full border border-navy/15 flex items-center justify-center text-navy/50">
-            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
-          </span>
-        </button>
-        <div class="faq-answer px-6">
-          <p class="font-body text-navy/80 text-base leading-relaxed pb-6">No. We set everything up and manage it. You get a simple dashboard to see your leads and reviews, but you never need to touch the backend. If you want to, you can — but most clients let us handle it.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════════
-     CONTACT
-═══════════════════════════════════════════════ -->
-<section id="contact" class="bg-navy py-20 md:py-28 relative overflow-hidden">
-  <div class="absolute inset-0 opacity-5" aria-hidden="true"
-       style="background-image: radial-gradient(circle at 30% 70%, rgba(2,195,154,0.2) 0%, transparent 50%), radial-gradient(circle at 70% 30%, rgba(2,128,144,0.15) 0%, transparent 50%);">
-  </div>
-  <div class="relative max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="reveal text-center mb-12">
-      <span class="font-body text-mint font-500 text-sm tracking-widest uppercase mb-3 block">Get Started</span>
-      <h2 class="font-heading font-800 text-white mb-4" style="font-size: clamp(1.6rem, 3.5vw, 2.6rem); letter-spacing: -0.02em;">
-        Get your free Google audit
-      </h2>
-      <p class="font-body text-white/80 max-w-lg mx-auto">We'll analyze your current Google presence and show you exactly what's costing you customers — no pitch, no pressure.</p>
-    </div>
-
-    <!-- Success state -->
-    <div id="form-success" class="hidden reveal text-center py-10">
-      <div class="w-16 h-16 rounded-full bg-mint/15 border border-mint/30 flex items-center justify-center mx-auto mb-5">
-        <svg class="w-8 h-8 text-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-      </div>
-      <h3 class="font-heading font-700 text-white text-2xl mb-3">You're on the list.</h3>
-      <p class="font-body text-white/80 max-w-sm mx-auto">We'll review your Google presence and reach out within 24 hours with what we find. No pitch — just the facts.</p>
-    </div>
-
-    <form id="contact-form" class="reveal reveal-delay-1 space-y-4" name="contact" method="POST">
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div>
-          <label for="business-name" class="block font-body font-500 text-white/70 text-sm mb-2">Business name <span class="text-mint" aria-hidden="true">*</span></label>
-          <input type="text" id="business-name" name="business_name" required
-                 placeholder="Mike's Auto Repair"
-                 class="w-full rounded-xl px-4 py-3 font-body text-sm text-white placeholder-white/25 outline-none transition-all duration-200"
-                 style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);"
-                 onfocus="this.style.borderColor='rgba(2,195,154,0.6)'; this.style.background='rgba(2,195,154,0.05)';"
-                 onblur="this.style.borderColor='rgba(255,255,255,0.1)'; this.style.background='rgba(255,255,255,0.06)';" />
-        </div>
-        <div>
-          <label for="contact-name" class="block font-body font-500 text-white/70 text-sm mb-2">Your name <span class="text-mint" aria-hidden="true">*</span></label>
-          <input type="text" id="contact-name" name="name" required
-                 placeholder="Mike Johnson"
-                 class="w-full rounded-xl px-4 py-3 font-body text-sm text-white placeholder-white/25 outline-none transition-all duration-200"
-                 style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);"
-                 onfocus="this.style.borderColor='rgba(2,195,154,0.6)'; this.style.background='rgba(2,195,154,0.05)';"
-                 onblur="this.style.borderColor='rgba(255,255,255,0.1)'; this.style.background='rgba(255,255,255,0.06)';" />
-        </div>
-        <div>
-          <label for="phone" class="block font-body font-500 text-white/70 text-sm mb-2">Phone <span class="text-mint" aria-hidden="true">*</span></label>
-          <input type="tel" id="phone" name="phone" required
-                 placeholder="(000) 000-0000"
-                 maxlength="14"
-                 class="w-full rounded-xl px-4 py-3 font-body text-sm text-white placeholder-white/25 outline-none transition-all duration-200"
-                 style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);"
-                 onfocus="this.style.borderColor='rgba(2,195,154,0.6)'; this.style.background='rgba(2,195,154,0.05)';"
-                 onblur="this.style.borderColor='rgba(255,255,255,0.1)'; this.style.background='rgba(255,255,255,0.06)';" />
-          <p id="phone-error" class="font-body text-red-400 text-xs mt-1 hidden">Please enter a valid phone number: (000) 000-0000</p>
-        </div>
-        <div>
-          <label for="email" class="block font-body font-500 text-white/70 text-sm mb-2">Email <span class="text-mint" aria-hidden="true">*</span></label>
-          <input type="email" id="email" name="email" required
-                 placeholder="mike@autorepair.com"
-                 class="w-full rounded-xl px-4 py-3 font-body text-sm text-white placeholder-white/25 outline-none transition-all duration-200"
-                 style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);"
-                 onfocus="this.style.borderColor='rgba(2,195,154,0.6)'; this.style.background='rgba(2,195,154,0.05)';"
-                 onblur="this.style.borderColor='rgba(255,255,255,0.1)'; this.style.background='rgba(255,255,255,0.06)';" />
-          <p id="email-error" class="font-body text-red-400 text-xs mt-1 hidden">Please enter a valid email address</p>
-        </div>
-      </div>
-
-      <div>
-        <label for="industry" class="block font-body font-500 text-white/70 text-sm mb-2">Type of business <span class="text-mint" aria-hidden="true">*</span></label>
-        <select id="industry" name="industry" required
-                class="w-full rounded-xl px-4 py-3 font-body text-sm text-white outline-none transition-all duration-200 appearance-none cursor-pointer"
-                style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2302C39A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M19 9l-7 7-7-7'/%3E%3C/svg%3E\"); background-repeat: no-repeat; background-position: right 1rem center; background-size: 16px;"
-                onfocus="this.style.borderColor='rgba(2,195,154,0.6)'; this.style.background='rgba(2,195,154,0.05)'"
-                onblur="this.style.borderColor='rgba(255,255,255,0.1)'; this.style.background='rgba(255,255,255,0.06)'">
-          <option value="" disabled selected style="background:#1A2332;">Select your industry...</option>
-          <option value="Auto Repair" style="background:#1A2332;">Auto Repair</option>
-          <option value="HVAC" style="background:#1A2332;">HVAC</option>
-          <option value="Landscaping" style="background:#1A2332;">Landscaping</option>
-          <option value="Barber / Salon" style="background:#1A2332;">Barber / Salon</option>
-          <option value="Pet Grooming" style="background:#1A2332;">Pet Grooming</option>
-          <option value="Dental" style="background:#1A2332;">Dental</option>
-          <option value="Cleaning" style="background:#1A2332;">Cleaning</option>
-          <option value="Restaurant" style="background:#1A2332;">Restaurant</option>
-          <option value="Electrician" style="background:#1A2332;">Electrician</option>
-          <option value="Plumber" style="background:#1A2332;">Plumber</option>
-          <option value="Roofing" style="background:#1A2332;">Roofing</option>
-          <option value="Painting" style="background:#1A2332;">Painting</option>
-          <option value="Chiropractic" style="background:#1A2332;">Chiropractic</option>
-          <option value="Nail Salon" style="background:#1A2332;">Nail Salon</option>
-          <option value="Gym / Fitness" style="background:#1A2332;">Gym / Fitness</option>
-          <option value="Other" style="background:#1A2332;">Other</option>
-        </select>
-      </div>
-
-      <div>
-        <label for="business-info" class="block font-body font-500 text-white/70 text-sm mb-2">Tell us about your business <span class="text-mint" aria-hidden="true">*</span></label>
-        <textarea id="business-info" name="business_info" required rows="4"
-                  placeholder="e.g. We're a family-owned auto shop in Providence — been open 12 years. We do oil changes, brakes, and inspections. We get most of our customers through word of mouth but struggle to show up on Google. We miss a lot of calls when we're under the hood."
-                  class="w-full rounded-xl px-4 py-3 font-body text-sm text-white placeholder-white/25 outline-none transition-all duration-200 resize-none"
-                  style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);"
-                  onfocus="this.style.borderColor='rgba(2,195,154,0.6)'; this.style.background='rgba(2,195,154,0.05)';"
-                  onblur="this.style.borderColor='rgba(255,255,255,0.1)'; this.style.background='rgba(255,255,255,0.06)';"></textarea>
-        <p class="font-body text-white/25 text-xs mt-1.5">The more you share, the more useful your audit will be.</p>
-      </div>
-
-      <div>
-        <label for="referral" class="block font-body font-500 text-white/70 text-sm mb-2">Where did you hear about us? <span class="text-mint" aria-hidden="true">*</span></label>
-        <select id="referral" name="referral" required
-                class="w-full rounded-xl px-4 py-3 font-body text-sm text-white outline-none transition-all duration-200 appearance-none cursor-pointer"
-                style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2302C39A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M19 9l-7 7-7-7'/%3E%3C/svg%3E\"); background-repeat: no-repeat; background-position: right 1rem center; background-size: 16px;"
-                onfocus="this.style.borderColor='rgba(2,195,154,0.6)'; this.style.background='rgba(2,195,154,0.05)'"
-                onblur="this.style.borderColor='rgba(255,255,255,0.1)'; this.style.background='rgba(255,255,255,0.06)'">
-          <option value="" disabled selected style="background:#1A2332;">Select one...</option>
-          <option value="Google Search" style="background:#1A2332;">Google Search</option>
-          <option value="Google Maps" style="background:#1A2332;">Google Maps</option>
-          <option value="Instagram" style="background:#1A2332;">Instagram</option>
-          <option value="Facebook" style="background:#1A2332;">Facebook</option>
-          <option value="Word of Mouth" style="background:#1A2332;">Word of Mouth</option>
-          <option value="Friend or Colleague" style="background:#1A2332;">Friend or Colleague</option>
-          <option value="Flyer or Card" style="background:#1A2332;">Flyer or Card</option>
-          <option value="Other" style="background:#1A2332;">Other</option>
-        </select>
-      </div>
-
-      <button type="submit"
-              class="w-full bg-mint hover:bg-mint-dark text-navy font-heading font-700 py-4 rounded-xl text-base transition-all duration-200 cursor-pointer flex items-center justify-center gap-2"
-              style="letter-spacing: -0.01em;"
-              onmouseover="this.style.boxShadow='0 8px 32px rgba(2,195,154,0.3)'"
-              onmouseout="this.style.boxShadow='none'">
-        Get my free audit
-        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </button>
-      <p class="font-body text-white/30 text-xs text-center">No spam. No sales pressure. Just an honest look at where you stand.</p>
-    </form>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════════
-     FOOTER
-═══════════════════════════════════════════════ -->
-<footer class="bg-navy border-t border-white/6 py-12">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-      <!-- Brand -->
-      <div class="flex items-center gap-2">
-        <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-mint to-teal flex items-center justify-center flex-shrink-0">
-          <svg class="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-          </svg>
-        </div>
-        <span class="font-heading font-700 text-white text-sm">Lead<span class="text-mint">Lock</span></span>
-      </div>
-
-      <!-- Links -->
-      <nav class="flex flex-wrap gap-6" aria-label="Footer navigation">
-        <a href="#services" class="font-body text-white/40 hover:text-white/80 text-sm transition-colors duration-200 cursor-pointer">Services</a>
-        <a href="#how-it-works" class="font-body text-white/40 hover:text-white/80 text-sm transition-colors duration-200 cursor-pointer">How It Works</a>
-        <a href="#faq" class="font-body text-white/40 hover:text-white/80 text-sm transition-colors duration-200 cursor-pointer">FAQ</a>
-        <a href="#contact" class="font-body text-white/40 hover:text-white/80 text-sm transition-colors duration-200 cursor-pointer">Contact</a>
-      </nav>
-
-      <!-- Location + owner -->
-      <p class="font-body text-white/30 text-sm">
-        Drew Lewis &mdash; Providence RI &amp; Hartford CT
-      </p>
-    </div>
-
-    <div class="border-t border-white/6 mt-8 pt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-      <p class="font-body text-white/25 text-xs">&copy; 2026 LeadLock. All rights reserved.</p>
-      <p class="font-body text-white/20 text-xs">Lock in every lead. Rank on every search.</p>
-    </div>
+    <div class="footer-copy">Drew Lewis · Providence RI &amp; Hartford CT</div>
   </div>
 </footer>
 
-
-<!-- Back to top button -->
+<!-- ── BACK TO TOP ── -->
 <button id="back-to-top" aria-label="Back to top">
-  <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-    <path d="M18 15l-6-6-6 6"/>
-  </svg>
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
 </button>
 
-
-<!-- ═══════════════════════════════════════════════
-     JAVASCRIPT
-═══════════════════════════════════════════════ -->
+<script src="widget.js"></script>
 <script>
-  // ─── Scroll reveal ──────────────────────────────────────────────────────────
-  (function() {
-    const observer = new IntersectionObserver(
-      (entries) => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }),
-      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
-    );
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-  })();
+  // Reveal on scroll
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  // ─── FAQ accordion ─────────────────────────────────────────────────────────
-  document.querySelectorAll('.faq-item').forEach(item => {
-    const btn    = item.querySelector('button');
-    const answer = item.querySelector('.faq-answer');
-    const icon   = item.querySelector('.faq-icon');
+  // Hamburger
+  const ham = document.getElementById('hamburger-btn');
+  const mobileNav = document.getElementById('mobile-nav');
+  ham.addEventListener('click', () => { ham.classList.toggle('open'); mobileNav.classList.toggle('open'); });
+  mobileNav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => { ham.classList.remove('open'); mobileNav.classList.remove('open'); });
+  });
 
-    btn.addEventListener('click', () => {
-      const isOpen = answer.classList.contains('open');
+  // FAQ
+  const faqs = [
+    { q: 'How long before I see results?', a: 'Most clients see measurable improvements within 30 days — ranking movement, more calls captured, and early reviews. Full impact typically shows in 60–90 days.' },
+    { q: 'What areas do you serve?', a: 'We currently serve local businesses in Providence, RI and Hartford, CT metro areas, with plans to expand.' },
+    { q: 'Do I need a website?', a: 'No — most of our services work independently of your website. We optimize your Google Business Profile, which is often more important for local search than your site.' },
+    { q: 'How does the missed call text-back work?', a: 'When a call goes unanswered, our system automatically sends a personalized text to the caller within seconds, keeping the lead warm before they dial a competitor.' },
+    { q: 'What does it cost?', a: "We offer tiered plans based on your business size and needs. Book a free audit and we'll recommend the right package — no obligation." },
+    { q: 'Can I cancel anytime?', a: "Yes. We operate on a month-to-month basis. We're confident in our results, so we don't lock you into long contracts." },
+  ];
+  const faqList = document.getElementById('faq-list');
+  faqs.forEach((faq, i) => {
+    faqList.innerHTML += `<div class="faq-item"><button class="faq-question" onclick="toggleFaq(${i})">${faq.q}<span class="faq-icon" id="faq-icon-${i}">+</span></button><div class="faq-answer" id="faq-answer-${i}"><p>${faq.a}</p></div></div>`;
+  });
+  function toggleFaq(i) {
+    document.getElementById('faq-answer-' + i).classList.toggle('open');
+    document.getElementById('faq-icon-' + i).classList.toggle('open');
+  }
 
-      // Close all others
-      document.querySelectorAll('.faq-answer.open').forEach(a => {
-        a.classList.remove('open');
-        a.closest('.faq-item').querySelector('button').setAttribute('aria-expanded', 'false');
-        a.closest('.faq-item').querySelector('.faq-icon').classList.remove('rotated');
-      });
-
-      if (!isOpen) {
-        answer.classList.add('open');
-        btn.setAttribute('aria-expanded', 'true');
-        icon.classList.add('rotated');
-      }
+  // Contact form → Formspree
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const btn = document.getElementById('form-btn');
+    const form = e.target;
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    fetch('https://formspree.io/f/xzdkdgwe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        firstName: form.firstName.value,
+        lastName: form.lastName.value,
+        businessName: form.businessName.value,
+        phone: form.phone.value,
+        email: form.email.value,
+        industry: form.industry.value,
+        challenge: form.challenge.value,
+      }),
+    })
+    .then(res => {
+      if (res.ok) { btn.style.display = 'none'; document.getElementById('form-success').style.display = 'block'; }
+      else { throw new Error(); }
+    })
+    .catch(() => {
+      btn.disabled = false;
+      btn.innerHTML = 'Send my free audit request <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
+      document.getElementById('form-error').style.display = 'block';
     });
   });
 
-  // ─── Smooth scroll for anchor links ────────────────────────────────────────
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      const id = a.getAttribute('href').slice(1);
-      const el = id ? document.getElementById(id) : null;
-      if (el) {
-        e.preventDefault();
-        const offset = 72; // sticky header height
-        const top = el.getBoundingClientRect().top + window.pageYOffset - offset;
-        window.scrollTo({ top, behavior: 'smooth' });
-      }
-    });
-  });
-
-  // ─── Header shrink on scroll ────────────────────────────────────────────────
-  (function() {
-    const header = document.getElementById('site-header');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 20) {
-        header.style.borderBottomColor = 'rgba(255,255,255,0.1)';
-      } else {
-        header.style.borderBottomColor = 'rgba(255,255,255,0.06)';
-      }
-    }, { passive: true });
-  })();
-
-  // ─── Mobile hamburger menu ──────────────────────────────────────────────────
-  (function() {
-    const btn  = document.getElementById('hamburger-btn');
-    const menu = document.getElementById('mobile-menu');
-    if (!btn || !menu) return;
-
-    btn.addEventListener('click', () => {
-      const isOpen = menu.classList.contains('open');
-      menu.classList.toggle('open', !isOpen);
-      btn.classList.toggle('open', !isOpen);
-      btn.setAttribute('aria-expanded', String(!isOpen));
-    });
-
-    // Close menu when a nav link is clicked
-    menu.querySelectorAll('.mobile-nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        menu.classList.remove('open');
-        btn.classList.remove('open');
-        btn.setAttribute('aria-expanded', 'false');
-      });
-    });
-  })();
-
-  // ─── Phone number auto-format ───────────────────────────────────────────────
-  (function() {
-    const phone = document.getElementById('phone');
-    if (!phone) return;
-
-    phone.addEventListener('input', function(e) {
-      let digits = this.value.replace(/\D/g, '').substring(0, 10);
-      let formatted = '';
-      if (digits.length > 0) formatted = '(' + digits.substring(0, 3);
-      if (digits.length >= 3) formatted += ') ' + digits.substring(3, 6);
-      if (digits.length >= 6) formatted += '-' + digits.substring(6, 10);
-      this.value = formatted;
-
-      // Clear error while typing
-      const err = document.getElementById('phone-error');
-      if (err) err.classList.add('hidden');
-      this.style.borderColor = 'rgba(2,195,154,0.6)';
-    });
-  })();
-
-  // ─── Contact form validation & submission via Formspree ────────────────────
-  (function() {
-    const form    = document.getElementById('contact-form');
-    const success = document.getElementById('form-success');
-    if (!form || !success) return;
-
-    const phoneInput    = document.getElementById('phone');
-    const emailInput    = document.getElementById('email');
-    const bizNameInput  = document.getElementById('business-name');
-    const nameInput     = document.getElementById('contact-name');
-    const industryInput = document.getElementById('industry');
-    const bizInfoInput  = document.getElementById('business-info');
-    const referralInput = document.getElementById('referral');
-    const phoneErr      = document.getElementById('phone-error');
-    const emailErr      = document.getElementById('email-error');
-    const submitBtn     = form.querySelector('button[type="submit"]');
-
-    const errorStyle  = 'rgba(239,68,68,0.7)';
-    const normalStyle = 'rgba(255,255,255,0.1)';
-
-    function showFieldError(input, msg) {
-      input.style.borderColor = errorStyle;
-      let err = input.parentElement.querySelector('.field-error');
-      if (!err) {
-        err = document.createElement('p');
-        err.className = 'field-error font-body text-red-400 text-xs mt-1';
-        input.insertAdjacentElement('afterend', err);
-      }
-      err.textContent = msg;
-    }
-
-    function clearFieldError(input) {
-      input.style.borderColor = normalStyle;
-      const err = input.parentElement.querySelector('.field-error');
-      if (err) err.remove();
-    }
-
-    function validatePhone() {
-      const digits = phoneInput.value.replace(/\D/g, '');
-      const valid = digits.length === 10;
-      if (!valid) {
-        phoneErr.classList.remove('hidden');
-        phoneInput.style.borderColor = errorStyle;
-      } else {
-        phoneErr.classList.add('hidden');
-        phoneInput.style.borderColor = normalStyle;
-      }
-      return valid;
-    }
-
-    function validateEmail() {
-      const valid = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(emailInput.value.trim());
-      if (!valid) {
-        emailErr.classList.remove('hidden');
-        emailInput.style.borderColor = errorStyle;
-      } else {
-        emailErr.classList.add('hidden');
-        emailInput.style.borderColor = normalStyle;
-      }
-      return valid;
-    }
-
-    function validateRequired(input, label) {
-      const val = input.value ? input.value.trim() : '';
-      if (!val) {
-        showFieldError(input, label + ' is required');
-        return false;
-      }
-      clearFieldError(input);
-      return true;
-    }
-
-    // Clear errors on input
-    emailInput.addEventListener('input', function() {
-      emailErr.classList.add('hidden');
-      this.style.borderColor = 'rgba(2,195,154,0.6)';
-    });
-    [bizNameInput, nameInput, bizInfoInput].forEach(function(el) {
-      el.addEventListener('input', function() { clearFieldError(this); this.style.borderColor = 'rgba(2,195,154,0.6)'; });
-    });
-    [industryInput, referralInput].forEach(function(el) {
-      el.addEventListener('change', function() { clearFieldError(this); this.style.borderColor = 'rgba(2,195,154,0.6)'; });
-    });
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      const bizOk      = validateRequired(bizNameInput, 'Business name');
-      const nameOk     = validateRequired(nameInput, 'Your name');
-      const phoneOk    = validatePhone();
-      const emailOk    = validateEmail();
-      const industryOk = validateRequired(industryInput, 'Type of business');
-      const bizInfoOk  = validateRequired(bizInfoInput, 'Tell us about your business');
-      const referralOk = validateRequired(referralInput, 'Where you heard about us');
-
-      if (!bizOk || !nameOk || !phoneOk || !emailOk || !industryOk || !bizInfoOk || !referralOk) return;
-
-      // Disable button & show loading
-      const origText = submitBtn.innerHTML;
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = '<svg class="w-5 h-5 animate-spin" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" opacity="0.3"/><path d="M12 2a10 10 0 0 1 10 10" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg> Sending...';
-
-      const data = new FormData(form);
-      try {
-        const res = await fetch('https://formspree.io/f/xzdkdgwe', {
-          method: 'POST',
-          body: data,
-          headers: { 'Accept': 'application/json' }
-        });
-        if (res.ok) {
-          form.style.display = 'none';
-          success.classList.remove('hidden');
-          success.classList.add('visible');
-        } else {
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = origText;
-          alert('Something went wrong. Please try again.');
-        }
-      } catch (_) {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = origText;
-        alert('Connection error. Please check your internet and try again.');
-      }
-    });
-  })();
-
-  // ─── Industry tile → auto-fill form ────────────────────────────────────────
-  (function() {
-    const grid = document.getElementById('industries-grid');
-    const select = document.getElementById('industry');
-    if (!grid || !select) return;
-
-    const map = {
-      'Auto Repair':     'Auto Repair',
-      'HVAC':            'HVAC',
-      'Landscaping':     'Landscaping',
-      'Barbers':         'Barber / Salon',
-      'Pet Groomers':    'Pet Grooming',
-      'Dentists':        'Dental',
-      'Cleaning':        'Cleaning',
-      'Restaurants':     'Restaurant',
-      'Electricians':    'Electrician',
-      'Plumbers':        'Plumber',
-      'Roofers':         'Roofing',
-      'Painters':        'Painting',
-      'Chiropractors':   'Chiropractic',
-      'Nail Salons':     'Nail Salon',
-      'Gyms & Fitness':  'Gym / Fitness',
-      'Other':           'Other',
-    };
-
-    grid.addEventListener('click', (e) => {
-      const tile = e.target.closest('[style]');
-      if (!tile) return;
-      const label = tile.querySelector('p.font-heading');
-      if (!label) return;
-      const name = label.textContent.trim();
-      const value = map[name];
-      if (value) {
-        select.value = value;
-        // Brief flash on the select to draw attention
-        select.style.borderColor = 'rgba(2,195,154,0.8)';
-        select.style.background  = 'rgba(2,195,154,0.08)';
-        setTimeout(() => {
-          select.style.borderColor = 'rgba(255,255,255,0.1)';
-          select.style.background  = 'rgba(255,255,255,0.06)';
-        }, 1200);
-      }
-      const contact = document.getElementById('contact');
-      if (contact) {
-        const top = contact.getBoundingClientRect().top + window.pageYOffset - 72;
-        window.scrollTo({ top, behavior: 'smooth' });
-      }
-    });
-  })();
-
-  // ─── Back to top ────────────────────────────────────────────────────────────
-  (function() {
-    const btn = document.getElementById('back-to-top');
-    if (!btn) return;
-
-    window.addEventListener('scroll', () => {
-      btn.classList.toggle('visible', window.scrollY > 400);
-    }, { passive: true });
-
-    btn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  })();
+  // Back to top
+  const backBtn = document.getElementById('back-to-top');
+  window.addEventListener('scroll', () => { backBtn.classList.toggle('visible', window.scrollY > 400); });
+  backBtn.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
 </script>
-
-  <!-- LeadLock Onboarding Chat Widget -->
-  <link rel="stylesheet" href="/widget.css">
-  <script src="/widget.js"></script>
 </body>
 </html>
